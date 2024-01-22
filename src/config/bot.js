@@ -2,15 +2,15 @@ module.exports = {
     colors: {
         succes: '#57F287',
         error: "#ED4245",
-        normal: "#5865F2"
+        normal: "#5AB5E7"
     },
 
     discord: {
         id: process.env.DISCORD_ID,
-        prefix: '!',
-        footer: `© Corwin 2021 - ${new Date().getFullYear()}`, 
-        botInvite: `https://discord.com/oauth2/authorize?&client_id=840212110817755157&scope=applications.commands+bot&permissions=8`,
-        serverInvite: "https://discord.gg/qHXxpQKC2H",
+        prefix: 'c!',
+        footer: `© Cludo ${new Date().getFullYear()}`, 
+        botInvite: `https://discord.com/api/oauth2/authorize?client_id=1071766414358216788&permissions=8&scope=bot%20applications.commands`,
+        serverInvite: "https://discord.gg/w94TaRcfs2",
     },
 
     wordList: `Airplane
