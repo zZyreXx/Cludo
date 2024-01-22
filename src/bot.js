@@ -173,7 +173,7 @@ process.on('unhandledRejection', error => {
         ])
         .setColor(client.config.colors.normal)
     consoleLogs.send({
-        username: 'Bot Logs',
+        username: 'Cludo Logs',
         embeds: [embed],
     }).catch(() => {
         console.log('Error sending unhandledRejection to webhook')
@@ -193,7 +193,7 @@ process.on('warning', warn => {
         ])
         .setColor(client.config.colors.normal)
     warnLogs.send({
-        username: 'Bot Logs',
+        username: 'Cludo Logs',
         embeds: [embed],
     }).catch(() => {
         console.log('Error sending warning to webhook')
@@ -220,7 +220,7 @@ client.on(Discord.ShardEvents.Error, error => {
         ])
         .setColor(client.config.colors.normal)
     consoleLogs.send({
-        username: 'Bot Logs',
+        username: 'Cludo Logs',
         embeds: [embed],
     });
 });
