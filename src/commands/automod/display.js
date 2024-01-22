@@ -6,7 +6,7 @@ module.exports = async (client, interaction, args) => {
     Schema.findOne({ Guild: interaction.guild.id }, async (err, data) => {
         if (data && data.Words.length > 0) {
             client.embed({
-                title: "🤬・Blacklisted words",
+                title: "<:dangrr:1071791074173014158>・Blacklisted words",
                 desc: data.Words.join(", "),
                 type: 'editreply'
             }, interaction)
@@ -19,5 +19,4 @@ module.exports = async (client, interaction, args) => {
         }
     })
 }
-
  
