@@ -32,7 +32,7 @@ module.exports = async (client, interaction, args) => {
                 data.Money += money;
                 data.save();
 
-                client.embed({ title: `🎰・Multiplier: 15x`, desc: `You won **${client.emotes.economy.coins} $${money}**`, type: 'editreply' }, interaction);
+                client.embed({ title: `<:infinityzz:1071792533606244463>・Multiplier: 15x`, desc: `You won **${client.emotes.economy.coins} $${money}**`, type: 'editreply' }, interaction);
             }
 
             else if (isOdd(random) && colour == 1) { // Red
@@ -40,7 +40,7 @@ module.exports = async (client, interaction, args) => {
                 data.Money += money;
                 data.save();
 
-                client.embed({ title: `🎰・Multiplier: 1.5x`, desc: `You won **${client.emotes.economy.coins} $${money}**`, type: 'editreply' }, interaction);
+                client.embed({ title: `<:infinityzz:1071792533606244463>・Multiplier: 1.5x`, desc: `You won **${client.emotes.economy.coins} $${money}**`, type: 'editreply' }, interaction);
             }
 
             else if (!isOdd(random) && colour == 0) { // Black
@@ -48,14 +48,14 @@ module.exports = async (client, interaction, args) => {
                 data.Money += money;
                 data.save();
 
-                client.embed({ title: `🎰・Multiplier: 2x`, desc: `You won **${client.emotes.economy.coins} $${money}**`, type: 'editreply' }, interaction);
+                client.embed({ title: `<:infinityzz:1071792533606244463>・Multiplier: 2x`, desc: `You won **${client.emotes.economy.coins} $${money}**`, type: 'editreply' }, interaction);
             }
 
             else { // Wrong
                 data.Money -= money;
                 data.save();
 
-                client.embed({ title: `🎰・Multiplier: 0x`, desc: `You lost **${client.emotes.economy.coins} $${money}**`, type: 'editreply' }, interaction);
+                client.embed({ title: `<:infinityzz:1071792533606244463>・Multiplier: 0x`, desc: `You lost **${client.emotes.economy.coins} $${money}**`, type: 'editreply' }, interaction);
             }
 
         }
