@@ -12,30 +12,30 @@ module.exports = async (client) => {
                     .addComponents(
                         new Discord.StringSelectMenuBuilder()
                             .setCustomId('Bot-helppanel')
-                            .setPlaceholder('❌┆Nothing selected')
+                            .setPlaceholder('Navigation System')
                             .addOptions([
                                 {
                                     label: `Commands`,
                                     description: `Show the commands of ${client.user.username}!`,
-                                    emoji: "💻",
+                                    emoji: "<:compzz:1071795353445220432>",
                                     value: "commands-Bothelp",
                                 },
                                 {
                                     label: `Invite`,
                                     description: `Invite ${client.user.username} to your server`,
-                                    emoji: "📨",
+                                    emoji: "<:linkee:1071784295594737768>",
                                     value: "invite-Bothelp",
                                 },
                                 {
                                     label: `Support server`,
                                     description: `Join the suppport server`,
-                                    emoji: "❓",
+                                    emoji: "<:helpzz:1072010469142974504>",
                                     value: "support-Bothelp",
                                 },
                                 {
                                     label: `Changelogs`,
                                     description: `Show the ${client.user.username} changelogs`,
-                                    emoji: "📃",
+                                    emoji: "<:i_:1071780309865091173>",
                                     value: "changelogs-Bothelp",
                                 },
                             ]),
@@ -50,9 +50,9 @@ module.exports = async (client) => {
                     );
 
                 client.embed({
-                    title: `❓・Support`,
+                    title: `<:helpzz:1072010469142974504>・Support`,
                     desc: `Make your server even better with ${client.user.username}!`,
-                    image: "https://cdn.discordapp.com/attachments/843487478881976381/874694194474668052/Bot_banner_invite.jpg",
+                    image: "https://cdn.discordapp.com/attachments/1064478382504550400/1072035974781091960/CLUDO-removebg-preview.png",
                     url: client.config.discord.serverInvite,
                     components: [row2, row],
                     type: 'edit'
