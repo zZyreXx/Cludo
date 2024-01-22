@@ -62,7 +62,7 @@ module.exports = async (client, interaction) => {
                     const commands = interaction.client.commands.filter(x => x.data.name == interaction.commandName).map((x) => x.data.options.map((c) => '`' + c.name + '` - ' + c.description).join("\n"));
 
                     return client.embed({
-                        title: `❓・Help panel`,
+                        title: `<:helpzz:1072010469142974504>・Help panel`,
                         desc: `Get help with the commands in \`${interaction.commandName}\` \n\n${commands}`,
                         type: 'reply'
                     }, interaction)
