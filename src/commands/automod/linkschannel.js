@@ -31,7 +31,7 @@ module.exports = async (client, interaction, args) => {
             text: `Channel has been added to the whitelist!`,
             fields: [
                 {
-                    name: `📘┆Channel`,
+                    name: `<:chan:1071790232632041533>┆Channel`,
                     value: `${channel} (${channel.name})`
                 }
             ],
@@ -60,7 +60,7 @@ module.exports = async (client, interaction, args) => {
                     text: `Channel has been removed from the whitelist!`,
                     fields: [
                         {
-                            name: `📘┆Channel`,
+                            name: `<:chan:1071790232632041533>┆Channel`,
                             value: `${channel} (${channel.name})`
                         }
                     ],
