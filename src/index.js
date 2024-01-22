@@ -1,3 +1,11 @@
+const express = require("express")
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send('This bot is running on Cludo.yml  <a href="https://github.com/">Here</a>')
+})
+
+app.listen(3000);
 const Discord = require('discord.js');
 const chalk = require('chalk');
 require('dotenv').config('./.env');
