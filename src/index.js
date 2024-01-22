@@ -15,6 +15,32 @@ axios.get('https://api.github.com/repos/CorwinDev/Discord-Bot/releases/latest').
 
 const webhook = require("./config/webhooks.json");
 const config = require("./config/bot.js");
+const https = require('https');
+
+exports.handler = async (event, context) => {
+  const url = 'https://yoursitehere.onrender.com';
+
+  return new Promise((resolve, reject) => {
+    const req = https.get(url, (res) => {
+      if (res.statusCode === 200) {
+        resolve({
+          statusCode: 200,
+          body: 'Server pinged successfully',
+        });
+      } else {
+        reject(
+          new Error(`Server ping failed with status code: ${res.statusCode}`)
+        );
+      }
+    });
+
+    req.on('error', (error) => {
+      reject(error);
+    });
+
+    req.end();
+  });
+};
 const webHooksArray = ['startLogs', 'shardLogs', 'errorLogs', 'dmLogs', 'voiceLogs', 'serverLogs', 'serverLogs2', 'commandLogs', 'consoleLogs', 'warnLogs', 'voiceErrorLogs', 'creditLogs', 'evalLogs', 'interactionLogs'];
 // Check if .env webhook_id and webhook_token are set
 if (process.env.WEBHOOK_ID && process.env.WEBHOOK_TOKEN) {
