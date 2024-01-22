@@ -14,7 +14,7 @@ module.exports = async (client, interaction, args) => {
             if (!json.players) return client.errNormal({ error: "Can't find the server!", type: 'editreply' }, interaction)
 
             return client.embed({
-                title: `📁・${ip}`,
+                title: `<:folderr:1071798946688680027>・${ip}`,
                 thumbnail: `https://eu.mc-api.net/v3/server/favicon/${ip}`,
                 fields: [{
                     name: "🟢┇Online",
@@ -22,12 +22,12 @@ module.exports = async (client, interaction, args) => {
                     inline: true,
                 },
                 {
-                    name: "🏷️┇Version",
+                    name: "<:x_:1071781614423642193> ┇Version",
                     value: `${json.version}`,
                     inline: true,
                 },
                 {
-                    name: "👤┇Players online",
+                    name: "<:memberzz:1071796953580572744>┇Players online",
                     value: `${json.players.online}/${json.players.max}`,
                     inline: true,
                 },
@@ -36,4 +36,5 @@ module.exports = async (client, interaction, args) => {
         }).catch({})
 }
 
+ 
  
