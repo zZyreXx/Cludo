@@ -26,20 +26,20 @@ module.exports = async (client, interaction, args) => {
     })
 
     client.embed({
-        title: `📻・Started radio`,
+        title: `<:tvzzz:1072024670125174794>・Started radio`,
         desc: `Radio has started successfully \nTo make the bot leave do: \`rleave\``,
         fields: [{
-            name: "👤┆Started By",
-            value: `${interaction.user} (${interaction.user.tag})`,
+            name: "<:memberzz:1071796953580572744>┆Started By",
+            value: `${interaction.user}`,
             inline: true
         },
         {
-            name: "📺┆Channel",
-            value: `${channel} (${channel.name})`,
+            name: "<:tvzzz:1072024670125174794>┆Channel",
+            value: `${channel}`,
             inline: true
         },
         {
-            name: "🎶┆Radio Station",
+            name: "<:musicc:1072028279546064896>┆Radio Station",
             value: `[Radio 538](https://www.538.nl/)`,
             inline: true
         },
@@ -48,19 +48,20 @@ module.exports = async (client, interaction, args) => {
     }, interaction)
 
     let embed = new Discord.EmbedBuilder()
-        .setTitle(`📻・Started radio`)
+        .setTitle(`<:tvzzz:1072024670125174794>・Started radio`)
         .setDescription(`_______________ \n\nRadio has started successfully`)
         .addFields(
-            { name: "👤┆Started By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
-            { name: "📺┆Channel", value: `${channel} (${channel.name})`, inline: true },
-            { name: "⚙️┆Guild", value: `${interaction.guild.name} (${interaction.guild.id})`, inline: true },
+            { name: "<:memberzz:1071796953580572744>┆Started By", value: `${interaction.user}`, inline: true },
+            { name: "<:tvzzz:1072024670125174794>┆Channel", value: `${channel}`, inline: true },
+            { name: "<:settingzz:1072016300848730182>┆Guild", value: `${interaction.guild.name}`, inline: true },
         )
         .setColor(client.config.colors.normal)
         .setTimestamp();
     webhookClientLogs.send({
-        username: 'Bot Logs',
+        username: 'Cludo',
         embeds: [embed],
     });
 }
 
+ 
  
