@@ -26,46 +26,46 @@ module.exports = {
                         {
                             label: `Commands`,
                             description: `Show the commands of Bot!`,
-                            emoji: "💻",
+                            emoji: "<:compzz:1071795353445220432>",
                             value: "commands-Bothelp",
                         },
                         {
                             label: `Invite`,
                             description: `Invite Bot to your server`,
-                            emoji: "📨",
+                            emoji: "<:linkee:1071784295594737768>",
                             value: "invite-Bothelp",
                         },
                         {
                             label: `Support server`,
                             description: `Join the suppport server`,
-                            emoji: "❓",
+                            emoji: "<:helpzz:1072010469142974504>",
                             value: "support-Bothelp",
                         },
                         {
                             label: `Changelogs`,
                             description: `Show the bot changelogs`,
-                            emoji: "📃",
+                            emoji: "<:i_:1071780309865091173>",
                             value: "changelogs-Bothelp",
                         },
                     ]),
             );
 
         return client.embed({
-            title: `❓・Help panel`,
+            title: `<:i_:1071780309865091173>・Help panel`,
             desc: `Welcome to Bot's help panel! We have made a small overview to help you! Make a choice via the menu below`,
-            image: "https://cdn.discordapp.com/attachments/843487478881976381/874694194474668052/Bot_banner_invite.jpg",
+            image: "https://cdn.discordapp.com/attachments/1064478382504550400/1072035974781091960/CLUDO-removebg-preview.png",
             fields: [
                 {
-                    name: `❌┆Menu doesn't work?`,
+                    name: `<:x_:1071781614423642193>┆Menu doesn't work?`,
                     value: `Try resending the command. If you get no reaction, make sure you report the bug!`
                 },
                 {
-                    name: `🪲┆Found a bug?`,
+                    name: `<:bb:1071783760502198323>┆Found a bug?`,
                     value: `Report this with \`/report bug\``
                 },
                 {
-                    name: `🔗┆Links`,
-                    value: `[Website](https://corwindev.nl/) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg/bot/798144456528363550/vote)`
+                    name: `<:linkee:1071784295594737768>┆Links`,
+                    value: `[Website](https://google.com) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg)`
                 },
             ],
             components: [row],
