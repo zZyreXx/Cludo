@@ -38,7 +38,7 @@ module.exports = async (client, interaction, args) => {
             text: `The channel name has been set successfully`,
             fields: [
                 {
-                    name: `💬┆Name`,
+                    name: `<:chatzz:1071790624929501184>┆Name`,
                     value: `${name}`,
                     inline: true
                 },
@@ -47,5 +47,3 @@ module.exports = async (client, interaction, args) => {
         }, interaction)
     })
 }
-
- 
