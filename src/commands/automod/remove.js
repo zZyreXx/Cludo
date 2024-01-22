@@ -25,7 +25,7 @@ module.exports = async (client, interaction, args) => {
                 text: `Word is removed from the blacklist!`,
                 fields: [
                     {
-                        name: `💬┆Word`,
+                        name: `<:chatzz:1071790624929501184>┆Word`,
                         value: `${word}`
                     }
                 ],
