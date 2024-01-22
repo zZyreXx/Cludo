@@ -15,21 +15,21 @@ module.exports = async (client, interaction, args) => {
             var apiSeconds = ((client.ws.ping % 60000) / 1000);
 
             client.embed({
-                title: `${client.emotes.normal.pong}・Pong`,
+                title: `<:dangrr:1071791074173014158>・Pong`,
                 desc: `Check out how fast our bot is`,
                 fields: [
                     {
-                        name: "🤖┆Bot latency",
+                        name: "<:botzz:1071794843438825492>┆Bot latency",
                         value: `${ping}ms (${pingSeconds}s)`,
                         inline: true,
                     },
                     {
-                        name: "💻┆API Latency",
+                        name: "<:compzz:1071795353445220432>┆API Latency",
                         value: `${client.ws.ping}ms (${apiSeconds}s)`,
                         inline: true,
                     },
                     {
-                        name: "📂┆Database Latency",
+                        name: "<:folderr:1071798946688680027>┆Database Latency",
                         value: `${result.ok}ms (${mongooseSeconds}s)`,
                         inline: true,
                     }
@@ -39,5 +39,7 @@ module.exports = async (client, interaction, args) => {
         })
     })
 }
+
+ 
 
  
