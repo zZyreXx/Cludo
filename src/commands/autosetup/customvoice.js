@@ -8,7 +8,7 @@ module.exports = async (client, interaction, args) => {
         type: Discord.ChannelType.GuildCategory,
     }).then((cat) => {
         interaction.guild.channels.create({
-            name: "➕ Create Voice",
+            name: "<:pluzz:1071791525824049244> Create Voice",
             type:  Discord.ChannelType.GuildVoice,
             parent: cat.id,
             permissionOverwrites: [
@@ -39,7 +39,7 @@ module.exports = async (client, interaction, args) => {
                 text: `Custom voice has been set up successfully!`,
                 fields: [
                     {
-                        name: `📘┆Channel`,
+                        name: `<:chan:1071790232632041533>┆Channel`,
                         value: `${ch} (${ch.name})`
                     }
                 ],
