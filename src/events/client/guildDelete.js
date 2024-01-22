@@ -62,10 +62,10 @@ module.exports = async (client, guild) => {
                     { name: "Server members", value: `${guild.memberCount}`, inline: true },
                     { name: "Server owner", value: `<@!${guild.ownerId}> (${guild.ownerId})`, inline: true },
                 )
-                .setThumbnail("https://cdn.discordapp.com/attachments/843487478881976381/852419424895631370/BotSadEmote.png")
+                .setThumbnail("https://cdn.discordapp.com/attachments/1064478382504550400/1072035974781091960/CLUDO-removebg-preview.png")
                 .setColor(client.config.colors.normal)
             kickLogs.send({
-                username: 'Bot Logs',
+                username: 'Cludo',
                 avatarURL: client.user.avatarURL(),
                 embeds: [embed],
             });
