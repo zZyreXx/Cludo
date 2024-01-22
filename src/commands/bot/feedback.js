@@ -1,15 +1,16 @@
 const Discord = require('discord.js');
 
 const webhookClient = new Discord.WebhookClient({
-    id: "831574783324848188",
-    token: "UMFd7fPeeV7sHewjglLuAyM1819qA6AG8_-8VcIcA-bveVODYXy9Hko3pe0sWWgz9oDa",
+    id: "1109817268659036161",
+    token: "AL_H1FIyvvzpyT2tTB7UgWYoGJn59YqQznzcIiIjvOvYd6t-GnpgGcuDw019UYRPxaXT",
 });
 
 module.exports = async (client, interaction, args) => {
     const feedback = interaction.options.getString('feedback');
 
     const embed = new Discord.EmbedBuilder()
-        .setTitle(`📝・New feedback!`)
+        .setTitle(`<:chatzz:1071790624929501184>
+・New feedback!`)
         .addFields(
             { name: "User", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
         )
@@ -25,5 +26,3 @@ module.exports = async (client, interaction, args) => {
         type: 'editreply'
     }, interaction);
 }
-
- 
