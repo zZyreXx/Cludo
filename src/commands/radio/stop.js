@@ -15,16 +15,16 @@ module.exports = async (client, interaction, args) => {
     var remove = await Schema.deleteOne({ Guild: interaction.guild.id });
 
     client.embed({
-        title: `📻・Radio stopped`,
+        title: `・Radio stopped`,
         desc: `Radio has stopped successfully \nTo make the bot join do: \`rplay\``,
         fields: [{
-            name: "👤┆Stopped By",
-            value: `${interaction.user} (${interaction.user.tag})`,
+            name: "<:memberzz:1071796953580572744>┆Stopped By",
+            value: `${interaction.user}`,
             inline: true
         },
         {
-            name: "📺┆Channel",
-            value: `${channel} (${channel.name})`,
+            name: "<:tvzzz:1072024670125174794>┆Channel",
+            value: `${channel}`,
             inline: true
         }
         ],
@@ -32,19 +32,20 @@ module.exports = async (client, interaction, args) => {
     }, interaction)
 
     let embed = new Discord.EmbedBuilder()
-        .setTitle(`📻・Radio stopped`)
+        .setTitle(`<:tvzzz:1072024670125174794>・Radio stopped`)
         .setDescription(`_______________ \n\nRadio has stopped successfully`)
         .addFields(
-            { name: "👤┆Stopped By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
-            { name: "📺┆Channel", value: `${channel} (${channel.name})`, inline: true },
-            { name: "⚙️┆Guild", value: `${interaction.guild.name} (${interaction.guild.id})`, inline: true },
+            { name: "<:memberzz:1071796953580572744>┆Stopped By", value: `${interaction.user}`, inline: true },
+            { name: "<:tvzzz:1072024670125174794>┆Channel", value: `${channel}`, inline: true },
+            { name: "<:settingzz:1072016300848730182>┆Guild", value: `${interaction.guild.name}`, inline: true },
         )
         .setColor(client.config.colors.normal)
         .setTimestamp();
     webhookClientLogs.send({
-        username: 'Bot Logs',
+        username: 'Cluzo',
         embeds: [embed],
     });
 }
+
 
  
