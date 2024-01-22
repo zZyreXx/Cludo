@@ -1,49 +1,27 @@
 const Discord = require('discord.js');
-const Schema = require("../../database/models/music");
 
 module.exports = async (client, interaction, args) => {
-    const webhookClientLogs = new Discord.WebhookClient({
-        id: client.webhooks.voiceLogs.id,
-        token: client.webhooks.voiceLogs.token,
-    });
-
-    let channel = interaction.member.voice ? interaction.member.voice.channel : null;
-    if (!channel) return client.errNormal({ error: `The channel does not exist!`, type: 'editreply' }, interaction);
-
-    client.radioStop(channel);
-
-    var remove = await Schema.deleteOne({ Guild: interaction.guild.id });
-
     client.embed({
-        title: `・Radio stopped`,
-        desc: `Radio has stopped successfully \nTo make the bot join do: \`rplay\``,
+        title: `<:tvzzz:1072024670125174794>・Radio information`,
+        desc: `All info about the radio in this guild`,
         fields: [{
-            name: "<:memberzz:1071796953580572744>┆Stopped By",
-            value: `${interaction.user}`,
+            name: "<:memberzz:1071796953580572744>┆Channel Listeners",
+            value: `${interaction.member.voice.channel.members.size} listeners`,
             inline: true
         },
         {
-            name: "<:tvzzz:1072024670125174794>┆Channel",
-            value: `${channel}`,
+            name: "<:tvzzz:1072024670125174794>┆Connected channel",
+            value: `${interaction.member.voice.channel} (${interaction.member.voice.channel.name})`,
             inline: true
-        }
+        },
+        {
+            name: "<:musicc:1072028279546064896>┆Radio Station",
+            value: `[Radio 538](https://www.538.nl/)`,
+            inline: true
+        },
         ],
-        type: 'editreply'
+       type: 'editreply'
     }, interaction)
-
-    let embed = new Discord.EmbedBuilder()
-        .setTitle(`<:tvzzz:1072024670125174794>・Radio stopped`)
-        .setDescription(`_______________ \n\nRadio has stopped successfully`)
-        .addFields(
-            { name: "<:memberzz:1071796953580572744>┆Stopped By", value: `${interaction.user}`, inline: true },
-            { name: "<:tvzzz:1072024670125174794>┆Channel", value: `${channel}`, inline: true },
-            { name: "<:settingzz:1072016300848730182>┆Guild", value: `${interaction.guild.name}`, inline: true },
-        )
-        .setColor(client.config.colors.normal)
-        .setTimestamp();
-    webhookClientLogs.send({
-        username: 'Cluzo',
-        embeds: [embed],
-    });
 }
 
+ 
