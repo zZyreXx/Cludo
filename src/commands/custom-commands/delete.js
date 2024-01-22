@@ -15,7 +15,7 @@ module.exports = async (client, interaction, args) => {
                 client.succNormal({
                     text: `The command has been deleted successfully`,
                     fields: [{
-                        name: "🔧┆Command",
+                        name: "<:toolzzz:1071795700662272131>┆Command",
                         value: `\`\`\`${cmdname}\`\`\``,
                         inline: true,
                     }],
@@ -29,5 +29,3 @@ module.exports = async (client, interaction, args) => {
     })
 
 }
-
- 
