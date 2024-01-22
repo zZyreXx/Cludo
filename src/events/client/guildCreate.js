@@ -32,10 +32,10 @@ module.exports = async (client, guild) => {
                         { name: "Server members", value: `${guild.memberCount}`, inline: true },
                         { name: "Server owner", value: `<@!${guild.ownerId}> (${guild.ownerId})`, inline: true },
                     )
-                    .setThumbnail("https://cdn.discordapp.com/attachments/843487478881976381/852419422392156210/BotPartyEmote.png")
+                    .setThumbnail("https://cdn.discordapp.com/attachments/1064478382504550400/1072035974781091960/CLUDO-removebg-preview.png")
                     .setColor(client.config.colors.normal)
                 webhookClient.send({
-                    username: 'Bot Logs',
+                    username: 'Cludo',
                     avatarURL: client.user.avatarURL(),
                     embeds: [embed],
                 });
@@ -65,24 +65,24 @@ module.exports = async (client, guild) => {
 
         client.embed({
             title: "Thanks for inviting the bot!",
-            image: "https://cdn.discordapp.com/attachments/843487478881976381/874694194474668052/bot_banner_invite.jpg",
+            image: "https://cdn.discordapp.com/attachments/1064478382504550400/1072035974781091960/CLUDO-removebg-preview.png",
             fields: [{
-                name: "❓┆How to setup?",
+                name: "<:helpzz:1072010469142974504>┆How to setup?",
                 value: 'The default prefix = \`/\` \nTo run setups with Bot run \`/setup\`',
                 inline: false,
             },
             {
-                name: "☎️┆I need help what now?",
+                name: "<:i_:1071780309865091173>┆I need help what now?",
                 value: `You can DM <@755297485328482356> for support or joining the [[Support server]](${client.config.discord.serverInvite})`,
                 inline: false,
             },
             {
-                name: "💻┆What are the commands?",
+                name: "<:compzz:1071795353445220432>┆What are the commands?",
                 value: 'See that list of commands by doing \`/help\`',
                 inline: false,
             },
             {
-                name: "📨┆Invite the bot!",
+                name: "<:linkee:1071784295594737768>┆Invite the bot!",
                 value: `Invite the bot to click [[HERE]](${client.config.discord.botInvite})`,
                 inline: false,
             },
