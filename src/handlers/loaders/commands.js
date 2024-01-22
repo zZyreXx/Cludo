@@ -35,7 +35,7 @@ module.exports = (client) => {
                 .setDescription(`Started refreshing application (/) commands.`)
                 .setColor(client.config.colors.normal)
             interactionLogs.send({
-                username: 'Bot Logs',
+                username: 'Cludo Logs',
                 embeds: [embed]
             });
 
@@ -48,7 +48,7 @@ module.exports = (client) => {
                 .setDescription(`Successfully reloaded ${commands.length} application (/) commands.`)
                 .setColor(client.config.colors.normal)
             interactionLogs.send({
-                username: 'Bot Logs',
+                username: 'Cludo Logs',
                 embeds: [embedFinal]
             });
 
