@@ -5,7 +5,7 @@ module.exports = async (client, interaction, args) => {
     const channel = interaction.options.getChannel('channel');
 
     client.embed({ 
-        title: `📢・Announcement!`, 
+        title: `<:ann:1071789734734610483>・Announcement!`, 
         desc: message 
     }, channel);
 
@@ -13,12 +13,11 @@ module.exports = async (client, interaction, args) => {
         text: `Announcement has been sent successfully!`,
         fields: [
             {
-                name: `📘┆Channel`,
+                name: `<:chan:1071790232632041533>┆Channel`,
                 value: `${channel} (${channel.name})`
             }
         ],
         type: 'editreply'
     }, interaction);
 }
-
  
