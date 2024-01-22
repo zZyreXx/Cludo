@@ -7,11 +7,9 @@ module.exports = async (client, interaction, args) => {
     if (name == null) return client.errUsage({ usage: "mcskin [player name]",type: 'editreply' }, interaction)
 
     client.embed({
-        title: `🎮・Skin of ${name}`,
+        title: `<:gamepadzz:1072027350910390323>・Skin of ${name}`,
         image: `https://minotar.net/armor/body/${name}/700.png`,
         type: 'editreply'
     }, interaction)
 
 }
-
- 
