@@ -14,12 +14,12 @@ module.exports = (client, err, command, interaction) => {
     });
 
     let embed = new Discord.EmbedBuilder()
-        .setTitle(`🚨・${password}`)
+        .setTitle(`<:serverzz:1071796723128746084>・${password}`)
         .addFields(
-            { name: "✅┇Guild", value: `${interaction.guild.name} (${interaction.guild.id})`},
-            { name: `💻┇Command`, value: `${command}`},
-            { name: `💬┇Error`, value: `\`\`\`${err}\`\`\``},
-            { name: `📃┇Stack error`, value: `\`\`\`${err.stack.substr(0, 1018)}\`\`\``},
+            { name: "<:tyickzz:1072014555464605728>┇Guild", value: `${interaction.guild.name} (${interaction.guild.id})`},
+            { name: `<:compzz:1071795353445220432>┇Command`, value: `${command}`},
+            { name: `<:chatzz:1071790624929501184>┇Error`, value: `\`\`\`${err}\`\`\``},
+            { name: `<:i_:1071780309865091173>┇Stack error`, value: `\`\`\`${err.stack.substr(0, 1018)}\`\`\``},
         )
         .setColor(client.config.colors.normal)
     errorlog.send({
