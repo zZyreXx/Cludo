@@ -10,9 +10,9 @@ module.exports = async (client, interaction, args) => {
         );
 
     client.embed({
-        title: `❓・Support`,
+        title: `<:helpzz:1072010469142974504>・Support`,
         desc: `Make your server even better with Bot!`,
-        image: "https://cdn.discordapp.com/attachments/843487478881976381/874694194474668052/Bot_banner_invite.jpg",
+        image: "https://cdn.discordapp.com/attachments/1064478382504550400/1072035974781091960/CLUDO-removebg-preview.png",
         url: client.config.discord.serverInvite,
         components: [row],
         type: 'editreply'
