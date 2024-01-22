@@ -42,7 +42,7 @@ module.exports = async (client, interaction, args) => {
         text: `The embed color has been adjusted successfully`,
         fields: [
             {
-                name: `🎨┆New color`,
+                name: `<:chatzz:1071790624929501184>┆New color`,
                 value: `#${color}`,
                 inline: true
             },
