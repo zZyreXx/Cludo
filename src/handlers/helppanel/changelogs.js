@@ -54,6 +54,7 @@ module.exports = async (client) => {
                         {
                             name: "<:jsszz:1071798658409967747>┆Changelogs",
                             value: '10/12/2022 - Updated the bot to the latest version of discord.js (v14)',
+                            description: 'Added Mallu Radio Station Club FM 94.3', 
                             inline: false,
                         }
                     ],
