@@ -64,17 +64,17 @@ module.exports = (client) => {
 
     player.on('stateChange', (oldState, newState) => {
         if (newState.status === Voice.AudioPlayerStatus.Idle) {
-            client.startStream(process.env.RADIO || "https://sp14.instainternet.com/8050/stream")
+            client.startStream(process.env.RADIO || "https://s2.stationplaylist.com:7080/macfast.aac")
         }
     });
 
     player.on('error', error => {
         client.emit("voiceError", error);
-        client.startStream(process.env.RADIO || "https://sp14.instainternet.com/8050/stream");
+        client.startStream(process.env.RADIO || "https://s2.stationplaylist.com:7080/macfast.aac");
     });
 
     client.on(Discord.Events.ClientReady, async () => {
-        client.startStream(process.env.RADIO || "https://sp14.instainternet.com/8050/stream");
+        client.startStream(process.env.RADIO || "https://s2.stationplaylist.com:7080/macfast.aac");
         
         Schema.find(async (err, data) => {
             if (data) {
