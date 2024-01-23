@@ -64,17 +64,17 @@ module.exports = (client) => {
 
     player.on('stateChange', (oldState, newState) => {
         if (newState.status === Voice.AudioPlayerStatus.Idle) {
-            client.startStream(process.env.RADIO || "https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO538")
+            client.startStream(process.env.RADIO || "https://sp14.instainternet.com/8050/stream")
         }
     });
 
     player.on('error', error => {
         client.emit("voiceError", error);
-        client.startStream(process.env.RADIO || "https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO538");
+        client.startStream(process.env.RADIO || "https://sp14.instainternet.com/8050/stream");
     });
 
     client.on(Discord.Events.ClientReady, async () => {
-        client.startStream(process.env.RADIO || "https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO538");
+        client.startStream(process.env.RADIO || "https://sp14.instainternet.com/8050/stream");
         
         Schema.find(async (err, data) => {
             if (data) {
