@@ -53,8 +53,7 @@ module.exports = async (client) => {
                         },
                         {
                             name: "<:jsszz:1071798658409967747>┆Changelogs",
-                            value: '10/12/2022 - Updated the bot to the latest version of discord.js (v14)',
-                            description: 'Added Mallu Radio Station Club FM 99.6', 
+                            value: '24/01/2024 - Added [Mallu Radio Station Club FM 99.6](https://clubfm.ae/)\n -Fixed Minor Bugs\n -Changed Host\n -Updated bot Latest Disocrd.js/Music Version 0.16.1',
                             inline: false,
                         }
                     ],
