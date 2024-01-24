@@ -16,7 +16,7 @@ module.exports = async (client, interaction, args) => {
         },
         {
             name: "<:musicc:1072028279546064896>┆Radio Station",
-            value: `[Radio MACFAST 90.4](https://www.radiomacfast.org/)`,
+            value: `[Club FM 99.6](https://clubfm.ae/)`,
             inline: true
         },
         ],
