@@ -6,9 +6,6 @@ app.get('/', (req, res) => {
 })
 
 app.listen(3000);
-process.on("multipleResolves", (type, promise, reason) => {
-    if (reason.toLocaleString() === "Error: Cannot perform IP discovery - socket closed") return;
-});
 const Discord = require('discord.js');
 const chalk = require('chalk');
 require('dotenv').config('./.env');
