@@ -7,7 +7,7 @@ module.exports = async (client, interaction, args) => {
         thumbnail: client.user.avatarURL({ size: 1024 }),
         fields: [{
             name: "<:logzz:1071794113982255134>┆Changelogs",
-                value: '10/12/2022 - Updated the bot to the latest version of discord.js (v14)',
+                value: '10/12/2022 - Added Mallu Radio Station MAcfast 90.4a',
                 inline: false,
             },
         ],
