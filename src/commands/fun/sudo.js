@@ -21,9 +21,9 @@ module.exports = async (client, interaction, args) => {
         setTimeout(() => {
         deleteMessage(interaction);
     }, 3000);
-}
+};
             function deleteMessage(interaction) {
-}
+};
     });
 }
 
