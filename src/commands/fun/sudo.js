@@ -22,6 +22,8 @@ module.exports = async (client, interaction, args) => {
         deleteMessage(interaction);
     }, 3000);
 }
+            function deleteMessage(interaction) {
+}
     });
 }
 
