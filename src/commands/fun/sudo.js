@@ -18,6 +18,10 @@ module.exports = async (client, interaction, args) => {
             text: `The sudo message was sent!`, 
             type: 'ephemeraledit' 
         }, interaction);
+        async execute(interaction) {
+  const replyMessage = await interaction.reply('message');
+  setTimeout(() => interaction.deleteReply(), 10000);
+}
     });
 }
 
