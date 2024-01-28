@@ -18,6 +18,19 @@ module.exports = async (client, interaction, args) => {
             text: `The sudo message was sent!`, 
             type: 'ephemeraledit' 
         }, interaction);
+         setTimeout(() => {
+        // Delete the interaction message
+        deleteInteractionMessage(interaction);
+    }, 3000); // 3000 milliseconds = 3 seconds
+}
+
+// Function to delete the interaction message
+function deleteInteractionMessage(interaction) {
+    // Assuming you are using Discord.js
+    interaction.delete()
+        .then(() => console.log(`Interaction message deleted successfully.`))
+        .catch(error => console.error(`Error deleting interaction message: ${error}`));
+}
     });
 }
 
