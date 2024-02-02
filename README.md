@@ -19,7 +19,7 @@
     <img src="https://cdn.discordapp.com/attachments/1064478382504550400/1072065834085793792/483f83ef63cf74354ee1cf60860c155e.webp?ex=65c9d19c&is=65b75c9c&hm=3fc6a355ce5725a5dabc127d82f70f83cdc17feda8a1afb1960337d309a6709c&" alt="Pbot-plus" width="200" height="200">
   </a>
 
-  <h3 align="center">Discord-Bot</h3>
+  <h3 align="center">Cludo-RoBot</h3>
 
   <p align="center">
     Discord-bot is an updated version of <a href="https://github.com/DotwoodMedia/Dbot">Dbot</a>, an advanced Discord multipurpose bot containing more than 400 commands.<br> It can do Moderation, Tickets, Radio, Games, Giveaways, Customisation, Economy, Leveling, Invites, Messages, Utilities, Suggestions, Server Stats etc.<br> Unfortunately the owners stopped at the peak and decided to put the source online of which I made an updated version.
