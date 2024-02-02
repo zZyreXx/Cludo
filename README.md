@@ -16,7 +16,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/corwindev/Discord-Bot">
-    <img src="https://cdn.discordapp.com/attachments/778665159316209748/1055857473749274694/Corwin-1-modified.png" alt="Pbot-plus" width="200" height="200">
+    <img src="https://cdn.discordapp.com/attachments/1064478382504550400/1072065834085793792/483f83ef63cf74354ee1cf60860c155e.webp?ex=65c9d19c&is=65b75c9c&hm=3fc6a355ce5725a5dabc127d82f70f83cdc17feda8a1afb1960337d309a6709c&" alt="Pbot-plus" width="200" height="200">
   </a>
 
   <h3 align="center">Discord-Bot</h3>
