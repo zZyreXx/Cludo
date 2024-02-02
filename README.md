@@ -22,7 +22,7 @@
   <h3 align="center">Cludo-RoBot</h3>
 
   <p align="center">
-    Discord-bot is an updated version of <a href="https://github.com/DotwoodMedia/Dbot">Dbot</a>, an advanced Discord multipurpose bot containing more than 400 commands.<br> It can do Moderation, Tickets, Radio, Games, Giveaways, Customisation, Economy, Leveling, Invites, Messages, Utilities, Suggestions, Server Stats etc.<br> Unfortunately the owners stopped at the peak and decided to put the source online of which I made an updated version.
+    Discord-bot is an updated version of <a href="https://github.com/DotwoodMedia/Dbot">CludoRobot</a>, an advanced Discord multipurpose bot containing more than 400 commands.<br> It can do Moderation, Tickets, Radio, Games, Giveaways, Customisation, Economy, Leveling, Invites, Messages, Utilities, Suggestions, Server Stats etc.<br> Unfortunately the owners stopped at the peak and decided to put the source online of which I made an updated version.
     <br />
     <br />
     <a href="https://github.com/corwindev/discord-bot/issues">Report Bug</a>
