@@ -6,6 +6,22 @@ app.get('/', (req, res) => {
 })
 
 app.listen(3000);
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+async function makeRequest() {
+  try {
+  } catch (error) {
+    if (error.response && error.response.status === 429) {
+      const retryAfter = error.response.headers['retry-after'] || 5000; 
+      await delay(retryAfter);
+      await makeRequest();
+    } else {
+      console.error(error);
+    }
+  }
+}
+
+makeRequest();
 const Discord = require('discord.js');
 const chalk = require('chalk');
 require('dotenv').config('./.env');
