@@ -6,7 +6,6 @@ app.get('/', (req, res) => {
 })
 
 app.listen(3000);
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const Discord = require('discord.js');
 const chalk = require('chalk');
 require('dotenv').config('./.env');
