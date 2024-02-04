@@ -63,7 +63,7 @@ If you like this repository, feel free to leave a star ⭐ to motivate me!
 <br />
 <p align="center">
   <a href="https://github.com/corwindev/discord-bot">
-    <img src="https://cdn.discordapp.com/attachments/778665159316209748/1055832339328024666/207117434-d98356b1-bf19-418e-9e12-0ef83e0d9a21.png">
+    <img src="https://cdn.discordapp.com/attachments/1064478382504550400/1203594253075353610/Screenshot_2024-02-04_122330.png?ex=65d1a97f&is=65bf347f&hm=3de7e0d39f2c8ed5a9b421b87e0af3bce38f42293d08951c488e9ccfcfcb6bf5&">
   </a>
 </p>
 
