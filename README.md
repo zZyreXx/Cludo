@@ -20,7 +20,7 @@
 <!-- NOTICE -->
 
 ### <img src="https://cdn.discordapp.com/emojis/1055803759831294013.png" width="20px" height="20px"> 》Notice 
-> You may not claim this as your own! The original source was created by [Dotwood Media](https://github.com/DotwoodMedia) and [Graphix Development](https://github.com/GraphixDevelopment). The source is modified and updated by me(CorwinDev)
+> You may not claim this as your own! The original source was created by [Dotwood Media](https://github.com/DotwoodMedia) and [Graphix Development](https://github.com/GraphixDevelopment). The source is modified and updated by me(zZyreXx)
 
 > Discord-Bot is a multipurpose Discord bot base in [Discord.js](https://github.com/Discordjs/discordjs)
 If you like this repository, feel free to leave a star ⭐ to motivate me!
@@ -28,7 +28,7 @@ If you like this repository, feel free to leave a star ⭐ to motivate me!
 <!-- ABOUT THE PROJECT -->
 
 ## <img src="https://cdn.discordapp.com/emojis/859424401186095114.png" width="20px" height="20px">》Description 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=corwindev&repo=Discord-bot&theme=tokyonight)](https://github.com/corwindev/Discord-bot)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=zZyreXx&repo=Cludo&theme=tokyonight)](https://github.com/zZyreXx/Cludo)
 ## <img src="https://cdn.discordapp.com/emojis/852881450667081728.gif" width="20px" height="20px">》Feature
 - [x] Slash Commands 
 - [x] Upto date with Discord.js v14
