@@ -44,7 +44,7 @@ If you like this repository, feel free to leave a star ⭐ to motivate me!
 - [x] Easy to use
 - [x] Customizable
 - [x] And much more
-- [x] Don't wanna host it yourself? [Use our public bot](https://discord.com/api/oauth2/authorize?client_id=860390761307439114&permissions=8&scope=bot%20applications.commands)
+- [x] Don't wanna host it yourself? [Use our public bot](https://discord.com/api/oauth2/authorize?client_id=1071766414358216788&permissions=8&scope=applications.commands+bot)
 ## <img src="https://cdn.discordapp.com/emojis/1028680849195020308.png" width="25px" height="25px">》Screenshots
 <br />
 <p align="center">
@@ -69,7 +69,7 @@ If you like this repository, feel free to leave a star ⭐ to motivate me!
 ### <img src="https://cdn.discordapp.com/emojis/1028680849195020308.png" width="15px" height="15px"> Installing via [NPM](https://www.npmjs.com/)
 Clone the repo by running
 ```bash
-git clone https://github.com/Corwindev/Discord-Bot.git
+git clone https://github.com/zZyreXx/Cludo.git
 ```
 ### After cloning Fill all requirement in `.env` **(rename `.env.example` to `.env`)**, then run
 
