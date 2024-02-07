@@ -2,8 +2,9 @@ const express = require("express")
 const app = express()
 
 app.get('/', (req, res) => {
-  res.send('This bot is running on Cludo.yml  <a href="https://github.com/">Here</a>')
-})
+  res.redirect('/dashboard');
+});
+app.use('/dashboard', express.static('dashboard'));
 
 app.listen(3000);
 const Discord = require('discord.js');
