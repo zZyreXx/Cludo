@@ -103,21 +103,3 @@ node src/index.js
 ```bash
 npm run add-dev YOUR_Discord_ID
 ```
-# Donate
-
- By Donating, You Will Help Me To Maintain This Project 
-
-<img src="https://cdn.discordapp.com/emojis/809085860632985630.png" width="15px" height="15px"> 》[Sponsor](https://github.com/sponsors/CorwinDev)
-
-[version-shield]: https://img.shields.io/github/package-json/v/CorwinDev/Discord-Bot?style=for-the-badge
-[version-url]: https://github.com/brblacky/WaveMusic
-[contributors-shield]: https://img.shields.io/github/contributors/CorwinDev/Discord-Bot.svg?style=for-the-badge
-[contributors-url]: https://github.com/Corwindev/Discord-Bot/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Corwindev/Discord-Bot.svg?style=for-the-badge
-[forks-url]: https://github.com/Corwindev/Discord-Bot/network/members
-[stars-shield]: https://img.shields.io/github/stars/Corwindev/Discord-Bot.svg?style=for-the-badge
-[stars-url]: https://github.com/Corwindev/Discord-Bot/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Corwindev/Discord-Bot.svg?style=for-the-badge
-[issues-url]: https://github.com/Corwindev/Discord-Bot/issues
-[license-shield]: https://img.shields.io/github/license/Corwindev/Discord-Bot.svg?style=for-the-badge
-[license-url]: https://github.com/Corwindev/Discord-Bot/blob/master/LICENSE
