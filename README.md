@@ -83,7 +83,7 @@ node src/index.js
 ```
 
 ## <img src="https://cdn.discordapp.com/emojis/1036083490292244493.png" width="15px" height="15px">》Support Server
-[![DiscordBanner](https://invidget.switchblade.xyz/techpoint-1016942011024158782)](https://discord.gg/techpoint-1016942011024158782)
+[![DiscordBanner](https://cdn.discordapp.com/attachments/1064478382504550400/1204701100687495188/Screenshot_2024-02-07_134145.png?ex=65d5b054&is=65c33b54&hm=ed5b55e5b155a4bd281b4807dd94b2a83cece0a8e0597bb0b01cc4ae79573d6a&)]([https://discord.gg/techpoint-1016942011024158782](https://discord.gg/vVwndu9VuC))
 
 [Support Server](https://discord.gg/vVwndu9VuC) - Discord-Bot's Support Server Invite
 
