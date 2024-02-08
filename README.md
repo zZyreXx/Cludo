@@ -46,7 +46,7 @@ If you like this repository, feel free to leave a star ⭐ to motivate me!
 ## <img src="https://cdn.discordapp.com/emojis/1028680849195020308.png" width="25px" height="25px">》Screenshots
 <br />
 <p align="center">
-  <a href="https://github.com/corwindev/discord-bot">
+  <a href="https://github.com/zZyreXx/Cludo">
     <img src="https://cdn.discordapp.com/attachments/1064478382504550400/1203594253075353610/Screenshot_2024-02-04_122330.png?ex=65d1a97f&is=65bf347f&hm=3de7e0d39f2c8ed5a9b421b87e0af3bce38f42293d08951c488e9ccfcfcb6bf5&">
   </a>
 </p>
