@@ -1,12 +1,3 @@
-const express = require("express")
-const app = express()
-
-app.get('/', (req, res) => {
-  res.redirect('/dashboard');
-});
-app.use('/dashboard', express.static('dashboard'));
-
-app.listen(3000);
 const Discord = require('discord.js');
 const chalk = require('chalk');
 require('dotenv').config('./.env');
