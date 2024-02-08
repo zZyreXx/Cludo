@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
 });
 app.use('/dashboard', express.static('dashboard'));
 
-app.listen(10000);
+app.listen(3000);
 const Discord = require('discord.js');
 const chalk = require('chalk');
 require('dotenv').config('./.env');
