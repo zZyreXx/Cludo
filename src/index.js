@@ -27,7 +27,7 @@ const config = require("./config/bot.js");
 const https = require('https');
 
 exports.handler = async (event, context) => {
-  const url = 'https://yoursitehere.onrender.com';
+  const url = 'https://cludo.onrender.com/';
 
   return new Promise((resolve, reject) => {
     const req = https.get(url, (res) => {
