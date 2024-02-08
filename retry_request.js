@@ -4,7 +4,7 @@ let retryCount = 0;
 function makeRequest() {
   // Your code to make the request goes here
   // For example:
-  fetch('https://example.com/api/data')
+  fetch('/dashboard')
     .then(response => {
       if (response.status === 429) {
         throw new Error('Too Many Requests');
