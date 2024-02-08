@@ -13,7 +13,7 @@ require('dotenv').config('./.env');
 const axios = require('axios');
 // Check if is up to date
 const { version } = require('.././package.json');
-axios.get('https://api.github.com/repos/CorwinDev/Discord-Bot/releases/latest').then(res => {
+axios.get('https://api.github.com/repos/zZyreXx/Cludo/releases/latest').then(res => {
     if (res.data.tag_name !== version) {
         console.log(chalk.red.bgYellow(`Your bot is not up to date! Please update to the latest version!`, version + ' -> ' + res.data.tag_name));
     }
