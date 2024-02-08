@@ -60,7 +60,7 @@ body {
 
 .home {
     height: 100vh;
-    background: url('https://cdn.discordapp.com/attachments/1064478382504550400/1204677238549651466/SL-031821-41530-04.jpg?ex=65d59a1b&is=65c3251b&hm=2351c5f5896ef3597f25686371594274e4c0e05303c81bfae28ebeb61d4a4e38&') no-repeat;
+    background: url('SL-031821-41530-04.jpg') no-repeat;
     background-size: cover;
     background-position: right;
     display: flex;
