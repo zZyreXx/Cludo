@@ -17,25 +17,25 @@ module.exports = async (client) => {
                                 {
                                     label: `Commands`,
                                     description: `Show the commands of ${client.user.username}!`,
-                                    emoji: "<:compzz:1071795353445220432>",
+                                    emoji: "<:cmd:1205416566141886506>",
                                     value: "commands-Bothelp",
                                 },
                                 {
                                     label: `Invite`,
                                     description: `Invite ${client.user.username} to your server`,
-                                    emoji: "<:linkee:1071784295594737768>",
+                                    emoji: "<:linkee:1205416083469762610>",
                                     value: "invite-Bothelp",
                                 },
                                 {
                                     label: `Support server`,
                                     description: `Join the suppport server`,
-                                    emoji: "<:helpzz:1072010469142974504>",
+                                    emoji: "<:__:1205407307811262466>",
                                     value: "support-Bothelp",
                                 },
                                 {
                                     label: `Changelogs`,
                                     description: `Show the ${client.user.username} bot changelogs`,
-                                    emoji: "<:i_:1071780309865091173>",
+                                    emoji: "<:i_:1205412741087494174>",
                                     value: "changelogs-Bothelp",
                                 },
                             ]),
@@ -55,7 +55,7 @@ module.exports = async (client) => {
                     );
 
                 client.embed({
-                    title: `<:linkee:1071784295594737768>・Invite`,
+                    title: `<:linkee:1205416083469762610>・Invite`,
                     desc: `Make your server even better with the ${client.user.username} bot!`,
                     image: "https://cdn.discordapp.com/attachments/1064478382504550400/1205446107279265812/CLUDO_1_2.png?ex=65d8662c&is=65c5f12c&hm=1dc3f94e83b96c83f3399ac2dafa88fa8c7a9479276a80371507b09e93e79950&",
                     url: client.config.discord.botInvite,
