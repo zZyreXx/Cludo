@@ -108,18 +108,18 @@ module.exports = async (client) => {
             inline: true
         },
         {
-            name: `<:modzz:1072025354694295583>┆Moderation`,
-            value: `\`/moderation help\``,
+            name: `<:moderationcx:1205560124832485406><:arrowright:1205414889451954196>Moderation`,
+            value: `</moderation help:1071786541334151233>`,
             inline: true
         },
         {
-            name: `<:musicc:1072028279546064896>┆Music`,
-            value: `\`/music help\``,
+            name: `<:musicxxx:1205560766795882587><:arrowright:1205414889451954196>Music`,
+            value: `</music help:1071786541334151234>`,
             inline: true
         },
         {
-            name: `<:writezzz:1071792217888391270>┆Notepad`,
-            value: `\`/notepad help\``,
+            name: `<:noepds:1205561401909710899><:arrowright:1205414889451954196>Notepad`,
+            value: `</notepad help:1071786541334151235>`,
             inline: true
         },
         {
