@@ -60,7 +60,7 @@ module.exports = {
                 },
                 {
                     name: `<:bugz:1205415768846499860>┆Found a bug?`,
-                    value: `Report this with \`/report bug\``
+                    value: `Report this with </report:1071786541711626294>`
                 },
                 {
                     name: `<:linkee:1205416083469762610>┆Links`,
