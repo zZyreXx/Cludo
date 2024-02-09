@@ -42,7 +42,7 @@ module.exports = async (client) => {
                     );
 
                 client.embed({
-                    title: "<:i_:1071780309865091173><:arrowright:1205414889451954196>Changelogs",
+                    title: "<:i_:1205412741087494174><:arrowright:1205414889451954196>Changelogs",
                     desc: `_____`,
                     thumbnail: client.user.avatarURL({ size: 1024 }),
                     fields: [
