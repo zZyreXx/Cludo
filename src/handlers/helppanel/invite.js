@@ -57,7 +57,7 @@ module.exports = async (client) => {
                 client.embed({
                     title: `<:linkee:1071784295594737768>・Invite`,
                     desc: `Make your server even better with the ${client.user.username} bot!`,
-                    image: "https://cdn.discordapp.com/attachments/1064478382504550400/1072035974781091960/CLUDO-removebg-preview.png",
+                    image: "https://cdn.discordapp.com/attachments/1064478382504550400/1205446107279265812/CLUDO_1_2.png?ex=65d8662c&is=65c5f12c&hm=1dc3f94e83b96c83f3399ac2dafa88fa8c7a9479276a80371507b09e93e79950&",
                     url: client.config.discord.botInvite,
                     components: [row2, row],
                     type: 'edit'
