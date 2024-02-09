@@ -21,7 +21,7 @@ module.exports = {
             .addComponents(
                 new Discord.StringSelectMenuBuilder()
                     .setCustomId('Bot-helppanel')
-                    .setPlaceholder('❌┆Nothing selected')
+                    .setPlaceholder('Navigation System')
                     .addOptions([
                         {
                             label: `Commands`,
