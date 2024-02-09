@@ -55,15 +55,15 @@ module.exports = {
             desc: `Welcome to Bot's help panel! We have made a small overview to help you! Make a choice via the menu below`,
             fields: [
                 {
-                    name: `<:x_:1205415513853927435><:arrowright:1205414889451954196>Menu doesn't work?`,
+                    name: `<:x_:1205415513853927435>┆Menu doesn't work?`,
                     value: `Try resending the command. If you get no reaction, make sure you report the bug!`
                 },
                 {
-                    name: `<:bugz:1205415768846499860><:arrowright:1205414889451954196>Found a bug?`,
+                    name: `<:bugz:1205415768846499860>┆Found a bug?`,
                     value: `Report this with \`/report bug\``
                 },
                 {
-                    name: `<:linkee:1205416083469762610><:arrowright:1205414889451954196>Links`,
+                    name: `<:linkee:1205416083469762610>┆Links`,
                     value: `[Website](https://cludobot.onrender.com/) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg)`
                 },
              ],
