@@ -53,7 +53,6 @@ module.exports = {
         return client.embed({
             title: `<:persn:1205425561720193046><:arrowright:1205414889451954196>__**About Cludo**__`,
             desc: `> Hey there! I come loaded with **450+ commands,** including entertainment, moderation, utilities and way more. Elevate your server with me!`,
-            image: "https://cdn.discordapp.com/attachments/1064478382504550400/1072035974781091960/CLUDO-removebg-preview.png",
             fields: [
                 {
                     name: `<:status:1205426484223938580>__**Status**__`,
