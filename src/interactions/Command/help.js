@@ -3,15 +3,18 @@ const { SlashCommandBuilder } = require('discord.js');
 const Discord = require('discord.js');
 const moment = require("moment");
 require("moment-duration-format");
+
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('help')
         .setDescription('Get help with the bot'),
+    
     /** 
      * @param {Client} client
      * @param {CommandInteraction} interaction
      * @param {String[]} args
      */
+    
     run: async (client, interaction, args) => {
         await interaction.deferReply({ fetchReply: true });
         const row = new Discord.ActionRowBuilder()
@@ -58,27 +61,15 @@ module.exports = {
                 },
                 {
                     name: `<:bugz:1205415768846499860>┆Found a bug?`,
-
-    
-          
-            
-    
-
-          
-          Expand Down
-    
-    
-  
                     value: `Report this with \`/report bug\``
                 },
                 {
                     name: `<:linkee:1205416083469762610>┆Links`,
                     value: `[Website](https://cludobot.onrender.com/) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg)`
                 },
-            ],
+             ],
             components: [row],
             type: 'editreply'
         }, interaction)
     },
 };
- 
