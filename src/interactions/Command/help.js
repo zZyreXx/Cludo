@@ -56,7 +56,7 @@ module.exports = {
             fields: [
                 {
                     name: `<:status:1205426484223938580>__**Status**__`,
-                    value: `<:round:1205428303150714880> ```450+``` Commands\n <:round:1205428303150714880> ```${totalGuilds} servers``` Guilds\n <:round:1205428303150714880> ```25``` Members`
+                    value: `<:round:1205428303150714880> 450+ Commands\n <:round:1205428303150714880> ${totalGuilds} servers Guilds\n <:round:1205428303150714880> 25 Members`
                 },
                 {
                     name: `<:bugz:1205415768846499860>┆Found a bug?`,
