@@ -68,43 +68,43 @@ module.exports = async (client) => {
             inline: true
         },
         {
-            name: `<:funzzz:1072027130034143262>┆Fun`,
-            value: `\`/fun help\``,
+            name: `<:funxxx:1205554067502268447><:arrowright:1205414889451954196>Fun`,
+            value: `</fun help:1071786541061513220>`,
             inline: true
         },
         {
-            name: `<:gamepadzz:1072027350910390323>┆Games`,
-            value: `\`/games help\``,
+            name: `<:gamesz:1205554597993910313><:arrowright:1205414889451954196>Games`,
+            value: `</games help:1071786541061513221>`,
             inline: true
         },
         {
-            name: `<:tdzz:1072018197269712967>┆Giveaway`,
-            value: `\`/giveaway help\``,
+            name: `<:tadxx:1205555120197345320><:arrowright:1205414889451954196>Giveaway`,
+            value: `</giveaway help:1071786541061513222>`,
             inline: true
         },
         {
-            name: `<:settingzz:1072016300848730182>┆Guild settings`,
-            value: `\`/guild help\``,
+            name: `<:guildxx:1205555662008881182><:arrowright:1205414889451954196>Guild settings`,
+            value: `</guild help:1071786541061513223>`,
             inline: true
         },
         {
-            name: `<:dangrr:1071791074173014158>┆Images`,
-            value: `\`/images help\``,
+            name: `<:imagexxc:1205556299908255824><:arrowright:1205414889451954196>Images`,
+            value: `</images help:1071786541061513225>`,
             inline: true
         },
         {
-            name: `<:linkee:1071784295594737768>┆Invites`,
-            value: `\`/invites help\``,
+            name: `<:linkee:1205416083469762610><:arrowright:1205414889451954196>Invites`,
+            value: `</invites help:1071786541334151229>`,
             inline: true
         },
         {
-            name: `<:cre4doitz:1072026396307767346>┆Leveling`,
-            value: `\`/levels help\``,
+            name: `<:lvlxz:1205557752345141268><:arrowright:1205414889451954196>Leveling`,
+            value: `</levels help:1071786541334151230>`,
             inline: true
         },
         {
-            name: `<:chatzz:1071790624929501184>┆Messages`,
-            value: `\`/messages help\``,
+            name: `<:messagexxc:1205558617416400926><:arrowright:1205414889451954196>Messages`,
+            value: `</messages help:1071786541334151232>`,
             inline: true
         },
         {
