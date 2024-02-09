@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = async (client) => {
     const fields = [
         {
-            name: `<:tvzzz:1072024670125174794>┆Activities`,
+            name: `<:activite:1205537677122994246><:arrowright:1205414889451954196>Activities`,
             value: `\`/activities\``,
             inline: true
         },
@@ -254,8 +254,8 @@ module.exports = async (client) => {
                     );
 
                 client.embed({
-                    title: `<:helpzz:1072010469142974504>・Help panel`,
-                    desc: `View all command categories in the bot here! \n\n[Website](https://Cludo.evilfoxzy.repl.co) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg/bot/)`,
+                    title: `<:__:1205407307811262466><:arrowright:1205414889451954196>Help panel`,
+                    desc: `View all command categories in the bot here! \n\n[Website](https://cludobot.onrender.com/) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg/bot/)`,
                     image: "https://cdn.discordapp.com/attachments/1064478382504550400/1205446107279265812/CLUDO_1_2.png?ex=65d8662c&is=65c5f12c&hm=1dc3f94e83b96c83f3399ac2dafa88fa8c7a9479276a80371507b09e93e79950&",
                     fields: fields.slice(0, 24),
                     components: [row2, row],
@@ -270,7 +270,7 @@ module.exports = async (client) => {
                             if (page == 1) {
                                 client.embed({
                                     title: `<:helpzz:1072010469142974504>・Help panel`,
-                                    desc: `View all command categories in the bot here! \n\n[Website](https://Cludo.evilfoxzy.repl.co) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg/bot/)`,
+                                    desc: `View all command categories in the bot here! \n\n[Website](https://cludobot.onrender.com/) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg/bot/)`,
                                     fields: fields.slice(25, 49),
                                     components: [row2, row],
                                     type: 'update'
@@ -283,7 +283,7 @@ module.exports = async (client) => {
                             if (page == 2) {
                                 client.embed({
                                     title: `<:helpzz:1072010469142974504>・Help panel`,
-                                    desc: `View all command categories in the bot here! \n\n[Website](https://Cludo.evilfoxzy.repl.co) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg/bot/)`,
+                                    desc: `View all command categories in the bot here! \n\n[Website](https://cludobot.onrender.com/) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg/bot/)`,
                                     fields: fields.slice(0, 24),
                                     components: [row2, row],
                                     type: 'update'
