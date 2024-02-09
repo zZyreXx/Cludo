@@ -201,12 +201,12 @@ module.exports = async (client) => {
                     .addComponents(
                         new Discord.ButtonBuilder()
                             .setCustomId('helpPrev')
-                            .setEmoji('⬅️')
+                            .setEmoji('<:leftxdx:1205574963386384424>')
                             .setStyle(Discord.ButtonStyle.Secondary),
 
                         new Discord.ButtonBuilder()
                             .setCustomId('helpNext')
-                            .setEmoji('➡️')
+                            .setEmoji('<:rightcvsd:1205574220738854972>')
                             .setStyle(Discord.ButtonStyle.Secondary),
 
                         new Discord.ButtonBuilder()
