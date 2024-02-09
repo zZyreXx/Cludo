@@ -26,46 +26,46 @@ module.exports = {
                         {
                             label: `Commands`,
                             description: `Show the commands of Bot!`,
-                            emoji: "<:compzz:1071795353445220432>",
+                            emoji: "<:cmd:1205416566141886506>",
                             value: "commands-Bothelp",
                         },
                         {
                             label: `Invite`,
                             description: `Invite Bot to your server`,
-                            emoji: "<:linkee:1071784295594737768>",
+                            emoji: "<:linkee:1205416083469762610>",
                             value: "invite-Bothelp",
                         },
                         {
                             label: `Support server`,
                             description: `Join the suppport server`,
-                            emoji: "<:helpzz:1072010469142974504>",
+                            emoji: "<:__:1205407307811262466>",
                             value: "support-Bothelp",
                         },
                         {
                             label: `Changelogs`,
                             description: `Show the bot changelogs`,
-                            emoji: "<:i_:1071780309865091173>",
+                            emoji: "<:i_:1205412741087494174>",
                             value: "changelogs-Bothelp",
                         },
                     ]),
             );
 
         return client.embed({
-            title: `<:i_:1071780309865091173>・Help panel`,
+            title: `<:i_:1205412741087494174> <:arrowright:1205414889451954196> Help panel`,
             desc: `Welcome to Bot's help panel! We have made a small overview to help you! Make a choice via the menu below`,
             image: "https://cdn.discordapp.com/attachments/1064478382504550400/1072035974781091960/CLUDO-removebg-preview.png",
             fields: [
                 {
-                    name: `<:x_:1071781614423642193>┆Menu doesn't work?`,
+                    name: `<:x_:1205415513853927435>┆Menu doesn't work?`,
                     value: `Try resending the command. If you get no reaction, make sure you report the bug!`
                 },
                 {
-                    name: `<:bb:1071783760502198323>┆Found a bug?`,
+                    name: `<:bugz:1205415768846499860>┆Found a bug?`,
                     value: `Report this with \`/report bug\``
                 },
                 {
-                    name: `<:linkee:1071784295594737768>┆Links`,
-                    value: `[Website](https://google.com) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg)`
+                    name: `<:linkee:1205416083469762610>┆Links`,
+                    value: `[Website](https://cludobot.onrender.com/) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg)`
                 },
             ],
             components: [row],
