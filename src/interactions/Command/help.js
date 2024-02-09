@@ -53,7 +53,6 @@ module.exports = {
         return client.embed({
             title: `<:i_:1205412741087494174> <:arrowright:1205414889451954196> Help panel`,
             desc: `Welcome to Bot's help panel! We have made a small overview to help you! Make a choice via the menu below`,
-            image: "https://cdn.discordapp.com/attachments/1064478382504550400/1072035974781091960/CLUDO-removebg-preview.png",
             fields: [
                 {
                     name: `<:x_:1205415513853927435>┆Menu doesn't work?`,
