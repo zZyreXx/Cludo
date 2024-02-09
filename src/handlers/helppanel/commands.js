@@ -123,67 +123,67 @@ module.exports = async (client) => {
             inline: true
         },
         {
-            name: `<:memberzz:107179695┆Profile`,
+            name: `<:persn:1205425561720193046><:arrowright:1205414889451954196>Profile`,
             value: `</profile help:1071786541334151236>`,
             inline: true
         },
         {
-            name: `<:tvzzz:1072024670125174794>┆Radio`,
+            name: `<:radioxz:1205564682262413373><:arrowright:1205414889451954196>Radio`,
             value: `</radio play:1071786541334151237>`,
             inline: true
         },
         {
-            name: `<:rolezz:1072030311682158753>┆Reaction roles`,
+            name: `<:lightzz:1205565101499744377><:arrowright:1205414889451954196>Reaction roles`,
             value: `</reactionroles help:1071786541711626293>`,
             inline: true
         },
         {
-            name: `<:srchzz:1072030518834647070>┆Search`,
+            name: `<:searchcvx:1205565393666842724><:arrowright:1205414889451954196>Search`,
             value: `</search help:1071786541711626295>`,
             inline: true
         },
         {
-            name: `<:upzzz:1071797858531016704>┆Server stats`,
+            name: `<:stausvd:1205566175229251585><:arrowright:1205414889451954196>Server stats`,
             value: `</serverstats help:1071786541711626296>`,
             inline: true
         },
         {
-            name: `<:settingzz:1072016300848730182>┆Setup`,
+            name: `<:multi:1205408937831309344><:arrowright:1205414889451954196>Setup`,
             value: `</setup help:1071786541711626297>`,
             inline: true
         },
         {
-            name: `<:vczzz:1071797171948634266>┆Soundboard`,
+            name: `<:soundbaodxxx:1205566816907173948><:arrowright:1205414889451954196>Soundboard`,
             value: `</soundboard help:1071786541711626298>`,
             inline: true
         },
         {
-            name: `<:chatzz:1071790624929501184>┆Sticky messages`,
+            name: `<:messagexc:1205567224362958868><:arrowright:1205414889451954196>Sticky messages`,
             value: `</stickymessages help:1071786541711626299>`,
             inline: true
         },
         {
-            name: `<:i_:1071780309865091173>┆Suggestions`,
+            name: `<:i_:1205412741087494174><:arrowright:1205414889451954196>Suggestions`,
             value: `</suggestions help:1071786541711626300>`,
             inline: true
         },
         {
-            name: `<:heartzz:1072031623991808071>┆Thanks`,
+            name: `<:lvlxz:1205557752345141268><:arrowright:1205414889451954196>Thanks`,
             value: `</thanks help:1071786541711626301>`,
             inline: true
         },
         {
-            name: `<:ticketzz:1071793049396584589>┆Tickets`,
+            name: `<:ticketxv:1205568405160067072><:arrowright:1205414889451954196>Tickets`,
             value: `</tickets help:1071786541711626302>`,
             inline: true
         },
         {
-            name: `<:toolzzz:1071795700662272131>┆Tools`,
+            name: `<:guildxx:1205555662008881182><:arrowright:1205414889451954196>Tools`,
             value: `</tools help:1071786541879402577>`,
             inline: true
         },
         {
-            name: `<:vczzz:1071797171948634266>┆Voice`,
+            name: `<:soundxz:1205569046276218910><:arrowright:1205414889451954196>Voice`,
             value: `</voice help:1071786541879402578>`,
             inline: true
         },
