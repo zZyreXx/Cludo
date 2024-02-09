@@ -48,23 +48,23 @@ module.exports = async (client) => {
             inline: true
         },
         {
-            name: `<:compzz:1071795353445220432>┆Custom commands`,
-            value: `\`/custom-commands help\``,
+            name: `<:slash:1205549360243548240><:arrowright:1205414889451954196>Custom cmds`,
+            value: `</custom-commands help:1071786540801462290>`,
             inline: true
         },
         {
-            name: `<:cre4doitz:1072026396307767346>┆Dcredits`,
-            value: `\`/dcredits help\``,
+            name: `<:dev:1205404510697164820><:arrowright:1205414889451954196>Dcredits`,
+            value: `</developers help:1071786541061513216>`,
             inline: true
         },
         {
-            name: `<:moneyzz:1072026660188205208>┆Economy`,
-            value: `\`/economy help\``,
+            name: `<:mney:1205551391788113940><:arrowright:1205414889451954196>Economy`,
+            value: `</economy help:1071786541061513217>`,
             inline: true
         },
         {
-            name: `<:memberzz:1071796953580572744>┆Family`,
-            value: `\`/family help\``,
+            name: `<:grpcz:1205551958585249822><:arrowright:1205414889451954196>Family`,
+            value: `</family help:1071786541061513219>`,
             inline: true
         },
         {
