@@ -33,18 +33,18 @@ module.exports = async (client) => {
             inline: true
         },
         {
-            name: `<:botzz:1071794843438825492>┆Bot`,
-            value: `\`/bot help\``,
+            name: `<:automod:1205540532206575666><:arrowright:1205414889451954196>Bot`,
+            value: `</bot help:1071786540801462288>`,
             inline: true
         },
         {
-            name: `<:infinityzz:1071792533606244463>┆Casino`,
-            value: `\`/casino help\``,
+            name: `<:heartxx:1205547235752804373><:arrowright:1205414889451954196>Casino`,
+            value: `</casino help:1071786540801462289>`,
             inline: true
         },
         {
-            name: `<:settingzz:1072016300848730182>┆Configuration`,
-            value: `\`/config help\``,
+            name: `<:cofxz:1205548007085310073><:arrowright:1205414889451954196>Configuration`,
+            value: `</config help:1071786540801462291>`,
             inline: true
         },
         {
