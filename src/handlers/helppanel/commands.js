@@ -229,25 +229,25 @@ module.exports = async (client) => {
                                 {
                                     label: `Commands`,
                                     description: `Show the commands of Bot!`,
-                                    emoji: "<:compzz:1071795353445220432>",
+                                    emoji: "<:cmd:1205416566141886506>",
                                     value: "commands-Bothelp",
                                 },
                                 {
                                     label: `Invite`,
                                     description: `Invite Bot to your server`,
-                                    emoji: "<:linkee:1071784295594737768>",
+                                    emoji: "<:linkee:1205416083469762610>",
                                     value: "invite-Bothelp",
                                 },
                                 {
                                     label: `Support server`,
                                     description: `Join the suppport server`,
-                                    emoji: "<:helpzz:1072010469142974504>",
+                                    emoji: "<:__:1205407307811262466>",
                                     value: "support-Bothelp",
                                 },
                                 {
                                     label: `Changelogs`,
                                     description: `Show the bot changelogs`,
-                                    emoji: "<:i_:1071780309865091173>",
+                                    emoji: "<:i_:1205412741087494174>",
                                     value: "changelogs-Bothelp",
                                 },
                             ]),
@@ -269,7 +269,7 @@ module.exports = async (client) => {
                         if (i.customId == "helpNext") {
                             if (page == 1) {
                                 client.embed({
-                                    title: `<:helpzz:1072010469142974504>・Help panel`,
+                                    title: `<:__:1205407307811262466>・Help panel`,
                                     desc: `View all command categories in the bot here! \n\n[Website](https://cludobot.onrender.com/) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg/bot/)`,
                                     fields: fields.slice(25, 49),
                                     components: [row2, row],
@@ -282,7 +282,7 @@ module.exports = async (client) => {
                         else if (i.customId == "helpPrev") {
                             if (page == 2) {
                                 client.embed({
-                                    title: `<:helpzz:1072010469142974504>・Help panel`,
+                                    title: `<:__:1205407307811262466>・Help panel`,
                                     desc: `View all command categories in the bot here! \n\n[Website](https://cludobot.onrender.com/) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg/bot/)`,
                                     fields: fields.slice(0, 24),
                                     components: [row2, row],
