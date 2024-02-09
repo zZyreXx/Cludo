@@ -51,12 +51,12 @@ module.exports = {
             );
 
         return client.embed({
-            title: `<:persn:1205425561720193046><:arrowright:1205414889451954196>__**About Cludo**__`,
-            desc: `> Hey there! I come loaded with **450+ commands,** including entertainment, moderation, utilities and way more. Elevate your server with me!`,
+           title: `<:i_:1205412741087494174> <:arrowright:1205414889451954196> Help panel`,
+            desc: `Welcome to Bot's help panel! We have made a small overview to help you! Make a choice via the menu below`,
             fields: [
                 {
-                    name: `<:status:1205426484223938580>__**Status**__`,
-                    value: `<:round:1205428303150714880> 450+ Commands\n <:round:1205428303150714880> ${totalGuilds} servers Guilds\n <:round:1205428303150714880> 25 Members`
+                    name: `<:x_:1205415513853927435>┆Menu doesn't work?`,
+                    value: `Try resending the command. If you get no reaction, make sure you report the bug!`
                 },
                 {
                     name: `<:bugz:1205415768846499860>┆Found a bug?`,
