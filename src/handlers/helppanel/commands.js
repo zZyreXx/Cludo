@@ -8,17 +8,17 @@ module.exports = async (client) => {
             inline: true
         },
         {
-            name: `<:x_:1071781614423642193>┆AFK`,
+            name: `<:afk:1205539497979289620><:arrowright:1205414889451954196>AFK`,
             value: `\`/afk help\``,
             inline: true
         },
         {
-            name: `<:ann:1071789734734610483>┆Announcement`,
+            name: `<:megaz:1205540030055981116><:arrowright:1205414889451954196>Announcement`,
             value: `\`/announcement help\``,
             inline: true
         },
         {
-            name: `<:modzz:1072025354694295583>┆Auto mod`,
+            name: `<:automod:1205540532206575666><:arrowright:1205414889451954196>Auto mod`,
             value: `\`/automod help\``,
             inline: true
         },
