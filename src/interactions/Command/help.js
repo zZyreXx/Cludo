@@ -3,18 +3,15 @@ const { SlashCommandBuilder } = require('discord.js');
 const Discord = require('discord.js');
 const moment = require("moment");
 require("moment-duration-format");
-
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('help')
         .setDescription('Get help with the bot'),
-
     /** 
      * @param {Client} client
      * @param {CommandInteraction} interaction
      * @param {String[]} args
      */
-
     run: async (client, interaction, args) => {
         await interaction.deferReply({ fetchReply: true });
         const row = new Discord.ActionRowBuilder()
@@ -51,8 +48,9 @@ module.exports = {
             );
 
         return client.embed({
-           title: `<:i_:1205412741087494174> <:arrowright:1205414889451954196> Help panel`,
+            title: `<:i_:1205412741087494174> <:arrowright:1205414889451954196> Help panel`,
             desc: `Welcome to Bot's help panel! We have made a small overview to help you! Make a choice via the menu below`,
+            image: "https://cdn.discordapp.com/attachments/1064478382504550400/1072035974781091960/CLUDO-removebg-preview.png",
             fields: [
                 {
                     name: `<:x_:1205415513853927435>┆Menu doesn't work?`,
@@ -60,6 +58,17 @@ module.exports = {
                 },
                 {
                     name: `<:bugz:1205415768846499860>┆Found a bug?`,
+
+    
+          
+            
+    
+
+          
+          Expand Down
+    
+    
+  
                     value: `Report this with \`/report bug\``
                 },
                 {
@@ -72,5 +81,4 @@ module.exports = {
         }, interaction)
     },
 };
-
  
