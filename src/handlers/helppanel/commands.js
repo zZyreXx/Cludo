@@ -124,67 +124,67 @@ module.exports = async (client) => {
         },
         {
             name: `<:memberzz:107179695┆Profile`,
-            value: `\`/profile help\``,
+            value: `</profile help:1071786541334151236>`,
             inline: true
         },
         {
             name: `<:tvzzz:1072024670125174794>┆Radio`,
-            value: `\`/radio help\``,
+            value: `</radio play:1071786541334151237>`,
             inline: true
         },
         {
             name: `<:rolezz:1072030311682158753>┆Reaction roles`,
-            value: `\`/reactionroles help\``,
+            value: `</reactionroles help:1071786541711626293>`,
             inline: true
         },
         {
             name: `<:srchzz:1072030518834647070>┆Search`,
-            value: `\`/search help\``,
+            value: `</search help:1071786541711626295>`,
             inline: true
         },
         {
             name: `<:upzzz:1071797858531016704>┆Server stats`,
-            value: `\`/serverstats help\``,
+            value: `</serverstats help:1071786541711626296>`,
             inline: true
         },
         {
             name: `<:settingzz:1072016300848730182>┆Setup`,
-            value: `\`/setup help\``,
+            value: `</setup help:1071786541711626297>`,
             inline: true
         },
         {
             name: `<:vczzz:1071797171948634266>┆Soundboard`,
-            value: `\`/soundboard help\``,
+            value: `</soundboard help:1071786541711626298>`,
             inline: true
         },
         {
             name: `<:chatzz:1071790624929501184>┆Sticky messages`,
-            value: `\`/stickymessages help\``,
+            value: `</stickymessages help:1071786541711626299>`,
             inline: true
         },
         {
             name: `<:i_:1071780309865091173>┆Suggestions`,
-            value: `\`/sugestions help\``,
+            value: `</suggestions help:1071786541711626300>`,
             inline: true
         },
         {
             name: `<:heartzz:1072031623991808071>┆Thanks`,
-            value: `\`/thanks help\``,
+            value: `</thanks help:1071786541711626301>`,
             inline: true
         },
         {
             name: `<:ticketzz:1071793049396584589>┆Tickets`,
-            value: `\`/tickets help\``,
+            value: `</tickets help:1071786541711626302>`,
             inline: true
         },
         {
             name: `<:toolzzz:1071795700662272131>┆Tools`,
-            value: `\`/tools help\``,
+            value: `</tools help:1071786541879402577>`,
             inline: true
         },
         {
             name: `<:vczzz:1071797171948634266>┆Voice`,
-            value: `\`/voice help\``,
+            value: `</voice help:1071786541879402578>`,
             inline: true
         },
     ];
