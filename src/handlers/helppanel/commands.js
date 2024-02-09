@@ -4,32 +4,32 @@ module.exports = async (client) => {
     const fields = [
         {
             name: `<:activite:1205537677122994246><:arrowright:1205414889451954196>Activities`,
-            value: `\`/activities\``,
+            value: `</activities:1071786540801462282>`,
             inline: true
         },
         {
             name: `<:afk:1205539497979289620><:arrowright:1205414889451954196>AFK`,
-            value: `\`/afk help\``,
+            value: `</afk help:1071786540801462283>`,
             inline: true
         },
         {
             name: `<:megaz:1205540030055981116><:arrowright:1205414889451954196>Announcement`,
-            value: `\`/announcement help\``,
+            value: `</announcement help:1071786540801462284>`,
             inline: true
         },
         {
             name: `<:automod:1205540532206575666><:arrowright:1205414889451954196>Auto mod`,
-            value: `\`/automod help\``,
+            value: `</automod help:1071786540801462285>`,
             inline: true
         },
         {
-            name: `<:settingzz:1072016300848730182>┆Auto setup`,
-            value: `\`/autosetup help\``,
+            name: `<:settings:1205543029817999390><:arrowright:1205414889451954196>Auto setup`,
+            value: `</automod help:1071786540801462285>`,
             inline: true
         },
         {
-            name: `<:burgirrr:1071793587739705344>┆Birthday`,
-            value: `\`/birthdays help\``,
+            name: `<:birthday1:1205543842904932372><:arrowright:1205414889451954196>Birthday`,
+            value: `</birthdays help:1071786540801462287>`,
             inline: true
         },
         {
