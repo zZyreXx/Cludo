@@ -35,6 +35,6 @@ module.exports = async (client, interaction, args) => {
                 type: 'editreply'
             }, interaction)
         }
-    }).catch(error => { client.errNormal({ text: `There was an error by checking this vote!`, editreply: true }, interaction) });
-});
+    }).catch(error => { client.errNormal({ text: `There was an error by checking this vote!`, editreply: true }, interaction) 
+    });
 }
