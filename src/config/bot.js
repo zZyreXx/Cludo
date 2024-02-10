@@ -8,7 +8,7 @@ module.exports = {
     discord: {
         id: process.env.DISCORD_ID,
         prefix: 'c!',
-        footer: `© Cludo 2022${new Date().getFullYear()}`, 
+        footer: `© Cludo 2022-${new Date().getFullYear()}`, 
         botInvite: `https://discord.com/api/oauth2/authorize?client_id=1071766414358216788&permissions=8&scope=bot%20applications.commands`,
         serverInvite: "https://discord.gg/w94TaRcfs2",
     },
