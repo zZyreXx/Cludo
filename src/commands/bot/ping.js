@@ -15,21 +15,21 @@ module.exports = async (client, interaction, args) => {
             var apiSeconds = ((client.ws.ping % 60000) / 1000);
 
             client.embed({
-                title: `<:dangrr:1071791074173014158>・Pong`,
+                title: `<:afk:1205539497979289620><:arrowright:1205414889451954196>Pong`,
                 desc: `Check out how fast our bot is`,
                 fields: [
                     {
-                        name: "<:botzz:1071794843438825492>┆Bot latency",
+                        name: "<:automod:1205540532206575666><:arrowright:1205414889451954196>Bot latency",
                         value: `${ping}ms (${pingSeconds}s)`,
                         inline: true,
                     },
                     {
-                        name: "<:compzz:1071795353445220432>┆API Latency",
+                        name: "<:settings:1205543029817999390><:arrowright:1205414889451954196>API Latency",
                         value: `${client.ws.ping}ms (${apiSeconds}s)`,
                         inline: true,
                     },
                     {
-                        name: "<:folderr:1071798946688680027>┆Database Latency",
+                        name: "<:cludoxc:1205719737766776872><:arrowright:1205414889451954196>Database Latency",
                         value: `${result.ok}ms (${mongooseSeconds}s)`,
                         inline: true,
                     }
