@@ -15,15 +15,15 @@ module.exports = async (client, interaction, args) => {
     var remove = await Schema.deleteOne({ Guild: interaction.guild.id });
 
     client.embed({
-        title: `・Radio stopped`,
+        title: `<:radioxz:1205564682262413373><:arrowright:1205414889451954196>Radio stopped`,
         desc: `Radio has stopped successfully \nTo make the bot join do: \`rplay\``,
         fields: [{
-            name: "<:memberzz:1071796953580572744>┆Stopped By",
+            name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>Stopped By",
             value: `${interaction.user}`,
             inline: true
         },
         {
-            name: "<:tvzzz:1072024670125174794>┆Channel",
+            name: "<:radioxz:1205564682262413373><:arrowright:1205414889451954196>Channel",
             value: `${channel}`,
             inline: true
         }
@@ -32,12 +32,12 @@ module.exports = async (client, interaction, args) => {
     }, interaction)
 
     let embed = new Discord.EmbedBuilder()
-        .setTitle(`<:tvzzz:1072024670125174794>・Radio stopped`)
+        .setTitle(`<:radioxz:1205564682262413373><:arrowright:1205414889451954196>Radio stopped`)
         .setDescription(`_______________ \n\nRadio has stopped successfully`)
         .addFields(
-            { name: "<:memberzz:1071796953580572744>┆Stopped By", value: `${interaction.user}`, inline: true },
-            { name: "<:tvzzz:1072024670125174794>┆Channel", value: `${channel}`, inline: true },
-            { name: "<:settingzz:1072016300848730182>┆Guild", value: `${interaction.guild.name}`, inline: true },
+            { name: "<:grpcz:1205551958585249822><:arrowright:1205414889451954196>Stopped By", value: `${interaction.user}`, inline: true },
+            { name: "<:cludoxc:1205719737766776872><:arrowright:1205414889451954196>Channel", value: `${channel}`, inline: true },
+            { name: "<:settings:1205543029817999390><:arrowright:1205414889451954196>Guild", value: `${interaction.guild.name}`, inline: true },
         )
         .setColor(client.config.colors.normal)
         .setTimestamp();
