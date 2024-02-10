@@ -26,20 +26,20 @@ module.exports = async (client, interaction, args) => {
     })
 
     client.embed({
-        title: `<:tvzzz:1072024670125174794>・Started radio`,
+        title: `<:radioxz:1205564682262413373><:arrowright:1205414889451954196>Started radio`,
         desc: `Radio has started successfully \nTo make the bot leave do: \`rleave\``,
         fields: [{
-            name: "<:memberzz:1071796953580572744>┆Started By",
+            name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>Started By",
             value: `${interaction.user}`,
             inline: true
         },
         {
-            name: "<:tvzzz:1072024670125174794>┆Channel",
+            name: "<:radioxz:1205564682262413373><:arrowright:1205414889451954196>Channel",
             value: `${channel}`,
             inline: true
         },
         {
-            name: "<:musicc:1072028279546064896>┆Radio Station",
+            name: "<:musicxxx:1205560766795882587><:arrowright:1205414889451954196>Radio Station",
             value: `[Club FM 99.6](https://clubfm.ae/)`,
             inline: true
         },
