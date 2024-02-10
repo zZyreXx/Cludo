@@ -17,9 +17,9 @@ module.exports = async (client, interaction, args) => {
     dbl.hasVoted(interaction.user.id).then(voted => {
         if (voted) {
             client.embed({
-                title: `<:ticketzz:1071793049396584589>・Vote`,
+                title: `📨・Vote`,
                 desc: `You have voted!`,
-                image: `https://cdn.discordapp.com/attachments/1064478382504550400/1072035974781091960/CLUDO-removebg-preview.png`,
+                image: `https://cdn.discordapp.com/attachments/843487478881976381/874694192755007509/Bot_banner_vote.jpg`,
                 color: client.config.colors.succes,
                 components: [row],
                 type: 'editreply'
@@ -27,14 +27,13 @@ module.exports = async (client, interaction, args) => {
         }
         if (!voted) {
             client.embed({
-                title: `<:ticketzz:1071793049396584589>・Vote`,
+                title: `📨・Vote`,
                 desc: `You have not voted!`,
-                image: `https://cdn.discordapp.com/attachments/1064478382504550400/1072035974781091960/CLUDO-removebg-preview.png`,
+                image: `https://cdn.discordapp.com/attachments/843487478881976381/874694192755007509/Bot_banner_vote.jpg`,
                 color: client.config.colors.error,
                 components: [row],
                 type: 'editreply'
             }, interaction)
         }
-    }).catch(error => { client.errNormal({ text: `There was an error by checking this vote!`, editreply: true }, interaction) 
-    });
+    }).catch(error => { client.errNormal({ text: `There was an error by checking this vote!`, editreply: true }, interaction) });
 }
