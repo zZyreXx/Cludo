@@ -7,16 +7,16 @@ module.exports = async (client, interaction, args) => {
     const upvalue = (Date.now() / 1000 - client.uptime / 1000).toFixed(0);
 
     client.embed({
-        title: `<:upzzz:1071797858531016704>・Uptime`,
+        title: `<:cludoxc:1205719737766776872><:arrowright:1205414889451954196>Uptime`,
         desc: `See the uptime of Bot`,
         fields: [
             {
-                name: "<:upzzz:1071797858531016704>┇Uptime",
+                name: "<:cludoxc:1205719737766776872><:arrowright:1205414889451954196>Uptime",
                 value: `${duration}`,
                 inline: true
             },
             {
-                name: "<:clockzz:1071798302741373008>┇Up Since",
+                name: "<:status:1205426484223938580><:arrowright:1205414889451954196>Up Since",
                 value: `<t:${upvalue}>`,
                 inline: true
             }
