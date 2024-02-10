@@ -30,3 +30,4 @@ module.exports = async (client, interaction, args) => {
         await interaction.reply({ content: "There was an error by checking this vote!", ephemeral: true });
     }
 }
+
