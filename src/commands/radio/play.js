@@ -48,12 +48,12 @@ module.exports = async (client, interaction, args) => {
     }, interaction)
 
     let embed = new Discord.EmbedBuilder()
-        .setTitle(`<:tvzzz:1072024670125174794>・Started radio`)
+        .setTitle(`<:radioxz:1205564682262413373><:arrowright:1205414889451954196>Started radio`)
         .setDescription(`_______________ \n\nRadio has started successfully`)
         .addFields(
-            { name: "<:memberzz:1071796953580572744>┆Started By", value: `${interaction.user}`, inline: true },
-            { name: "<:tvzzz:1072024670125174794>┆Channel", value: `${channel}`, inline: true },
-            { name: "<:settingzz:1072016300848730182>┆Guild", value: `${interaction.guild.name}`, inline: true },
+            { name: "<:grpcz:1205551958585249822><:arrowright:1205414889451954196>Started By", value: `${interaction.user}`, inline: true },
+            { name: "<:cludoxc:1205719737766776872><:arrowright:1205414889451954196>Channel", value: `${channel}`, inline: true },
+            { name: "<:settings:1205543029817999390><:arrowright:1205414889451954196>Guild", value: `${interaction.guild.name}`, inline: true },
         )
         .setColor(client.config.colors.normal)
         .setTimestamp();
