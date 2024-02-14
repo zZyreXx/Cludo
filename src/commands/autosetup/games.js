@@ -14,7 +14,7 @@ module.exports = async (client, interaction, args) => {
             type: Discord.ChannelType.GuildText
         }).then((ch) => {
             client.embed({
-                title: `<:writezzz:1071792217888391270>・Counting`,
+                title: `<:noepds:1205561401909710899><:arrowright:1205414889451954196>Counting`,
                 desc: `This is the start of counting! The first number is **1**`
             }, ch)
 
@@ -28,7 +28,7 @@ module.exports = async (client, interaction, args) => {
             type: Discord.ChannelType.GuildText
         }).then((ch) => {
             client.embed({
-                title: `<:writezzz:1071792217888391270>・Guess the number`,
+                title: `<:noepds:1205561401909710899><:arrowright:1205414889451954196>Guess the number`,
                 desc: `Guess the number between **1** and **10.000**!`
             }, ch)
 
@@ -45,11 +45,11 @@ module.exports = async (client, interaction, args) => {
             var shuffled = word.split('').sort(function () { return 0.5 - Math.random() }).join('');
 
             client.embed({
-                title: `<:chatzz:1071790624929501184>・Guess the word`,
+                title: `<:messagexc:1205567224362958868><:arrowright:1205414889451954196>Guess the word`,
                 desc: `Put the letters in the right position!`,
                 fields: [
                     {
-                        name: `<:infinityzz:1071792533606244463>┆Word`,
+                        name: `<:__:1205407307811262466><:arrowright:1205414889451954196>Word`,
                         value: `${shuffled.toLowerCase()}`
                     }
                 ],
