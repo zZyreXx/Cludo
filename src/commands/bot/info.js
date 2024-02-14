@@ -19,118 +19,118 @@ module.exports = async (client, interaction, args) => {
             const duration = moment.duration(client.uptime).format("\`D\` [days], \`H\` [hrs], \`m\` [mins], \`s\` [secs]");
 
             client.embed({
-                title: `ℹ・Bot information`,
+                title: `<:i_:1205412741087494174><:arrowright:1205414889451954196>Bot information`,
                 desc: `____________________________`,
                 thumbnail: client.user.avatarURL({ size: 1024 }),
                 fields: [
                {
-                    name: "ℹ️┆Information",
+                    name: "<:i_:1205412741087494174><:arrowright:1205414889451954196>Information",
                     value: `Bot is a bot with which you can run your entire server! With no less than 350+ commands, we have a large bot with many options to improve your server!`,
                     inline: false,
                 },
                 {
-                    name: "_____ \n\n│General",
+                    name: "_____ \n\n<:cludoxc:1205719737766776872><:arrowright:1205414889451954196>General",
                     value: `_____`,
                     inline: false,
                 },
                 {
-                    name: "<:botzz:1071794843438825492>┆Bot name",
+                    name: "<:automod:1205540532206575666><:arrowright:1205414889451954196>Bot name",
                     value: `${client.user.username}`,
                     inline: true,
                 },
                 {
-                    name: "<:idzz:1071795045440704564>┆Bot id",
+                    name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>Bot id",
                     value: `${client.user.id}`,
                     inline: true,
                 },
                 {
-                    name: "<:compzz:1071795353445220432>┆Shards",
+                    name: "<:round:1205428303150714880><:arrowright:1205414889451954196>Shards",
                     value: `\`${client.options.shardCount}\` shards`,
                     inline: true,
                 },
                 {
-                    name: "<:ownerzz:1071795933521645651>┆Bot owner",
+                    name: "<:lvlxz:1205557752345141268><:arrowright:1205414889451954196>Bot owner",
                     value: `<@!790541561111904266> `,
                     inline: true,
                 },
                 {
-                    name: "<:devzz:1071796245699494019>┆Bot developer",
-                    value: `<@!790541561111904266> <@!852790941918953482>`,
+                    name: "<:dev:1205404510697164820><:arrowright:1205414889451954196>Bot developer",
+                    value: `<@!790541561111904266>`,
                     inline: true,
                 },
                 {
-                    name: "<:compzz:1071795353445220432>┆Commands",
+                    name: "<:messagexc:1205567224362958868><:arrowright:1205414889451954196>Commands",
                     value: `\`${client.commands.size}\` commands`,
                     inline: true,
                 },
                 {
-                    name: "<:serverzz:1071796723128746084>┆Servers",
+                    name: "<:globe:1205409366849888307><:arrowright:1205414889451954196>Servers",
                     value: `\`${totalGuilds}\` servers`,
                     inline: true,
                 },
                 {
-                    name: "<:serverzz:1071796723128746084>┆Servers this shard",
+                    name: "<:globe:1205409366849888307><:arrowright:1205414889451954196>Servers on shard",
                     value: `\`${client.guilds.cache.size}\` servers`,
                     inline: true,
                 },
                 {
-                    name: "<:memberzz:1071796953580572744>┆Members",
+                    name: "<:grpcz:1205551958585249822><:arrowright:1205414889451954196>Members",
                     value: `\`${totalMembers}\` members`,
                     inline: true,
                 },
                 {
-                    name: "<:vczzz:1071797171948634266>┆Connected channels",
+                    name: "<:soundxz:1205569046276218910><:arrowright:1205414889451954196>Connected channels",
                     value: `\`${totalVoice}\` channels`,
                     inline: true,
                 },
                 {
-                    name: "<:chan:1071790232632041533>┆Channels",
+                    name: "<:megaz:1205540030055981116><:arrowright:1205414889451954196>Channels",
                     value: `\`${totalChannels}\` channels`,
                     inline: true,
                 },
                 {
-                    name: "<:calenderzz:1071797419089612900>┆Created",
+                    name: "<:noepds:1205561401909710899><:arrowright:1205414889451954196>Created",
                     value: `<t:${Math.round(client.user.createdTimestamp / 1000)}>`,
                     inline: true,
                 },
 
                 {
-                    name: "_____ \n\n│System",
+                    name: "_____ \n\n<:cofxz:1205548007085310073><:arrowright:1205414889451954196>System",
                     value: `_____`,
                     inline: false,
                 },
                 {
-                    name: "<:upzzz:1071797858531016704>┆Uptime",
+                    name: "<:status:1205426484223938580><:arrowright:1205414889451954196>Uptime",
                     value: `${duration}`,
                     inline: true,
                 },
                 {
-                    name: "<:clockzz:1071798302741373008>┆API speed:",
+                    name: "<:guildxx:1205555662008881182><:arrowright:1205414889451954196>API speed:",
                     value: `\`${client.ws.ping}\`ms`,
                     inline: true,
                 },
                 {
-                    name: "<:jsszz:1071798658409967747>┆Bot Version",
+                    name: "<:settings:1205543029817999390><:arrowright:1205414889451954196>Bot Version",
                     value: `\`${require(`${process.cwd()}/package.json`).version}\``,
                     inline: true,
                 },
                 {
-                    name: "<:jsszz:1071798658409967747>┆Node.js Version",
+                    name: "<:lightzz:1205565101499744377><:arrowright:1205414889451954196>Node.js Version",
                     value: `\`${process.version}\``,
                     inline: true,
                 },
                 {
-                    name: "<:folderr:1071798946688680027>┆Discord.js Version",
+                    name: "<:cofxz:1205548007085310073><:arrowright:1205414889451954196>Discord.js Version",
                     value: `\`${Discord.version}\``,
                     inline: true,
                 },
                 {
-                    name: "<:savezz:1071799231297368104>┆Bot memory",
+                    name: "<:imagexxc:1205556299908255824><:arrowright:1205414889451954196>Bot memory",
                     value: `\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}\` MB`,
                     inline: true,
                 },
                 {
-                    name: "<:linkee:1071784295594737768>┆Links",
+                    name: "<:linkee:1205416083469762610><:arrowright:1205414889451954196>Links",
                     value: `Add me: [[HERE]](${client.config.discord.botInvite}) \nSupport server: [[HERE]](${client.config.discord.serverInvite})`,
                     inline: false,
                 }],
