@@ -10,14 +10,14 @@ module.exports = async (client, interaction, args) => {
                 .setCustomId('Bot_openticket')
                 .setLabel("Tickets")
                 .setStyle(Discord.ButtonStyle.Primary)
-                .setEmoji('<:ticketzz:1071793049396584589>')
+                .setEmoji('<:ticketxv:1205568405160067072>')
 
             const row = new Discord.ActionRowBuilder()
                 .addComponents(button)
 
             client.embed({
                 title: "Tickets",
-                desc: "Click on <:ticketzz:1071793049396584589> to open a ticket",
+                desc: "Click on <:ticketxv:1205568405160067072> to open a ticket",
                 components: [row]
             }, channel)
 
