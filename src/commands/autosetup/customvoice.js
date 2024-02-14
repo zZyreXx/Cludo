@@ -39,7 +39,7 @@ module.exports = async (client, interaction, args) => {
                 text: `Custom voice has been set up successfully!`,
                 fields: [
                     {
-                        name: `<:chan:1071790232632041533>┆Channel`,
+                        name: `<:megaz:1205540030055981116><:arrowright:1205414889451954196>Channel`,
                         value: `${ch} (${ch.name})`
                     }
                 ],
