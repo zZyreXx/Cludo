@@ -5,7 +5,7 @@ module.exports = async (client, interaction, args) => {
     const channel = interaction.options.getChannel('channel');
 
     client.embed({ 
-        title: `<:ann:1071789734734610483>・Announcement!`, 
+        title: `<:megaz:1205540030055981116><:arrowright:1205414889451954196>Announcement!`, 
         desc: message 
     }, channel);
 
@@ -13,7 +13,7 @@ module.exports = async (client, interaction, args) => {
         text: `Announcement has been sent successfully!`,
         fields: [
             {
-                name: `<:chan:1071790232632041533>┆Channel`,
+                name: `<:megaz:1205540030055981116><:arrowright:1205414889451954196>Channel`,
                 value: `${channel} (${channel.name})`
             }
         ],
