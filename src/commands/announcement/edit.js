@@ -7,7 +7,7 @@ module.exports = async (client, interaction, args) => {
     const editMessage = await interaction.channel.messages.fetch(messageId);
 
     client.embed({ 
-        title: `<:ann:1071789734734610483>・Announcement!`, 
+        title: `<:megaz:1205540030055981116><:arrowright:1205414889451954196>Announcement!`, 
         desc: message,
         type: 'edit'
     }, editMessage);
