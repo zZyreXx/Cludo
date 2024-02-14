@@ -22,7 +22,7 @@ module.exports = async (client, interaction, args) => {
         },
         {
             name: "<:globe:1205409366849888307><:arrowright:1205414889451954196>Website",
-            value: `[https://cludo.com](https://cludobot.onrender.com/)`,
+            value: `[cludo.com](https://cludobot.onrender.com/)`,
             inline: true,
         }],
         type: 'editreply'
