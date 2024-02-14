@@ -2,27 +2,27 @@ const Discord = require('discord.js');
 
 module.exports = async (client, interaction, args) => {
     client.embed({
-        title: `<:logzz:1071794113982255134>・Owner information`,
+        title: `<:cludoxc:1205719737766776872><:arrowright:1205414889451954196>Owner information`,
         desc: `____________________________`,
         thumbnail: client.user.avatarURL({ dynamic: true, size: 1024 }),
         fields: [{
-            name: "<:ownerzz:1071795933521645651>┆Owner name",
-            value: `Corwin`,
+            name: "<:dev:1205404510697164820><:arrowright:1205414889451954196>Owner name",
+            value: `tɑιғʏὗ™`,
             inline: true,
         },
         {
-            name: "<:idzz:1071795045440704564>┆Discord tag",
+            name: "<:funxxx:1205554067502268447><:arrowright:1205414889451954196>Discord tag",
             value: `@Tɑιғʏὗ™#7003`,
             inline: true,
         },
         {
-            name: "<:compzz:1071795353445220432>┆Organization",
+            name: "<:stausvd:1205566175229251585><:arrowright:1205414889451954196>Organization",
             value: `TEDX BOTZ`,
             inline: true,
         },
         {
-            name: "<:serverzz:1071796723128746084>┆Website",
-            value: `[https://](https://Cludo.yml)`,
+            name: "<:globe:1205409366849888307><:arrowright:1205414889451954196>Website",
+            value: `[https://cludo.com](https://cludobot.onrender.com/)`,
             inline: true,
         }],
         type: 'editreply'
