@@ -12,7 +12,7 @@ module.exports = async (client, interaction, args) => {
 
     const lb = rawBirthdayboard.map(e => `${client.emotes.normal.birthday} | **<@!${e.User}>** - ${e.Birthday} `);
 
-    await client.createLeaderboard(`<:burgirrr:1071793587739705344>・Birthdays - ${interaction.guild.name}`, lb, interaction);
+    await client.createLeaderboard(`<:birthday1:1205543842904932372><:arrowright:1205414889451954196>Birthdays - ${interaction.guild.name}`, lb, interaction);
 }
 
  
