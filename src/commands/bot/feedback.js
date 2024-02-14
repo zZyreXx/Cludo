@@ -9,8 +9,7 @@ module.exports = async (client, interaction, args) => {
     const feedback = interaction.options.getString('feedback');
 
     const embed = new Discord.EmbedBuilder()
-        .setTitle(`<:chatzz:1071790624929501184>
-・New feedback!`)
+        .setTitle(`<:messagexxc:1205558617416400926><:arrowright:1205414889451954196>New feedback!`)
         .addFields(
             { name: "User", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
         )
