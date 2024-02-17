@@ -224,7 +224,9 @@ module.exports = async (client, message) => {
   });
 
   // Chat bot
-  chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
+    chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
+    if (!data) return;
+    if (message.channel.id !== data.Channel) return;
     if (process.env.OPENAI) {
       fetch(
         `https://api.openai.com/v1/chat/completions`,
