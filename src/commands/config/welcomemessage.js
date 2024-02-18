@@ -64,7 +64,7 @@ module.exports = async (client, interaction, args) => {
                 text: `The welcome message has been set successfully`,
                 fields: [
                     {
-                        name: `<:chatzz:1071790624929501184>┆Message`,
+                        name: `<:messagexxc:1205558617416400926><:arrowright:1205414889451954196>Message`,
                         value: `${message}`,
                         inline: true
                     },
