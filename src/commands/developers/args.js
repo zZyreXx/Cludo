@@ -238,27 +238,27 @@ module.exports = async (client, interaction, args) => {
 
     if (message == "ourbots") {
         client.simpleEmbed({
-            image: `https://cdn.discordapp.com/attachments/843487478881976381/874742741224022016/Bot_banner_bot_info.jpg`
+            image: `https://cdn.discordapp.com/attachments/1064478382504550400/1205446107279265812/CLUDO_1_2.png?ex=65e1a0ac&is=65cf2bac&hm=d9162faec278995d0da71fe9f644ce514bc2c4718892143f824be0aa4523551f&`
         }, interaction.channel).then(() => {
             client.embed({
-                title: `🤖・Our bots`,
+                title: `<:cludoxc:1205719737766776872><:arrowright:1205414889451954196>Our bots`,
                 thumbnail: client.user.avatarURL({ size: 1024 }),
                 desc: `_____ \n\nOutside of a community we also maintain 2 public bots. These bots are all made to make your server better!`,
                 fields: [
                     {
-                        name: `📘┆What is Bot?`,
+                        name: `<:i_:1205412741087494174><:arrowright:1205414889451954196>What is Bot?`,
                         value: `Bot is a bot with which you can run your entire server! With no less than 400+ commands, we have a large bot with many options to improve your server! You know what else is beautiful? All of this is **FREE** to use!`,
                     },
                     {
-                        name: `🎶┆What is Bot 2?`,
+                        name: `<:soundbaodxxx:1205566816907173948><:arrowright:1205414889451954196>What is Bot 2?`,
                         value: `Bot 2 was created for additional music. This way you never get in each other's way when someone is already listening to music. Furthermore, this bot contains a soundboard and a radio system`,
                     },
                     {
-                        name: `📨┆How do I invite the bots?`,
+                        name: `<:automod:1205540532206575666><:arrowright:1205414889451954196>How do I invite the bots?`,
                         value: `You can invite the bots by doing \`/invite\` or by clicking on the links below \n\n**Bot** - [Invite here](${client.config.discord.botInvite})`,
                     },
                     {
-                        name: `🎫┆How do I get help when needed?`,
+                        name: `<:__:1205407307811262466><:arrowright:1205414889451954196>How do I get help when needed?`,
                         value: `You can make a ticket in <#820308164322656327>! We are happy to help you with your questions here and offer support in your server!`,
                     }
                 ]
