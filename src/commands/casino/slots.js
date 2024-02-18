@@ -46,7 +46,7 @@ module.exports = async (client, interaction, args) => {
             if (win) {
 
                 client.embed({
-                    title: `<:infinityzz:1071792533606244463>・Slots`,
+                    title: `<:imagexxc:1205556299908255824><:arrowright:1205414889451954196>Slots`,
                     desc: `You won **${client.emotes.economy.coins} $${money}**`,
                     color: client.config.colors.succes, 
                     components: [row], 
@@ -58,7 +58,7 @@ module.exports = async (client, interaction, args) => {
             } else {
 
                 client.embed({
-                    title: `<:infinityzz:1071792533606244463>・Slots`,
+                    title: `<:imagexxc:1205556299908255824><:arrowright:1205414889451954196>Slots`,
                     desc: `You lost **${client.emotes.economy.coins} $${money}**`,
                     components: [row], 
                     color: client.config.colors.error, 
