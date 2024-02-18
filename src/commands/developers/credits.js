@@ -32,11 +32,11 @@ module.exports = async (client, interaction, args) => {
         }, interaction);
 
         let embedLogs = new Discord.EmbedBuilder()
-            .setTitle(`🪙・Credits added`)
+            .setTitle(`<:funxxx:1205554067502268447><:arrowright:1205414889451954196>Credits added`)
             .setDescription(`Added credits to ${user} (${user.id})`)
             .addFields(
-                { name: "👤┆Added By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
-                { name: "🔢┆Amount", value: `${amount}`, inline: true },
+                { name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>Added By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+                { name: "<:noepds:1205561401909710899><:arrowright:1205414889451954196>Amount", value: `${amount}`, inline: true },
             )
             .setColor(client.config.colors.normal)
             .setTimestamp();
@@ -59,11 +59,11 @@ module.exports = async (client, interaction, args) => {
         }, interaction);
 
         let embedLogs = new Discord.EmbedBuilder()
-            .setTitle(`🪙・Credits removed`)
+            .setTitle(`<:funxxx:1205554067502268447><:arrowright:1205414889451954196>Credits removed`)
             .setDescription(`Removed credits from ${user} (${user.id})`)
             .addFields(
-                { name: "👤┆Removed By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
-                { name: "🔢┆Amount", value: `${amount}`, inline: true },
+                { name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>Removed By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+                { name: "<:noepds:1205561401909710899><:arrowright:1205414889451954196>Amount", value: `${amount}`, inline: true },
             )
             .setColor(client.config.colors.normal)
             .setTimestamp();
