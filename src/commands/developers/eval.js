@@ -27,15 +27,15 @@ module.exports = async (client, interaction, args) => {
 
         if (outputResponse.length <= 1024) {
             await client.embed({
-                title: `💻・Eval`,
+                title: `<:tvcfs:1208770529545166868>・Eval`,
                 fields: [
                     {
-                        name: "📥┇Input",
+                        name: "<:inputxx:1208771195051442186><:arrowright:1205414889451954196>Input",
                         value: `\`\`\`${code}\`\`\``,
                         inline: false,
                     },
                     {
-                        name: "📥┇Output",
+                        name: "<:outoput:1208771745729871872><:arrowright:1205414889451954196>Output",
                         value: outputResponse.substr(0, 1024),
                         inline: false,
                     },
@@ -46,8 +46,8 @@ module.exports = async (client, interaction, args) => {
             const embed2 = new Discord.EmbedBuilder()
                 .setTitle(`${interaction.user.tag} used eval command`)
                 .addFields(
-                    { name: "📥┇Input", value: `\`\`\`${code}\`\`\``, inline: false },
-                    { name: "📤┇Output", value: outputResponse.substr(0, 1024), inline: false },
+                    { name: "<:inputxx:1208771195051442186><:arrowright:1205414889451954196>Input", value: `\`\`\`${code}\`\`\``, inline: false },
+                    { name: "<:outoput:1208771745729871872><:arrowright:1205414889451954196>Output", value: outputResponse.substr(0, 1024), inline: false },
                 )
                 .setColor(client.config.colors.normal)
                 .setTimestamp();
@@ -61,7 +61,7 @@ module.exports = async (client, interaction, args) => {
             var embed2 = new Discord.EmbedBuilder()
                 .setAuthor(client.user.username, client.user.avatarURL())
                 .addFields(
-                    { name: "📥┇Input", value: `\`\`\`${code}\`\`\``, inline: false },
+                    { name: "<:inputxx:1208771195051442186><:arrowright:1205414889451954196>Input", value: `\`\`\`${code}\`\`\``, inline: false },
                 )
                 .setColor(client.config.colors.succes)
                 .setFooter(client.config.discord.footer)
@@ -73,15 +73,15 @@ module.exports = async (client, interaction, args) => {
     catch (err) {
 
         return client.embed({
-            title: `💻・Eval`,
+            title: `<:tvcfs:1208770529545166868><:arrowright:1205414889451954196>Eval`,
             fields: [
                 {
-                    name: "📥┇Input",
+                    name: "<:inputxx:1208771195051442186><:arrowright:1205414889451954196>Input",
                     value: `\`\`\`${code}\`\`\``,
                     inline: false,
                 },
                 {
-                    name: "📥┇Error!",
+                    name: "<:croszx:1208738786662678548><:arrowright:1205414889451954196>Error!",
                     value: `\`\`\`${clean(err)}\`\`\``,
                     inline: false,
                 },
