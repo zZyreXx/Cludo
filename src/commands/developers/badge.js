@@ -72,11 +72,11 @@ module.exports = async (client, interaction, args) => {
         }
 
         let embedLogs = new Discord.EmbedBuilder()
-            .setTitle(`📛・Badge added`)
+            .setTitle(`<:rmoveas:1208768254747615262><:arrowright:1205414889451954196>Badge added`)
             .setDescription(`Added a new badge to ${member} (${member.id})`)
             .addFields(
-                { name: "👤┆Added By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
-                { name: `📛┆Badge`, value: `${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()})`, inline: true },
+                { name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>Added By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+                { name: `<:rmoveas:1208768254747615262><:arrowright:1205414889451954196>Badge`, value: `${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()})`, inline: true },
             )
             .setColor(client.config.colors.normal)
             .setFooter({ text: client.config.discord.footer})
@@ -126,11 +126,11 @@ module.exports = async (client, interaction, args) => {
         }
 
         let embedLogs = new Discord.EmbedBuilder()
-            .setTitle(`📛・Badge removed`)
+            .setTitle(`<:rmoveas:1208768254747615262><:arrowright:1205414889451954196>Badge removed`)
             .setDescription(`Removed a badge from ${member} (${member.id})`)
             .addFields(
-                { name: "👤┆Removed By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
-                { name: `📛┆Badge`, value: `${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()})`, inline: true },
+                { name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>Removed By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+                { name: `<:rmoveas:1208768254747615262><:arrowright:1205414889451954196>Badge`, value: `${badgeFlags[badge.toUpperCase()]} (${badge.toUpperCase()})`, inline: true },
             )
             .setColor(client.config.colors.normal)
             .setFooter({ text: client.config.discord.footer })
