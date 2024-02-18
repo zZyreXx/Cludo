@@ -17,7 +17,7 @@ module.exports = async (client, interaction, args) => {
                 .addComponents(
                     new Discord.ButtonBuilder()
                         .setCustomId('crash_stop')
-                        .setEmoji("<:blok:1071789363903606855>")
+                        .setEmoji("<:croszx:1208738786662678548>")
                         .setStyle(Discord.ButtonStyle.Danger),
                 )
 
@@ -25,13 +25,13 @@ module.exports = async (client, interaction, args) => {
                 .addComponents(
                     new Discord.ButtonBuilder()
                         .setCustomId('crash_stop')
-                        .setEmoji("<:blok:1071789363903606855>")
+                        .setEmoji("<:croszx:1208738786662678548>")
                         .setStyle(Discord.ButtonStyle.Danger)
                         .setDisabled(true),
                 )
 
             client.embed({
-                desc: `Crash started by ${user}・React <:blok:1071789363903606855> to stop`,
+                desc: `Crash started by ${user}・React <:croszx:1208738786662678548> to stop`,
                 fields: [
                     {
                         name: `Multiplier`,
@@ -86,7 +86,7 @@ module.exports = async (client, interaction, args) => {
                         let profit = calc - money;
 
                         client.embed({
-                            desc: `Crash started by ${user}・React <:blok:1071789363903606855> to stop`,
+                            desc: `Crash started by ${user}・React <:croszx:1208738786662678548> to stop`,
                             type: 'edit',
                             fields: [
                                 {
