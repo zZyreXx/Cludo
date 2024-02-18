@@ -14,7 +14,7 @@ module.exports = async (client, interaction, args) => {
                 .addComponents(
                     new Discord.StringSelectMenuBuilder()
                         .setCustomId('customSelect')
-                        .setPlaceholder('<:x_:1071781614423642193>┆Nothing selected')
+                        .setPlaceholder('Navigation System')
                         .addOptions(
                             [
                                 {
@@ -54,7 +54,7 @@ module.exports = async (client, interaction, args) => {
                         client.succNormal({
                             text: `The command has been added successfully`,
                             fields: [{
-                                name: "<:toolzzz:1071795700662272131>┆Command",
+                                name: "<:multi:1205408937831309344><:arrowright:1205414889451954196>Command",
                                 value: `\`\`\`${cmdname.toLowerCase()}\`\`\``,
                                 inline: true,
                             }],
@@ -74,7 +74,7 @@ module.exports = async (client, interaction, args) => {
                         client.succNormal({
                             text: `The command has been added successfully`,
                             fields: [{
-                                name: "<:toolzzz:1071795700662272131>┆Command",
+                                name: "<:multi:1205408937831309344><:arrowright:1205414889451954196>Command",
                                 value: `\`\`\`${cmdname.toLowerCase()}\`\`\``,
                                 inline: true,
                             }],
@@ -94,7 +94,7 @@ module.exports = async (client, interaction, args) => {
                         client.succNormal({
                             text: `The command has been added successfully`,
                             fields: [{
-                                name: "<:toolzzz:1071795700662272131>┆Command",
+                                name: "<:multi:1205408937831309344><:arrowright:1205414889451954196>Command",
                                 value: `\`\`\`${cmdname.toLowerCase()}\`\`\``,
                                 inline: true,
                             }],
