@@ -25,12 +25,12 @@ module.exports = async (client, interaction, args) => {
                     text: `The ticket message has been set successfully`,
                     fields: [
                         {
-                            name: `<:i_:1071780309865091173>┆Message type`,
+                            name: `<:i_:1205412741087494174><:arrowright:1205414889451954196>Message type`,
                             value: `${type}`,
                             inline: true
                         },
                         {
-                            name: `<:chatzz:1071790624929501184>┆Message`,
+                            name: `<:arrowright:1205414889451954196><:arrowright:1205414889451954196>Message`,
                             value: `${data.openTicket}`,
                             inline: true
                         },
@@ -65,12 +65,12 @@ module.exports = async (client, interaction, args) => {
             text: `The ticket message has been set successfully`,
             fields: [
                 {
-                    name: `<:i_:1071780309865091173>┆Message type`,
+                    name: `<:i_:1205412741087494174><:arrowright:1205414889451954196>Message type`,
                     value: `${type}`,
                     inline: true
                 },
                 {
-                    name: `<:chatzz:1071790624929501184>┆Message`,
+                    name: `<:messagexxc:1205558617416400926><:arrowright:1205414889451954196>Message`,
                     value: `${message}`,
                     inline: true
                 },
@@ -90,12 +90,12 @@ module.exports = async (client, interaction, args) => {
                     text: `The ticket message has been set successfully`,
                     fields: [
                         {
-                            name: `<:i_:1071780309865091173>┆Message type`,
+                            name: `<:i_:1205412741087494174><:arrowright:1205414889451954196>Message type`,
                             value: `${type}`,
                             inline: true
                         },
                         {
-                            name: `<:chatzz:1071790624929501184>┆Message`,
+                            name: `<:messagexxc:1205558617416400926><:arrowright:1205414889451954196>Message`,
                             value: `${data.dmMessage}`,
                             inline: true
                         },
@@ -130,12 +130,12 @@ module.exports = async (client, interaction, args) => {
             text: `The ticket message has been set successfully`,
             fields: [
                 {
-                    name: `<:i_:1071780309865091173>┆Message type`,
+                    name: `<:i_:1205412741087494174><:arrowright:1205414889451954196>Message type`,
                     value: `${type}`,
                     inline: true
                 },
                 {
-                    name: `<:chatzz:1071790624929501184>┆Message`,
+                    name: `<:messagexxc:1205558617416400926><:arrowright:1205414889451954196>Message`,
                     value: `${message}`,
                     inline: true
                 },
