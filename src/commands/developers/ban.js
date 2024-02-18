@@ -37,10 +37,10 @@ module.exports = async (client, interaction, args) => {
                 }, interaction)
 
                 let embedLogs = new Discord.EmbedBuilder()
-                    .setTitle(`🔨・Ban added`)
+                    .setTitle(`<:banxxc:1208768974506950686><:arrowright:1205414889451954196>Ban added`)
                     .setDescription(`<@!${member.id}> (${member.id}) banned from the bot`)
                     .addFields(
-                        { name: "👤┆Banned By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+                        { name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>Banned By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
                     )
                     .setColor(client.config.colors.normal)
                     .setFooter({ text: client.config.discord.footer })
@@ -62,10 +62,10 @@ module.exports = async (client, interaction, args) => {
                     }, interaction)
 
                     let embedLogs = new Discord.EmbedBuilder()
-                        .setTitle(`🔨・Ban removed`)
+                        .setTitle(`<:banxxc:1208768974506950686><:arrowright:1205414889451954196>Ban removed`)
                         .setDescription(`<@!${member.id}> (${member.id}) unbanned from the bot`)
                         .addFields(
-                            { name: "👤┆Unbanned By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
+                            { name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>Unbanned By", value: `${interaction.user} (${interaction.user.tag})`, inline: true },
                         )
                         .setColor(client.config.colors.normal)
                         .setFooter({ text: client.config.discord.footer })
