@@ -14,7 +14,7 @@ module.exports = async (client, interaction, args) => {
 
     if (name.toUpperCase() == "HELP") {
         return client.embed({
-            title: `ℹ️・Channel name options`,
+            title: `<:i_:1205412741087494174><:arrowright:1205414889451954196>Channel name options`,
             desc: `These are the channel name options: \n
             \`{emoji}\` - Channel emoji
             \`{name}\` - Channel name`,
@@ -38,7 +38,7 @@ module.exports = async (client, interaction, args) => {
             text: `The channel name has been set successfully`,
             fields: [
                 {
-                    name: `<:chatzz:1071790624929501184>┆Name`,
+                    name: `<:messagexxc:1205558617416400926><:arrowright:1205414889451954196>Name`,
                     value: `${name}`,
                     inline: true
                 },
