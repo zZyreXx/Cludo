@@ -10,27 +10,27 @@ module.exports = async (client, interaction, args) => {
 
     if (message == "information") {
         client.simpleEmbed({
-            image: `https://cdn.discordapp.com/attachments/843487478881976381/874742689017520128/Bot_banner_information.jpg`
+            image: `https://cdn.discordapp.com/attachments/1064478382504550400/1205446107279265812/CLUDO_1_2.png?ex=65e1a0ac&is=65cf2bac&hm=d9162faec278995d0da71fe9f644ce514bc2c4718892143f824be0aa4523551f&`
         }, interaction.channel).then(() => {
             client.embed({
-                title: `ℹ️・Information`,
+                title: `<:i_:1205412741087494174><:arrowright:1205414889451954196>Information`,
                 thumbnail: client.user.avatarURL({ size: 1024 }),
                 desc: `_____`,
                 fields: [
                     {
-                        name: `<:dangrr:1071791074173014158>┆Welcome to ${interaction.guild.name}!`,
+                        name: `<:cludoxc:1205719737766776872><:arrowright:1205414889451954196>Welcome to ${interaction.guild.name}!`,
                         value: `Welcome to our hangout place! Meet new people here, play some games and participate in seasonal events! We are a server where we bring everyone together and we try to make it comfortable for everyone! Please be welcome and have some fun!`,
                     },
                     {
-                        name: `<:helpzz:1072010469142974504>┆What can I do here?`,
+                        name: `<:__:1205407307811262466><:arrowright:1205414889451954196>What can I do here?`,
                         value: `- Meet new people! \n- Play many fun games! \n- Discover the seasons! \n- Participate in events! \nAnd…. Last but not least, choose your own roles at <#847867992044994561>!`,
                     },
                     {
-                        name: `<:chatzz:1071790624929501184>┆How do I get help when needed?`,
+                        name: `<:messagexxc:1205558617416400926><:arrowright:1205414889451954196>How do I get help when needed?`,
                         value: `You can make a ticket in <#820308164322656327>! We are happy to help you with your questions here and offer support in your server!`,
                     },
                     {
-                        name: `<:settingzz:1072016300848730182>┆I want to help Bot Hangout to improve!`,
+                        name: `<:cofxz:1205548007085310073><:arrowright:1205414889451954196>I want to help Bot Hangout to improve!`,
                         value: `- Go to applications and see what kind of jobs are available! \n- Or make a ticket and ask if you can help with certain things! \n\n**We wish you a very nice and happy time here!**`,
                     }
                 ]
@@ -40,10 +40,10 @@ module.exports = async (client, interaction, args) => {
 
     if (message == "rules") {
         client.simpleEmbed({
-            image: `https://cdn.discordapp.com/attachments/843487478881976381/874742702393131038/Bot_banner_rules.jpg`
+            image: `https://cdn.discordapp.com/attachments/1064478382504550400/1205446107279265812/CLUDO_1_2.png?ex=65e1a0ac&is=65cf2bac&hm=d9162faec278995d0da71fe9f644ce514bc2c4718892143f824be0aa4523551f&`
         }, interaction.channel).then(async () => {
             await client.embed({
-                title: `<:i_:1071780309865091173>・Rules`,
+                title: `<:i_:1205412741087494174><:arrowright:1205414889451954196>Rules`,
                 thumbnail: client.user.avatarURL({ size: 1024 }),
                 desc: `_____ \n\nThese are our server rules. Please stick to this to keep it fun for everyone. The Admins and Mods will Timeout/Kick/Ban per discretion`,
             }, interaction.channel)
@@ -102,35 +102,35 @@ module.exports = async (client, interaction, args) => {
 
     if (message == "applications") {
         client.simpleEmbed({
-            image: `https://cdn.discordapp.com/attachments/843487478881976381/874742737415581786/Bot_banner_applications.jpg`
+            image: `https://cdn.discordapp.com/attachments/1064478382504550400/1205446107279265812/CLUDO_1_2.png?ex=65e1a0ac&is=65cf2bac&hm=d9162faec278995d0da71fe9f644ce514bc2c4718892143f824be0aa4523551f&`
         }, interaction.channel).then(() => {
             client.embed({
-                title: `<:writezzz:1071792217888391270>・Applications`,
+                title: `<:noepds:1205561401909710899><:arrowright:1205414889451954196>Applications`,
                 thumbnail: client.user.avatarURL({ size: 1024 }),
                 desc: `_____ \n\nWhat could be more fun than working at the best bot/server? We regularly have spots for new positions that you can apply for \n\nBut... what can you expect?`,
                 fields: [
                     {
-                        name: `<:memberzz:1071796953580572744>┆A very nice team`,
+                        name: `<:imagexxc:1205556299908255824><:arrowright:1205414889451954196>A very nice team`,
                         value: `In the Bot team there is always a pleasant atmosphere and everyone is treated equally!`,
                     },
                     {
-                        name: `<:logzz:1071794113982255134>┆Access to the beta program`,
+                        name: `<:imagexxc:1205556299908255824><:arrowright:1205414889451954196>Access to the beta program`,
                         value: `Get access to unreleased Bot features with your own server! You are a real Bot tester!`,
                     },
                     {
-                        name: `<:pluzz:1071791525824049244>┆A nice rank and badge`,
+                        name: `<:imagexxc:1205556299908255824><:arrowright:1205414889451954196>A nice rank and badge`,
                         value: `You will get a nice rank in the server and a team badge in our userinfo command. Everyone can see that you contribute to the team`,
                     },
                     {
-                        name: `<:chatzz:1071790624929501184>┆Learn and grow`,
+                        name: `<:imagexxc:1205556299908255824><:arrowright:1205414889451954196>Learn and grow`,
                         value: `We understand that you don't always understand everything right away! At Bot, we give you the opportunity to learn new things and get better at the position. You can also grow into the management team in the future!`,
                     },
                     {
-                        name: `<:i_:1071780309865091173>┆What does everything mean?`,
+                        name: `<:imagexxc:1205556299908255824><:arrowright:1205414889451954196>What does everything mean?`,
                         value: `**Moderator** \nYou keep yourself busy with the server that everything is and remains fun for everyone! Chat with us and keep the overview \n\n**Marketing** \nWe also want to grow and we do that with a great marketing team! You know better than anyone how to make a server grow well \n\n**Organization** \nYou will ensure an even nicer atmosphere in the server! Together with a team you work on new and fun events to make the server even more fun!`,
                     },
                     {
-                        name: `<:chatzz:1071790624929501184>┆Apply?`,
+                        name: `<:imagexxc:1205556299908255824><:arrowright:1205414889451954196>Apply?`,
                         value: `Create a ticket to receive your application!`,
                     }
                 ]
@@ -140,55 +140,55 @@ module.exports = async (client, interaction, args) => {
 
     if (message == "boosterperks") {
         client.simpleEmbed({
-            image: `https://media.discordapp.net/attachments/843487478881976381/881396544195149874/Bot_banner_boosters.jpg`
+            image: `https://cdn.discordapp.com/attachments/1064478382504550400/1205446107279265812/CLUDO_1_2.png?ex=65e1a0ac&is=65cf2bac&hm=d9162faec278995d0da71fe9f644ce514bc2c4718892143f824be0aa4523551f&`
         }, interaction.channel).then(() => {
             client.embed({
-                title: `<:infinityzz:1071792533606244463>・Booster Perks`,
+                title: `<:heartxx:1205547235752804373><:arrowright:1205414889451954196>Booster Perks`,
                 thumbnail: client.user.avatarURL({ size: 1024 }),
                 desc: `_____ \n\nMore options in the server? Become a real Bot Booster and get nice benefits for a nice experience. But what do you actually get?`,
                 fields: [
                     {
-                        name: `<:serverzz:1071796723128746084>┆Use external stickers`,
+                        name: `<:round:1205428303150714880><:arrowright:1205414889451954196>Use external stickers`,
                         value: `Use stickers from other servers in our server`,
                     },
                     {
-                        name: `<:vczzz:1071797171948634266>┆Send TTS messages`,
+                        name: `<:round:1205428303150714880><:arrowright:1205414889451954196>Send TTS messages`,
                         value: `Send messages that have a sound attached`,
                     },
                     {
-                        name: `<:i_:1071780309865091173>┆Access to the hidden lounge`,
+                        name: `<:round:1205428303150714880><:arrowright:1205414889451954196>Access to the hidden lounge`,
                         value: `Get access to a private lounge and chat with other boosters!`,
                     },
                     {
-                        name: `<:memberzz:1071796953580572744>┆Change your nickname`,
+                        name: `<:round:1205428303150714880><:arrowright:1205414889451954196>Change your nickname`,
                         value: `Change your name in the server. This is how you stand out in the server`,
                     },
                     {
-                        name: `<:chatzz:1071790624929501184>┆Create public/private threads`,
+                        name: `<:round:1205428303150714880><:arrowright:1205414889451954196>Create public/private threads`,
                         value: `Create a thread in our text channels`,
                     },
                     {
-                        name: `<:tdzz:1072018197269712967>┆Private giveaways`,
+                        name: `<:round:1205428303150714880><:arrowright:1205414889451954196>Private giveaways`,
                         value: `Get access to fun exclusive giveaways`,
                     },
                     {
-                        name: `<:folderr:1071798946688680027>┆Send files in any channel`,
+                        name: `<:round:1205428303150714880><:arrowright:1205414889451954196>Send files in any channel`,
                         value: `Send files in all channels where you can talk`,
                     },
                     {
-                        name: `<:infinityzz:1071792533606244463>┆Get access to a special promotional channel`,
+                        name: `<:round:1205428303150714880><:arrowright:1205414889451954196>Get access to a special promotional channel`,
                         value: `Get the opportunity to promote your own server in a special channel`,
                     },
                     {
-                        name: `<:i_:1071780309865091173>┆Custom role of your choice`,
+                        name: `<:round:1205428303150714880><:arrowright:1205414889451954196>Custom role of your choice`,
                         value: `Create your own role that you can set yourself`,
                     },
                     {
-                        name: `<:logzz:1071794113982255134>┆Get the booster role + badge`,
+                        name: `<:round:1205428303150714880><:arrowright:1205414889451954196>Get the booster role + badge`,
                         value: `Stand out with a nice booster role and a booster badge!`,
                     },
                     {
-                        name: `<:compzz:1071795353445220432>┆Access to new bèta updates in Bot`,
+                        name: `<:round:1205428303150714880><:arrowright:1205414889451954196>Access to new bèta updates in Bot`,
                         value: `We'll give your server access to updates that aren't out yet! How nice is that?`,
                     }
                 ]
@@ -197,26 +197,26 @@ module.exports = async (client, interaction, args) => {
     }
 
     if (message == "links") {
-        client.simpleEmbed({
-            image: `https://media.discordapp.net/attachments/843487478881976381/881396544195149874/Bot_banner_boosters.jpg`
-        }, interaction.channel).then(() => {
-            client.embed({
-                title: `<:linkee:1071784295594737768>・Links`,
-                thumbnail: client.user.avatarURL({ size: 1024 }),
-                desc: `_____ \n\nSee all the links from Bot Network!`,
-                fields: [
-                    {
-                        name: `▬▬│Servers│▬▬`,
-                        value: ``,
-                    }
-                ]
-            }, interaction.channel)
-        })
-    }
+    client.simpleEmbed({
+        image: `https://cdn.discordapp.com/attachments/1064478382504550400/1205446107279265812/CLUDO_1_2.png?ex=65e1a0ac&is=65cf2bac&hm=d9162faec278995d0da71fe9f644ce514bc2c4718892143f824be0aa4523551f&`
+    }, interaction.channel).then(() => {
+        client.embed({
+            title: "<:linkee:1205416083469762610><:arrowright:1205414889451954196>Links",
+            thumbnail: { url: client.user.avatarURL({ size: 1024 }) },
+            description: "_____ \n\nSee all the links from Bot Network!",
+            fields: [
+                {
+                    name: "▬▬│Servers│▬▬",
+                    value: "Your server links here", // Add your server links here
+                }
+            ]
+        }, interaction.channel)
+    })
+}
 
     if (message == "rewards") {
         client.embed({
-            title: `<:pluzz:1071791525824049244>・Role Rewards`,
+            title: `<:lightzz:1205565101499744377><:arrowright:1205414889451954196>Role Rewards`,
             thumbnail: client.user.avatarURL({ size: 1024 }),
             desc: `_____ \n\nDo you want some extras in the server? Or do you want to stand out more in the server? Look below for the rewards`,
             fields: [
