@@ -40,7 +40,7 @@ module.exports = {
 
         if (type == "bug") {
             const embed = new Discord.EmbedBuilder()
-                .setTitle(`📣・New bug report!`)
+                .setTitle(`<:megaz:1205540030055981116><:arrowright:1205414889451954196>New bug report!`)
                 .addFields(
                     { name: "Report category", value: "Bug", inline: true },
                     { name: "Submitted by", value: `${interaction.user.tag}`, inline: true },
@@ -59,7 +59,7 @@ module.exports = {
         }
         else if (type == "user") {
             const embed = new Discord.EmbedBuilder()
-                .setTitle(`📣・New user report!`)
+                .setTitle(`<:megaz:1205540030055981116><:arrowright:1205414889451954196>New user report!`)
                 .addFields(
                     { name: "Report category", value: "User", inline: true },
                     { name: "Submitted by", value: `${interaction.user.tag}`, inline: true },
