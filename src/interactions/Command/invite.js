@@ -29,7 +29,7 @@ module.exports = {
             );
 
         client.embed({
-            title: `📨・Invite`,
+            title: `<:linkee:1205416083469762610><:arrowright:1205414889451954196>Invite`,
             desc: `Make your server even better with Bot!`,
             image: "https://cdn.discordapp.com/attachments/843487478881976381/874694194474668052/Bot_banner_invite.jpg",
             url: client.config.discord.botInvite,
