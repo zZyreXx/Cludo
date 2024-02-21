@@ -228,6 +228,35 @@ module.exports = async (client, message) => {
     if (!data) return;
     if (message.channel.id !== data.Channel) return;
     if (process.env.OPENAI) {
+         fetch(
+        `https://api.openai.com/v1/chat/completions`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + process.env.OPENAI,
+          },
+          body: JSON.stringify({
+            'model': 'gpt-3.5-turbo',
+            'messages': [{
+              'role': 'user',
+              'content': message.content
+            }]
+          })
+        }
+      )
+        .catch(() => {
+        })
+        .then((res) => {
+          res.json().then((data) => {
+            if(data.error) return;
+            message.reply({ content: data.choices[0].message.content });
+          });
+        });
+    } else {
+      try {
+        const input = message;
+        try {
           fetch(
             `https://api.coreware.nl/fun/chat?msg=${encodeURIComponent(input)}&uid=${message.author.id}`,
           )
@@ -256,6 +285,7 @@ module.exports = async (client, message) => {
       } catch { }
     }
   });
+  
   // Sticky messages
   try {
     Schema.findOne(
