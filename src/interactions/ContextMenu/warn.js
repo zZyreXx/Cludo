@@ -94,16 +94,16 @@ module.exports = {
         })
 
         client.embed({
-            title: `🔨・Warn`,
+            title: `<:banxxc:1208768974506950686><:arrowright:1205414889451954196>Warn`,
             desc: `You've been warned in **${interaction.guild.name}**`,
             fields: [
                 {
-                    name: "👤┆Moderator",
+                    name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>Moderator",
                     value: interaction.user.tag,
                     inline: true
                 },
                 {
-                    name: "📄┆Reason",
+                    name: "<:messagexc:1205567224362958868><:arrowright:1205414889451954196>Reason",
                     value: submitted.fields.getTextInputValue("reason"),
                     inline: true
                 }
@@ -115,17 +115,17 @@ module.exports = {
             text: `User has received a warning!`,
             fields: [
                 {
-                    name: "👤┆User",
+                    name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>User",
                     value: `${member}`,
                     inline: true
                 },
                 {
-                    name: "👤┆Moderator",
+                    name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>Moderator",
                     value: `${interaction.user}`,
                     inline: true
                 },
                 {
-                    name: "📄┆Reason",
+                    name: "<:messagexxc:1205558617416400926><:arrowright:1205414889451954196>Reason",
                     value: submitted.fields.getTextInputValue("reason"),
                     inline: false
                 }
