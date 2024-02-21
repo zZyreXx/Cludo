@@ -47,7 +47,7 @@ module.exports = {
                 });
                 // Create a new message with the menu
                 client.embed({
-                    title: `🔨・Unwarn`,
+                    title: `<:banxxc:1208768974506950686><:arrowright:1205414889451954196>Unwarn`,
                     desc: `Select a warning to remove from **${member.user.tag}**`,
                     components: [new Discord.ActionRowBuilder().addComponents(menu)],
                     type: 'ephemeraledit'
@@ -71,7 +71,7 @@ module.exports = {
                             text: `The warning has been successfully removed`,
                             fields: [
                                 {
-                                    name: "👤┆User",
+                                    name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>User",
                                     value: `${member}`,
                                     inline: true
                                 }
@@ -80,11 +80,11 @@ module.exports = {
                         }, interaction);
                         client.emit('warnRemove', member, interaction.user)
                         client.embed({
-                            title: `🔨・Unwarn`,
+                            title: `<:banxxc:1208768974506950686><:arrowright:1205414889451954196>Unwarn`,
                             desc: `You've been unwarned in **${interaction.guild.name}**`,
                             fields: [
                                 {
-                                    name: "👤┆Moderator",
+                                    name: "<:persn:1205425561720193046><:arrowright:1205414889451954196>Moderator",
                                     value: interaction.user.tag,
                                     inline: true
                                 },
