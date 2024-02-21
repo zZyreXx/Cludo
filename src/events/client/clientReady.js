@@ -12,7 +12,7 @@ module.exports = async (client) => {
   console.log(chalk.blue(chalk.bold(`Bot`)), (chalk.white(`>>`)), chalk.green(`Started on`), chalk.red(`${client.guilds.cache.size}`), chalk.green(`servers!`))
 
   let embed = new Discord.EmbedBuilder()
-    .setTitle(`<:upzzz:1071797858531016704>・Finishing Bot`)
+    .setTitle(`<:cludoxc:1205719737766776872><:arrowright:1205414889451954196>Finishing Bot`)
     .setDescription(`A bot just became ready`)
     .setColor(client.config.colors.normal)
   startLogs.send({
@@ -35,7 +35,7 @@ module.exports = async (client) => {
       ];
     }
     const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
-    client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Watching }], status: 'Online' });
+    client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Watching }], status: 'Dnd' });
   }, 50000)
 
   client.player.init(client.user.id);
