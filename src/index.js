@@ -91,16 +91,16 @@ console.log(`\u001b[0m`);
 
 manager.on('shardCreate', shard => {
     let embed = new Discord.EmbedBuilder()
-        .setTitle(`🆙・Launching shard`)
+        .setTitle(`<:cludoxc:1205719737766776872><:arrowright:1205414889451954196>Launching shard`)
         .setDescription(`A shard has just been launched`)
         .setFields([
             {
-                name: "🆔┆ID",
+                name: "<:guildxx:1205555662008881182><:arrowright:1205414889451954196>ID",
                 value: `${shard.id + 1}/${manager.totalShards}`,
                 inline: true
             },
             {
-                name: `📃┆State`,
+                name: `<:uptimex:1205871485424631828><:arrowright:1205414889451954196>State`,
                 value: `Starting up...`,
                 inline: true
             }
@@ -116,10 +116,10 @@ manager.on('shardCreate', shard => {
 
     shard.on("death", (process) => {
         const embed = new Discord.EmbedBuilder()
-            .setTitle(`🚨・Closing shard ${shard.id + 1}/${manager.totalShards} unexpectedly`)
+            .setTitle(`<:status:1205426484223938580><:arrowright:1205414889451954196>Closing shard ${shard.id + 1}/${manager.totalShards} unexpectedly`)
             .setFields([
                 {
-                    name: "🆔┆ID",
+                    name: "<:cludoxc:1205719737766776872><:arrowright:1205414889451954196>ID",
                     value: `${shard.id + 1}/${manager.totalShards}`,
                 },
             ])
@@ -131,7 +131,7 @@ manager.on('shardCreate', shard => {
 
         if (process.exitCode === null) {
             const embed = new Discord.EmbedBuilder()
-                .setTitle(`🚨・Shard ${shard.id + 1}/${manager.totalShards} exited with NULL error code!`)
+                .setTitle(`<:status:1205426484223938580><:arrowright:1205414889451954196>Shard ${shard.id + 1}/${manager.totalShards} exited with NULL error code!`)
                 .setFields([
                     {
                         name: "PID",
@@ -152,7 +152,7 @@ manager.on('shardCreate', shard => {
 
     shard.on("shardDisconnect", (event) => {
         const embed = new Discord.EmbedBuilder()
-            .setTitle(`🚨・Shard ${shard.id + 1}/${manager.totalShards} disconnected`)
+            .setTitle(`<:status:1205426484223938580><:arrowright:1205414889451954196>Shard ${shard.id + 1}/${manager.totalShards} disconnected`)
             .setDescription("Dumping socket close event...")
             .setColor(config.colors.normal)
         shardLogs.send({
@@ -163,7 +163,7 @@ manager.on('shardCreate', shard => {
 
     shard.on("shardReconnecting", () => {
         const embed = new Discord.EmbedBuilder()
-            .setTitle(`🚨・Reconnecting shard ${shard.id + 1}/${manager.totalShards}`)
+            .setTitle(`<:status:1205426484223938580><:arrowright:1205414889451954196>Reconnecting shard ${shard.id + 1}/${manager.totalShards}`)
             .setColor(config.colors.normal)
         shardLogs.send({
             username: 'Cludo Logs',
@@ -193,7 +193,7 @@ process.on('unhandledRejection', error => {
     if (error.stack) if (error.stack.length > 950) error.stack = error.stack.slice(0, 950) + '... view console for details';
     if (!error.stack) return
     const embed = new Discord.EmbedBuilder()
-        .setTitle(`🚨・Unhandled promise rejection`)
+        .setTitle(`<:status:1205426484223938580><:arrowright:1205414889451954196>Unhandled promise rejection`)
         .addFields([
             {
                 name: "Error",
@@ -216,7 +216,7 @@ process.on('unhandledRejection', error => {
 process.on('warning', warn => {
     console.warn("Warning:", warn);
     const embed = new Discord.EmbedBuilder()
-        .setTitle(`🚨・New warning found`)
+        .setTitle(`<:status:1205426484223938580><:arrowright:1205414889451954196>New warning found`)
         .addFields([
             {
                 name: `Warn`,
