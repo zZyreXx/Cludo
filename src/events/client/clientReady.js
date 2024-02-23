@@ -35,7 +35,7 @@ module.exports = async (client) => {
       ];
     }
     const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
-    client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Watching }], status: 'Idle' });
+    client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Watching }], status: 'dnd' });
   }, 50000)
 
   client.player.init(client.user.id);
