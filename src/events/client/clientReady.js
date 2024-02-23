@@ -30,7 +30,7 @@ module.exports = async (client) => {
         `/help`,
         `${totalGuilds} servers`,
         `cludo.yml`,
-        `disc.gg/cludo`,
+        `tiny.cc/Cludo`,
         `Version ${require(`${process.cwd()}/package.json`).version}`
       ];
     }
