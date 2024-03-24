@@ -47,7 +47,7 @@ If you like this repository, feel free to leave a star ⭐ to motivate me!
 <br />
 <p align="center">
   <a href="https://github.com/zZyreXx/Cludo">
-    <img src="https://cdn.discordapp.com/attachments/1064478382504550400/1203594253075353610/Screenshot_2024-02-04_122330.png?ex=65d1a97f&is=65bf347f&hm=3de7e0d39f2c8ed5a9b421b87e0af3bce38f42293d08951c488e9ccfcfcb6bf5&">
+    <img src="https://cdn.discordapp.com/attachments/1064478382504550400/1221424119229452298/Screenshot_2024-03-24_171259.png?ex=661286da&is=660011da&hm=00b52e2a8447fd8261997d981f754ff79a5779d6f02f77a1f11dcba50b356a9c&">
   </a>
 </p>
 
