@@ -66,15 +66,15 @@ if (clientID && clientSecret) {
         ],
         nodes: [
             {
-                host: process.env.LAVALINK_HOST || "lava.link",
-                port: parseInt(process.env.LAVALINK_PORT) || 80,
-                password: process.env.LAVALINK_PASSWORD || "CorwinDev",
+                host: process.env.LAVALINK_HOST || "the-net.loves-genshin.lol",
+                port: parseInt(process.env.LAVALINK_PORT) || 2333,
+                password: process.env.LAVALINK_PASSWORD || "luxurydev.eu",
                 secure: Boolean(process.env.LAVALINK_SECURE) || false
             },
             {
-                host: "lavalink.techpoint.world",
-                port: 80,
-                password: "techpoint"
+                host: "209.145.62.164",
+                port: 50117,
+                password: "redant"
             },
         ],
         send(id, payload) {
@@ -93,9 +93,9 @@ if (clientID && clientSecret) {
         ],
         nodes: [
             {
-                host: process.env.LAVALINK_HOST || "lava.link",
-                port: parseInt(process.env.LAVALINK_PORT) || 80,
-                password: process.env.LAVALINK_PASSWORD || "CorwinDev",
+                host: process.env.LAVALINK_HOST || "node.raidenbot.xyz",
+                port: parseInt(process.env.LAVALINK_PORT) || 5500,
+                password: process.env.LAVALINK_PASSWORD || "pwd",
                 secure: Boolean(process.env.LAVALINK_SECURE) || false
             },
         ],
