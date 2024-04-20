@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', 'sans-serif';
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -109,11 +109,13 @@ body {
     animation: showRight 1s ease forwards;
     animation-delay: 1.3s;
 }
+
 .home-content p {
     font-size: 16px;
     margin: 20px 0 40px;
 }
-.home-content .btn-box {
+
+.btn-box {
     display: flex;
     justify-content: space-between;
     width: 345px;
@@ -173,6 +175,7 @@ body {
 .btn-box a:hover:before {
     width: 100%;
 }
+
 .home-sci {
     position: absolute;
     bottom: 40px;
@@ -219,11 +222,127 @@ body {
     width: 100%;
 } 
 
+/* About Section Styles */
+.about {
+    padding: 100px 10%;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #081b29;
+}
+
+.about-content p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Vote Section Styles */
+.vote {
+    padding: 100px 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.vote-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vote-content h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #081b29;
+}
+
+.vote-content p {
+    font-size: 18px;
+    color: #666;
+}
+
+.vote-links {
+    margin-top: 30px;
+}
+
+.vote-links a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #00abf0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Discord Section Styles */
+.discord {
+    padding: 100px 10%;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.discord-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.discord-content h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #081b29;
+}
+
+.discord-content p {
+    font-size: 18px;
+    color: #666;
+}
+
+.discord-content a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    background-color: #00abf0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/* Developer Section Styles */
+.developer {
+    padding: 100px 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.developer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.developer-content h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #081b29;
+}
+
+.developer-content p {
+    font-size: 18px;
+    color: #666;
+}
 
 /* KEYFRAME ANIMATIONS */
 @keyframes showRight {
     100% {
         width: 0;
-
     }
 }
