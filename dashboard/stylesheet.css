@@ -276,7 +276,7 @@ body {
     display: inline-block;
     margin: 0 10px;
     padding: 10px 20px;
-    background-color: #00abf0;
+    background-color: #00acf0;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -338,6 +338,24 @@ body {
 .developer-content p {
     font-size: 18px;
     color: #666;
+}
+
+/* Footer Section Styles */
+.footer {
+    background-color: #00acf0;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-content p::before {
+    content: '\2022'; /* Bullet point character */
+    margin-right: 5px;
 }
 
 /* KEYFRAME ANIMATIONS */
