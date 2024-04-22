@@ -33,12 +33,12 @@ module.exports = async (client, interaction, args) => {
             text: `Verify panel has been successfully created`,
             fields: [
                 {
-                    name: `<:megaz:1205540030055981116><:arrowright:1205414889451954196>Channel`,
+                    name: `📘┆Channel`,
                     value: `${channel} (${channel.name})`,
                     inline: true
                 },
                 {
-                    name: `<:i_:1205412741087494174><:arrowright:1205414889451954196>Role`,
+                    name: `📛┆Role`,
                     value: `${role} (${role.name})`,
                     inline: true
                 }
@@ -50,7 +50,7 @@ module.exports = async (client, interaction, args) => {
             .addComponents(
                 new Discord.ButtonBuilder()
                     .setCustomId('Bot_verify')
-                    .setEmoji('<:tickzz:1208744096110477313>')
+                    .setEmoji('✅')
                     .setStyle(Discord.ButtonStyle.Success),
             );
 
@@ -61,5 +61,3 @@ module.exports = async (client, interaction, args) => {
         }, channel)
     }
 }
-
- 
