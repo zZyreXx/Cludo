@@ -223,68 +223,89 @@ module.exports = async (client, message) => {
     }
   });
 
-  // Chat bot
-    chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
-    if (!data) return;
-    if (message.channel.id !== data.Channel) return;
-    if (process.env.OPENAI) {
-         fetch(
-        `https://chat-app-f2d296.zapier.app/`,
+// Chat bot
+chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
+  if (!data) return;
+  if (message.channel.id !== data.Channel) return;
+  if (process.env.OPENAI) {
+    fetch(
+      `https://chat-app-f2d296.zapier.app/`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + process.env.OPENAI,
+        },
+        body: JSON.stringify({
+          'model': 'gpt-3.5-turbo',
+          'messages': [{
+            'role': 'user',
+            'content': message.content
+          }]
+        })
+      }
+    )
+      .catch(() => {
+        console.error('Error while fetching from OpenAI.');
+      })
+      .then((res) => {
+        res.json().then((data) => {
+          if (data.error) return console.error('OpenAI error:', data.error);
+          message.reply({ content: data.choices[0].message.content });
+        });
+      });
+  } else if (process.env.GEMINI_AI) {
+    try {
+      const response = await fetch(
+        'https://api.gemini-ai.com/v1/chat',
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + process.env.OPENAI,
+            'Authorization': 'Bearer ' + process.env.GEMINI_AI,
           },
           body: JSON.stringify({
-            'model': 'gpt-3.5-turbo',
-            'messages': [{
-              'role': 'user',
-              'content': message.content
-            }]
+            'message': message.content,
+            'user_id': message.author.id
           })
         }
-      )
-        .catch(() => {
-        })
-        .then((res) => {
-          res.json().then((data) => {
-            if(data.error) return;
-            message.reply({ content: data.choices[0].message.content });
-          });
-        });
-    } else {
-      try {
-        const input = message;
-        try {
-          fetch(
-            `https://api.coreware.nl/fun/chat?msg=${encodeURIComponent(input)}&uid=${message.author.id}`,
-          )
-            .catch(() => { console.log })
-            .then((res) => res.json())
-            .catch(() => { console.log})
-            .then(async (json) => {
-              console.log(json);
-              if (json) {
-                if (
-                  json.response !== " " ||
-                  json.response !== undefined ||
-                  json.response !== "" ||
-                  json.response !== null
-                ) {
-                  try {
-                    return message
-                      .reply({ content: json.response })
-                      .catch(() => { });
-                  } catch { }
-                }
-              }
-            })
-            .catch(() => { });
-        } catch { }
-      } catch { }
+      );
+      const responseData = await response.json();
+      if (responseData && responseData.result) {
+        message.reply({ content: responseData.result });
+      }
+    } catch (error) {
+      console.error('Error while fetching from Gemini AI:', error);
     }
-  });
+  } else {
+    try {
+      const input = message;
+      try {
+        fetch(
+          `https://api.coreware.nl/fun/chat?msg=${encodeURIComponent(input)}&uid=${message.author.id}`,
+        )
+          .catch(() => { console.error('Error while fetching from fallback service.'); })
+          .then((res) => res.json())
+          .catch(() => { console.error('Error parsing JSON from fallback service response.'); })
+          .then(async (json) => {
+            console.log(json);
+            if (json && json.response) {
+              try {
+                message.reply({ content: json.response });
+              } catch (error) {
+                console.error('Error replying from fallback service:', error);
+              }
+            }
+          })
+          .catch((error) => { console.error('Error while fetching from fallback service:', error); });
+      } catch (error) {
+        console.error('Error in fallback service request:', error);
+      }
+    } catch (error) {
+      console.error('Error in fallback service:', error);
+    }
+  }
+});
   
   // Sticky messages
   try {
