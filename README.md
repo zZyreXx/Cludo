@@ -81,7 +81,7 @@ node src/index.js
 ```
 
 ## <img src="https://cdn.discordapp.com/emojis/1036083490292244493.png" width="15px" height="15px">》Support Server
-[![DiscordBanner](dashboard/Screenshot 2024-04-29 050841.png)]([https://discord.gg/techpoint-1016942011024158782](https://discord.gg/vVwndu9VuC))
+[![DiscordBanner](Screenshot 2024-04-29 050841.png)](https://discord.gg/gJc5CBCC6w)
 
 [Support Server](https://discord.gg/vVwndu9VuC) - Discord-Bot's Support Server Invite
 
