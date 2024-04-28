@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/zZyreXx/Cludo">
-    <img src="https://ibb.co/5F1KmSp" alt="Cludo" width="200" height="200">
+    <img src="dashboard/483f83ef63cf74354ee1cf60860c155e.webp" alt="Cludo" width="200" height="200">
   </a>
 
   <h3 align="center">Cludo-RoBot</h3>
