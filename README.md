@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/zZyreXx/Cludo">
-    <img src="https://media.discordapp.net/attachments/1064478382504550400/1072065834085793792/483f83ef63cf74354ee1cf60860c155e.webp?ex=660a6b1c&is=65f7f61c&hm=c5ac7b99990cda2f86077243d01c5b946de99a6d9bd12445f696855c7470c856&=&format=webp" alt="Pbot-plus" width="200" height="200">
+    <img src="https://ibb.co/5F1KmSp" alt="Cludo" width="200" height="200">
   </a>
 
   <h3 align="center">Cludo-RoBot</h3>
