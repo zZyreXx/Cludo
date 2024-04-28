@@ -43,7 +43,7 @@ If you like this repository, feel free to leave a star ⭐ to motivate me!
 - [x] Customizable
 - [x] And much more
 - [x] Don't wanna host it yourself? [Use our public bot](https://discord.com/api/oauth2/authorize?client_id=1071766414358216788&permissions=8&scope=applications.commands+bot)
-## <img src="[https://cdn.discordapp.com/emojis/1028680849195020308.png](https://cdn.discordapp.com/attachments/1064478382504550400/1221424119229452298/Screenshot_2024-03-24_171259.png?ex=661286da&is=660011da&hm=00b52e2a8447fd8261997d981f754ff79a5779d6f02f77a1f11dcba50b356a9c&)" width="25px" height="25px">》Screenshots
+## <img src="https://cdn.discordapp.com/emojis/1028680849195020308.png" width="25px" height="25px">》Screenshots
 <br />
 <p align="center">
   <a href="https://github.com/zZyreXx/Cludo">
