@@ -11,6 +11,7 @@ body {
     color: #081b29;
 }
 
+/* Header Section Styles */
 .header {
     position: fixed;
     top: 0;
@@ -24,6 +25,7 @@ body {
     z-index: 100;
 }
 
+/* Logo Styles */
 .logo {
     position: relative;
     font-size: 25px;
@@ -44,6 +46,7 @@ body {
     animation-delay: .4s;
 }
 
+/* Navbar Styles */
 .navbar a {
     font-size: 18px;
     color: #081b29;
@@ -58,6 +61,7 @@ body {
     color: #00abf0;
 }
 
+/* Home Section Styles */
 .home {
     height: 100vh;
     background: url('SL-031821-41530-04.jpg') no-repeat;
@@ -68,8 +72,10 @@ body {
     padding: 0 10%;
 }
 
+/* Home Content Styles */
 .home-content {
     max-width: 600px;
+    animation: fadeIn 1s ease forwards;
 }
 
 .home-content h1 {
@@ -115,6 +121,7 @@ body {
     margin: 20px 0 40px;
 }
 
+/* Button Box Styles */
 .btn-box {
     display: flex;
     justify-content: space-between;
@@ -153,7 +160,6 @@ body {
 
 .btn-box a:nth-child(2):hover {
     color: #081b29;
-
 }
 
 .btn-box a:nth-child(2)::before {
@@ -176,12 +182,13 @@ body {
     width: 100%;
 }
 
+/* Home Social Icons Styles */
 .home-sci {
     position: absolute;
     bottom: 40px;
     width: 170px;
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
 }
 
 .home-sci a {
@@ -227,6 +234,7 @@ body {
     padding: 100px 10%;
     background-color: #f9f9f9;
     text-align: center;
+    animation: fadeIn 1s ease forwards;
 }
 
 .about-content {
@@ -250,6 +258,7 @@ body {
     padding: 100px 10%;
     background-color: #fff;
     text-align: center;
+    animation: fadeIn 1s ease forwards;
 }
 
 .vote-content {
@@ -288,6 +297,7 @@ body {
     padding: 100px 10%;
     background-color: #f9f9f9;
     text-align: center;
+    animation: fadeIn 1s ease forwards;
 }
 
 .discord-content {
@@ -322,6 +332,7 @@ body {
     padding: 100px 10%;
     background-color: #fff;
     text-align: center;
+    animation: fadeIn 1s ease forwards;
 }
 
 .developer-content {
@@ -340,12 +351,45 @@ body {
     color: #666;
 }
 
+/* Changelogs Section Styles */
+.changelogs {
+    padding: 100px 10%;
+    background-color: #f9f9f9;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+}
+
+.changelogs-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.changelogs-content h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #081b29;
+}
+
+.changelogs-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.changelogs-content ul li {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
 /* Footer Section Styles */
 .footer {
     background-color: #00acf0;
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    animation: fadeIn 1s ease forwards;
 }
 
 .footer-content p {
@@ -362,5 +406,16 @@ body {
 @keyframes showRight {
     100% {
         width: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
