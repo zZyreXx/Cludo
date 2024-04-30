@@ -1,3 +1,3 @@
-# trace warnings
+#trace warnings
 node . --trace-warnings
 PAUSE
