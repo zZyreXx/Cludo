@@ -19,7 +19,8 @@ module.exports = async (client, interaction, args) => {
     // Mention roles
     if (mentionedRoles) {
         mentionedRoles.forEach(role => {
-            if (role.mentionable) {
+            // Check if the role is @everyone or @here
+            if (role.mentionable && role.name !== '@everyone' && role.name !== '@here') {
                 const roleMention = `<@&${role.id}>`;
                 mentionedText = mentionedText.replace(role.id, roleMention);
             }
@@ -46,3 +47,4 @@ module.exports = async (client, interaction, args) => {
         }, interaction)
     });
 }
+
