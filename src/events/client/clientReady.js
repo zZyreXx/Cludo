@@ -29,7 +29,7 @@ module.exports = async (client) => {
       statuttext = [
         `/help`,
         `${totalGuilds} servers`,
-        `cludo.yml`,
+        `cludo.js`,
         `tiny.cc/Cludo`,
         `Version ${require(`${process.cwd()}/package.json`).version}`
       ];
