@@ -16,7 +16,7 @@ module.exports = async (client) => {
     .setDescription(`A bot just became ready`)
     .setColor(client.config.colors.normal)
   startLogs.send({
-    username: 'Cludo',
+    username: '.Cludo',
     embeds: [embed],
   });
 
@@ -40,4 +40,3 @@ module.exports = async (client) => {
 
   client.player.init(client.user.id);
 }
-
