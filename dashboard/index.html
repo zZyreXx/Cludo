@@ -3,36 +3,57 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cludo Dashboard</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'
+        rel='stylesheet'>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
 
     <header class="header">
-        <a href="#" class="logo">Cludo.</a>
-
-        <nav class="navbar">
-            <a href="#" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#vote">Vote</a>
-            <a href="#discord">Discord</a>
-            <a href="#developer">Developer</a>
-        </nav>
+        <div class="container">
+            <div class="logo-container">
+                <a href="#" class="logo">Cludo.</a>
+            </div>
+            <nav class="navbar">
+                <a href="#" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+                <a href="#vote">Vote</a>
+                <a href="#discord">Discord</a>
+                <a href="#developer">Developer</a>
+            </nav>
+            <div class="mobile-nav-toggle"><i class='bx bx-menu'></i></div>
+        </div>
     </header>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#vote">Vote</a>
+        <a href="#discord">Discord</a>
+        <a href="#developer">Developer</a>
+    </div>
 
     <section class="home">
         <div class="home-content">
-            <h1>Welcome to Cludo</h1>
-            <h3></h3>
-            <p>Discover the power of Cludo, the Discord bot crafted to elevate your server experience with its advanced features and extensive command library. Cludo is not just a bot; it's a sophisticated companion designed to enrich every facet of your Discord community.</p>
-            <div class="btn-box">
-                <a href="https://discord.com/api/oauth2/authorize?client_id=1071766414358216788&permissions=8&scope=bot+applications.commands">Invite Me</a>
-                <a href="https://discord.gg/2gkXJ92BWU">Support</a>
+            <div class="container">
+                <h1 class="animated-text">Welcome to Cludo</h1>
+                <h3 class="animated-text">The Ultimate Discord Bot</h3>
+                <p>Discover the power of Cludo, the Discord bot meticulously crafted to elevate your server
+                    experience with its advanced features and extensive command library. Cludo is not just a bot; it's a
+                    sophisticated companion designed to enrich every facet of your Discord community.</p>
+                <div class="btn-box">
+                    <a class="animated-button"
+                        href="https://discord.com/api/oauth2/authorize?client_id=1071766414358216788&permissions=8&scope=bot+applications.commands">Invite
+                        Me</a>
+                    <a class="animated-button" href="https://discord.gg/2gkXJ92BWU">Support</a>
+                </div>
             </div>
         </div>
 
@@ -47,60 +68,109 @@
 
     <section id="changelogs" class="changelogs">
         <div class="changelogs-content">
-            <h2>Changelogs</h2>
-            <ul>
-<h1>Version: 1.10.0 (Major Update)</h1>
-<h2>Bug Resolutions:</h2>
-<p>Addressed critical issues to ensure a more stable and reliable user experience.</p>
-<h3>Dependency Updates:</h3>
-<p>Upgraded essential Node packages to maintain optimal performance and security.</p>
-<h3>Music System Enhancement:</h3>
-<p>Resolved the "no nodes available" error, ensuring uninterrupted music playback.</p>
-<h3>Radio Functionality Optimization:</h3>
-<p>Eliminated lag during /radio play command execution for seamless radio streaming.</p>
-<h3>Text Command Enhancement:</h3>
-<p>Enabled role and user mentions within the /fun text say command for enhanced communication.</p>
+            <div class="container">
+                <h2>Changelogs</h2>
+                <div class="changelog-item">
+                    <h1>Version: 1.10.0 (Major Update)</h1>
+                    <h2>Bug Resolutions:</h2>
+                    <p>Addressed critical issues to ensure a more stable and reliable user experience.</p>
+                    <h3>Dependency Updates:</h3>
+                    <p>Upgraded essential Node packages to maintain optimal performance and security.</p>
+                    <h3>Music System Enhancement:</h3>
+                    <p>Resolved the "no nodes available" error, ensuring uninterrupted music playback.</p>
+                    <h3>Radio Functionality Optimization:</h3>
+                    <p>Eliminated lag during /radio play command execution for seamless radio streaming.</p>
+                    <h3>Text Command Enhancement:</h3>
+                    <p>Enabled role and user mentions within the /fun text say command for enhanced communication.</p>
 
-<p>The development team is actively working on new features to enhance the Cludo experience. More information will be available soon. 💘</p>
-            </ul>
+                    <p>The development team is actively working on new features to enhance the Cludo experience. More
+                        information will be available soon. 💘</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="about" class="about">
         <div class="about-content">
-            <h2>About Cludo</h2>
-            <p>Cludo is a multifunctional Discord bot designed to enhance communication, moderation, and entertainment within your server. With features ranging from advanced moderation tools to interactive games and utilities, Cludo offers a comprehensive solution for managing and engaging your community.</p>
+            <div class="container">
+                <h2>About Cludo</h2>
+                <p>Cludo is a multifunctional Discord bot designed to enhance communication, moderation, and entertainment
+                    within your server. With features ranging from advanced moderation tools to interactive games and
+                    utilities, Cludo offers a comprehensive solution for managing and engaging your community.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="features-content">
+            <div class="container">
+                <h2>Key Features</h2>
+                <div class="features-items">
+                    <div class="features-item">
+                        <i class='bx bx-music'></i>
+                        <h3>Music Player</h3>
+                        <p>Enjoy a seamless music experience with Cludo's advanced music player. Queue your favorite tracks,
+                            control playback, and create a vibrant atmosphere on your server.</p>
+                    </div>
+                    <div class="features-item">
+                        <i class='bx bx-chat'></i>
+                        <h3>Interactive Commands</h3>
+                        <p>Engage your community with Cludo's vast collection of interactive commands. From fun games to
+                            useful utilities, there's something for everyone.</p>
+                    </div>
+                    <div class="features-item">
+                        <i class='bx bx-shield-alt'></i>
+                        <h3>Moderation Tools</h3>
+                        <p>Keep your server safe and organized with Cludo's powerful moderation tools. Manage roles, mute
+                            members, and enforce rules effectively.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="vote" class="vote">
         <div class="vote-content">
-            <h2>Vote for Cludo</h2>
-            <p>Your support helps Cludo grow and improve! Show your appreciation by voting for Cludo on top bot lists and Discord server listings. Your votes not only help Cludo gain visibility but also contribute to the development of new features and enhancements.</p>
-            <div class="vote-links">
-                <a href="#">Vote on Top.gg</a>
-                <a href="#">Vote on Discord Bot List</a>
+            <div class="container">
+                <h2>Vote for Cludo</h2>
+                <p>Your support helps Cludo grow and improve! Show your appreciation by voting for Cludo on top bot lists
+                    and Discord server listings. Your votes not only help Cludo gain visibility but also contribute to the
+                    development of new features and enhancements.</p>
+                <div class="vote-links">
+                    <a href="#">Vote on Top.gg</a>
+                    <a href="#">Vote on Discord Bot List</a>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="discord" class="discord">
         <div class="discord-content">
-            <h2>Join our Discord Server</h2>
-            <p>Connect with the Cludo community on our official Discord server! Get support, participate in events, and interact with other users. Join us to stay updated on the latest news, announcements, and feature releases.</p>
-            <a href="https://discord.gg/2gkXJ92BWU">Join Now</a>
+            <div class="container">
+                <h2>Join our Discord Server</h2>
+                <p>Connect with the Cludo community on our official Discord server! Get support, participate in events, and
+                    interact with other users. Join us to stay updated on the latest news, announcements, and feature
+                    releases.</p>
+                <a href="https://discord.gg/2gkXJ92BWU">Join Now</a>
+            </div>
         </div>
     </section>
 
     <section id="developer" class="developer">
         <div class="developer-content">
-            <h2>About the Developer</h2>
-            <p>Cludo is developed by a passionate team of Discord enthusiasts dedicated to creating innovative solutions for the community. Led by Tɑιғʏὗ™, our team is committed to delivering high-quality software and providing exceptional support to our users.</p>
+            <div class="container">
+                <h2>About the Developer</h2>
+                <p>Cludo is developed by a passionate team of Discord enthusiasts dedicated to creating innovative
+                    solutions for the community. Led by Tɑιғʏὗ™, our team is committed to delivering high-quality software
+                    and providing exceptional support to our users.</p>
+            </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2024 Cludo. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Cludo. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="main.js"></script>
