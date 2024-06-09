@@ -1,81 +1,51 @@
-// DOM Elements
-const navbarLinks = document.querySelectorAll('.navbar a');
-const homeSections = document.querySelectorAll('section');
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+const mobileNav = document.querySelector('.mobile-nav');
 
-// Smooth scrolling for navbar links
-navbarLinks.forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault();
+mobileNavToggle.addEventListener('click', () => {
+    mobileNav.classList.toggle('active');
+});
 
-        const targetId = link.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
+// Add animation to the navigation links
+const navLinks = document.querySelectorAll('.navbar a, .mobile-nav a');
 
-        window.scrollTo({
-            top: targetSection.offsetTop,
-            behavior: 'smooth'
-        });
+navLinks.forEach(link => {
+    link.addEventListener('mouseover', () => {
+        link.style.transform = 'translateY(-5px)';
+        link.style.transition = 'transform 0.2s ease-in-out';
+    });
+
+    link.addEventListener('mouseout', () => {
+        link.style.transform = 'translateY(0)';
+        link.style.transition = 'transform 0.2s ease-in-out';
     });
 });
 
-// Highlight active section in navbar with smooth scrolling
-window.addEventListener('scroll', () => {
-    let current = '';
+// Add animation to the buttons in the home section
+const homeButtons = document.querySelectorAll('.home-content .btn-box a');
 
-    homeSections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
-            current = section.getAttribute('id');
-        }
+homeButtons.forEach(button => {
+    button.addEventListener('mouseover', () => {
+        button.style.boxShadow = '0 5px 10px rgba(0, 0, 0, 0.2)';
+        button.style.transition = 'box-shadow 0.2s ease-in-out';
     });
 
-    navbarLinks.forEach(link => {
-        link.classList.remove('active');
-        const targetId = link.getAttribute('href').substring(1);
-        if (targetId === current) {
-            link.classList.add('active');
-        }
+    button.addEventListener('mouseout', () => {
+        button.style.boxShadow = 'none';
+        button.style.transition = 'box-shadow 0.2s ease-in-out';
     });
 });
 
-// Smooth scrolling with animation effect
-const smoothScrollTo = (targetSection, duration) => {
-    const targetPosition = targetSection.offsetTop;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    let startTime = null;
+// Add animation to social icons
+const socialIcons = document.querySelectorAll('.home-sci a');
 
-    const ease = (t, b, c, d) => {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
-    };
+socialIcons.forEach(icon => {
+    icon.addEventListener('mouseover', () => {
+        icon.style.transform = 'scale(1.1)';
+        icon.style.transition = 'transform 0.2s ease-in-out';
+    });
 
-    const animation = currentTime => {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const run = ease(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
-    };
-
-    requestAnimationFrame(animation);
-
-    // Add animation effect here
-    targetSection.style.opacity = '0'; // Initial opacity
-    targetSection.style.transition = `opacity ${duration}ms ease`; // CSS transition
-    setTimeout(() => {
-        targetSection.style.opacity = '1'; // Final opacity
-    }, 50); // Adjust delay as needed
-};
-
-// Smooth scrolling for internal links
-navbarLinks.forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        smoothScrollTo(targetSection, 1000); // Adjust duration as needed
+    icon.addEventListener('mouseout', () => {
+        icon.style.transform = 'scale(1)';
+        icon.style.transition = 'transform 0.2s ease-in-out';
     });
 });
