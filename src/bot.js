@@ -66,10 +66,10 @@ if (clientID && clientSecret) {
         ],
         nodes: [
             {
-                host: process.env.LAVALINK_HOST || "lavalink.oddcoder.xyz",
-                port: parseInt(process.env.LAVALINK_PORT) ||  443,
-                password: process.env.LAVALINK_PASSWORD || "oddcoder",
-                secure: Boolean(process.env.LAVALINK_SECURE) || true
+                host: process.env.LAVALINK_HOST || "lavalink.api.timelessnesses.me",
+                port: parseInt(process.env.LAVALINK_PORT) ||  80,
+                password: process.env.LAVALINK_PASSWORD || "youshallnotpass",
+                secure: Boolean(process.env.LAVALINK_SECURE) || false
             },
             {
                 host: "209.145.62.164",
@@ -93,9 +93,9 @@ if (clientID && clientSecret) {
         ],
         nodes: [
             {
-                host: process.env.LAVALINK_HOST || "209.145.62.164",
-                port: parseInt(process.env.LAVALINK_PORT) || 50117,
-                password: process.env.LAVALINK_PASSWORD || "redant",
+                host: process.env.LAVALINK_HOST || "lavalink1.albinhakanson.se",
+                port: parseInt(process.env.LAVALINK_PORT) || 1141,
+                password: process.env.LAVALINK_PASSWORD || "albinhakanson.se",
                 secure: Boolean(process.env.LAVALINK_SECURE) || false
             },
         ],
