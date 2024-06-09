@@ -93,9 +93,9 @@ if (clientID && clientSecret) {
         ],
         nodes: [
             {
-                host: process.env.LAVALINK_HOST || "lavalink1.albinhakanson.se",
-                port: parseInt(process.env.LAVALINK_PORT) || 1141,
-                password: process.env.LAVALINK_PASSWORD || "albinhakanson.se",
+                host: process.env.LAVALINK_HOST || "us1.lavalink.creavite.co",
+                port: parseInt(process.env.LAVALINK_PORT) || 20080,
+                password: process.env.LAVALINK_PASSWORD || "auto.creavite.co",
                 secure: Boolean(process.env.LAVALINK_SECURE) || false
             },
         ],
