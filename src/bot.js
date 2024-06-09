@@ -66,10 +66,10 @@ if (clientID && clientSecret) {
         ],
         nodes: [
             {
-                host: process.env.LAVALINK_HOST || "node.catfein.com",
-                port: parseInt(process.env.LAVALINK_PORT) || 30034,
-                password: process.env.LAVALINK_PASSWORD || "hanmetaforce",
-                secure: Boolean(process.env.LAVALINK_SECURE) || false
+                host: process.env.LAVALINK_HOST || "lavalink.oddcoder.xyz",
+                port: parseInt(process.env.LAVALINK_PORT) ||  443,
+                password: process.env.LAVALINK_PASSWORD || "oddcoder",
+                secure: Boolean(process.env.LAVALINK_SECURE) || true
             },
             {
                 host: "209.145.62.164",
