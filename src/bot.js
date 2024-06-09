@@ -66,9 +66,9 @@ if (clientID && clientSecret) {
         ],
         nodes: [
             {
-                host: process.env.LAVALINK_HOST || "the-net.loves-genshin.lol",
-                port: parseInt(process.env.LAVALINK_PORT) || 2333,
-                password: process.env.LAVALINK_PASSWORD || "luxurydev.eu",
+                host: process.env.LAVALINK_HOST || "node.catfein.com",
+                port: parseInt(process.env.LAVALINK_PORT) || 30034,
+                password: process.env.LAVALINK_PASSWORD || "hanmetaforce",
                 secure: Boolean(process.env.LAVALINK_SECURE) || false
             },
             {
@@ -93,9 +93,9 @@ if (clientID && clientSecret) {
         ],
         nodes: [
             {
-                host: process.env.LAVALINK_HOST || "node.raidenbot.xyz",
-                port: parseInt(process.env.LAVALINK_PORT) || 5500,
-                password: process.env.LAVALINK_PASSWORD || "pwd",
+                host: process.env.LAVALINK_HOST || "209.145.62.164",
+                port: parseInt(process.env.LAVALINK_PORT) || 50117,
+                password: process.env.LAVALINK_PASSWORD || "redant",
                 secure: Boolean(process.env.LAVALINK_SECURE) || false
             },
         ],
