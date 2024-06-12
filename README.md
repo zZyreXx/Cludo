@@ -74,7 +74,7 @@ git clone https://github.com/zZyreXx/Cludo.git
 ```bash
 npm install
 ```
-To start your bot 
+To start Cludo bot 
 
 ```js
 node src/index.js
