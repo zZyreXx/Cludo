@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+const fetch = require("node-fetch");
 const Functions = require("../../database/models/functions");
 const afk = require("../../database/models/afk");
 const chatBotSchema = require("../../database/models/chatbot-channel");
@@ -11,7 +11,6 @@ const levelRewards = require("../../database/models/levelRewards");
 const levelLogs = require("../../database/models/levelChannels");
 const Commands = require("../../database/models/customCommand");
 const CommandsSchema = require("../../database/models/customCommandAdvanced");
-const fetch = require("node-fetch");
 
 /**
  * 
@@ -50,95 +49,93 @@ module.exports = async (client, message) => {
 
   // Levels
   Functions.findOne({ Guild: message.guild.id }, async (err, data) => {
-    if (data) {
-      if (data.Levels == true) {
-        const randomXP = Math.floor(Math.random() * 9) + 1;
-        const hasLeveledUp = await client.addXP(
+    if (data && data.Levels) {
+      const randomXP = Math.floor(Math.random() * 9) + 1;
+      const hasLeveledUp = await client.addXP(
+        message.author.id,
+        message.guild.id,
+        randomXP
+      );
+
+      if (hasLeveledUp) {
+        const user = await client.fetchLevels(
           message.author.id,
-          message.guild.id,
-          randomXP
+          message.guild.id
         );
 
-        if (hasLeveledUp) {
-          const user = await client.fetchLevels(
-            message.author.id,
-            message.guild.id
+        const levelData = await levelLogs.findOne({
+          Guild: message.guild.id,
+        });
+        const messageData = await messageSchema.findOne({
+          Guild: message.guild.id,
+        });
+
+        if (messageData) {
+          var levelMessage = messageData.Message;
+          levelMessage = levelMessage.replace(
+            `{user:username}`,
+            message.author.username
+          );
+          levelMessage = levelMessage.replace(
+            `{user:discriminator}`,
+            message.author.discriminator
+          );
+          levelMessage = levelMessage.replace(
+            `{user:tag}`,
+            message.author.tag
+          );
+          levelMessage = levelMessage.replace(
+            `{user:mention}`,
+            message.author
           );
 
-          const levelData = await levelLogs.findOne({
-            Guild: message.guild.id,
-          });
-          const messageData = await messageSchema.findOne({
-            Guild: message.guild.id,
-          });
+          levelMessage = levelMessage.replace(`{user:level}`, user.level);
+          levelMessage = levelMessage.replace(`{user:xp}`, user.xp);
 
-          if (messageData) {
-            var levelMessage = messageData.Message;
-            levelMessage = levelMessage.replace(
-              `{user:username}`,
-              message.author.username
-            );
-            levelMessage = levelMessage.replace(
-              `{user:discriminator}`,
-              message.author.discriminator
-            );
-            levelMessage = levelMessage.replace(
-              `{user:tag}`,
-              message.author.tag
-            );
-            levelMessage = levelMessage.replace(
-              `{user:mention}`,
-              message.author
-            );
-
-            levelMessage = levelMessage.replace(`{user:level}`, user.level);
-            levelMessage = levelMessage.replace(`{user:xp}`, user.xp);
-
-            try {
-              if (levelData) {
-                await client.channels.cache
-                  .get(levelData.Channel)
-                  .send({ content: levelMessage })
-                  .catch(() => { });
-              } else {
-                await message.channel.send({ content: levelMessage });
-              }
-            } catch {
+          try {
+            if (levelData) {
+              await client.channels.cache
+                .get(levelData.Channel)
+                .send({ content: levelMessage })
+                .catch(() => { });
+            } else {
               await message.channel.send({ content: levelMessage });
             }
-          } else {
-            try {
-              if (levelData) {
-                await client.channels.cache
-                  .get(levelData.Channel)
-                  .send({
-                    content: `**GG** <@!${message.author.id}>, you are now level **${user.level}**`,
-                  })
-                  .catch(() => { });
-              } else {
-                message.channel.send({
+          } catch {
+            await message.channel.send({ content: levelMessage });
+          }
+        } else {
+          try {
+            if (levelData) {
+              await client.channels.cache
+                .get(levelData.Channel)
+                .send({
                   content: `**GG** <@!${message.author.id}>, you are now level **${user.level}**`,
-                });
-              }
-            } catch {
+                })
+                .catch(() => { });
+            } else {
               message.channel.send({
                 content: `**GG** <@!${message.author.id}>, you are now level **${user.level}**`,
               });
             }
+          } catch {
+            message.channel.send({
+              content: `**GG** <@!${message.author.id}>, you are now level **${user.level}**`,
+            });
           }
-
-          levelRewards.findOne(
-            { Guild: message.guild.id, Level: user.level },
-            async (err, data) => {
-              if (data) {
-                message.guild.members.cache
-                  .get(message.author.id)
-                  .roles.add(data.Role)
-                  .catch((e) => { });
-              }
-            }
-          );
         }
+
+        levelRewards.findOne(
+          { Guild: message.guild.id, Level: user.level },
+          async (err, data) => {
+            if (data) {
+              message.guild.members.cache
+                .get(message.author.id)
+                .roles.add(data.Role)
+                .catch((e) => { });
+            }
+          }
+        );
       }
     }
   });
@@ -247,7 +244,15 @@ module.exports = async (client, message) => {
             })
           }
         );
-        const data = await response.json();
+
+        const responseBody = await response.text();
+        if (!response.ok) {
+          console.error(`OpenAI API error: ${response.status} ${response.statusText}`);
+          console.error(`Response body: ${responseBody}`);
+          return;
+        }
+
+        const data = JSON.parse(responseBody);
         if (data.error) {
           console.error('OpenAI error:', data.error);
         } else {
@@ -272,11 +277,19 @@ module.exports = async (client, message) => {
             })
           }
         );
-        const data = await response.json();
-        if (data && data.result) {
-          message.reply({ content: data.result });
+
+        const responseBody = await response.text();
+        if (!response.ok) {
+          console.error(`Gemini AI API error: ${response.status} ${response.statusText}`);
+          console.error(`Response body: ${responseBody}`);
+          return;
+        }
+
+        const data = JSON.parse(responseBody);
+        if (data && data.response) {
+          message.reply({ content: data.response });
         } else {
-          console.error('Gemini AI error:', data);
+          console.error('Gemini AI error: Invalid response structure', data);
         }
       } catch (error) {
         console.error('Error while fetching from Gemini AI:', error);
@@ -284,13 +297,32 @@ module.exports = async (client, message) => {
     } else {
       try {
         const response = await fetch(
-          `https://api.coreware.nl/fun/chat?msg=${encodeURIComponent(message.content)}&uid=${message.author.id}`
+          `https://some-fallback-service.com/chat`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + process.env.FALLBACK_API,
+            },
+            body: JSON.stringify({
+              'message': message.content,
+              'user_id': message.author.id
+            })
+          }
         );
-        const data = await response.json();
+
+        const responseBody = await response.text();
+        if (!response.ok) {
+          console.error(`Fallback service API error: ${response.status} ${response.statusText}`);
+          console.error(`Response body: ${responseBody}`);
+          return;
+        }
+
+        const data = JSON.parse(responseBody);
         if (data && data.response) {
           message.reply({ content: data.response });
         } else {
-          console.error('Fallback service error:', data);
+          console.error('Fallback service error: Invalid response structure', data);
         }
       } catch (error) {
         console.error('Error while fetching from fallback service:', error);
