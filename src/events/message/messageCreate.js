@@ -223,90 +223,81 @@ module.exports = async (client, message) => {
     }
   });
 
-// Chat bot
-chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
-  if (!data) return;
-  if (message.channel.id !== data.Channel) return;
-  if (process.env.OPENAI) {
-    fetch(
-      `https://chat-app-f2d296.zapier.app/`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + process.env.OPENAI,
-        },
-        body: JSON.stringify({
-          'model': 'gpt-3.5-turbo',
-          'messages': [{
-            'role': 'user',
-            'content': message.content
-          }]
-        })
-      }
-    )
-      .catch(() => {
-        console.error('Error while fetching from OpenAI.');
-      })
-      .then((res) => {
-        res.json().then((data) => {
-          if (data.error) return console.error('OpenAI error:', data.error);
-          message.reply({ content: data.choices[0].message.content });
-        });
-      });
-  } else if (process.env.GEMINI_AI) {
-    try {
-      const response = await fetch(
-        'https://api.gemini-ai.com/v1/chat',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + process.env.GEMINI_AI,
-          },
-          body: JSON.stringify({
-            'message': message.content,
-            'user_id': message.author.id
-          })
-        }
-      );
-      const responseData = await response.json();
-      if (responseData && responseData.result) {
-        message.reply({ content: responseData.result });
-      }
-    } catch (error) {
-      console.error('Error while fetching from Gemini AI:', error);
-    }
-  } else {
-    try {
-      const input = message;
+  // Chat bot
+  chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
+    if (!data) return;
+    if (message.channel.id !== data.Channel) return;
+
+    if (process.env.OPENAI) {
       try {
-        fetch(
-          `https://api.coreware.nl/fun/chat?msg=${encodeURIComponent(input)}&uid=${message.author.id}`,
-        )
-          .catch(() => { console.error('Error while fetching from fallback service.'); })
-          .then((res) => res.json())
-          .catch(() => { console.error('Error parsing JSON from fallback service response.'); })
-          .then(async (json) => {
-            console.log(json);
-            if (json && json.response) {
-              try {
-                message.reply({ content: json.response });
-              } catch (error) {
-                console.error('Error replying from fallback service:', error);
-              }
-            }
-          })
-          .catch((error) => { console.error('Error while fetching from fallback service:', error); });
+        const response = await fetch(
+          `https://chat-app-f2d296.zapier.app/`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + process.env.OPENAI,
+            },
+            body: JSON.stringify({
+              'model': 'gpt-3.5-turbo',
+              'messages': [{
+                'role': 'user',
+                'content': message.content
+              }]
+            })
+          }
+        );
+        const data = await response.json();
+        if (data.error) {
+          console.error('OpenAI error:', data.error);
+        } else {
+          message.reply({ content: data.choices[0].message.content });
+        }
       } catch (error) {
-        console.error('Error in fallback service request:', error);
+        console.error('Error while fetching from OpenAI:', error);
       }
-    } catch (error) {
-      console.error('Error in fallback service:', error);
+    } else if (process.env.GEMINI_AI) {
+      try {
+        const response = await fetch(
+          'https://api.gemini-ai.com/v1/chat',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + process.env.GEMINI_AI,
+            },
+            body: JSON.stringify({
+              'message': message.content,
+              'user_id': message.author.id
+            })
+          }
+        );
+        const data = await response.json();
+        if (data && data.result) {
+          message.reply({ content: data.result });
+        } else {
+          console.error('Gemini AI error:', data);
+        }
+      } catch (error) {
+        console.error('Error while fetching from Gemini AI:', error);
+      }
+    } else {
+      try {
+        const response = await fetch(
+          `https://api.coreware.nl/fun/chat?msg=${encodeURIComponent(message.content)}&uid=${message.author.id}`
+        );
+        const data = await response.json();
+        if (data && data.response) {
+          message.reply({ content: data.response });
+        } else {
+          console.error('Fallback service error:', data);
+        }
+      } catch (error) {
+        console.error('Error while fetching from fallback service:', error);
+      }
     }
-  }
-});
-  
+  });
+
   // Sticky messages
   try {
     Schema.findOne(
@@ -318,7 +309,7 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
           .fetch(data.LastMessage)
           .catch(() => { });
         if (!lastStickyMessage) return;
-        await lastStickyMessage.delete({ timeout: 1000 });
+        await lastStickyMessage.delete();
 
         const newMessage = await client.simpleEmbed(
           { desc: `${data.Content}` },
@@ -329,10 +320,12 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
         data.save();
       }
     );
-  } catch { }
+  } catch (error) {
+    console.error('Error handling sticky messages:', error);
+  }
 
   // Prefix
-  var guildSettings = await Functions.findOne({ Guild: message.guild.id });
+  let guildSettings = await Functions.findOne({ Guild: message.guild.id });
   if (!guildSettings) {
     new Functions({
       Guild: message.guild.id,
@@ -351,11 +344,7 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
     guildSettings = await Functions.findOne({ Guild: message.guild.id });
   }
 
-  if (!guildSettings || !guildSettings.Prefix) {
-    var prefix = client.config.Discord.prefix;
-  } else {
-    var prefix = guildSettings.Prefix;
-  }
+  const prefix = guildSettings ? guildSettings.Prefix : client.config.discord.prefix;
 
   const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const prefixRegex = new RegExp(
@@ -390,21 +379,21 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
     client
       .embed(
         {
-          title: "Hi, i'm Bot",
+          title: "Hi, I'm Bot",
           desc: `Use with commands via Discord ${client.emotes.normal.slash} commands`,
           fields: [
             {
               name: "📨┆Invite me",
-              value: `Invite Bot in your own server! [Click here](${client.config.discord.botInvite})`,
+              value: `Invite Bot to your own server! [Click here](${client.config.discord.botInvite})`,
             },
             {
               name: "❓┇I don't see any slash commands",
               value:
-                "The bot may not have permissions for this. Open the invite link again and select your server. The bot then gets the correct permissions",
+                "The bot may not have permissions for this. Open the invite link again and select your server. The bot then gets the correct permissions.",
             },
             {
               name: "❓┆Need support?",
-              value: `For questions you can join our [support server](${client.config.discord.serverInvite})!`,
+              value: `For questions, you can join our [support server](${client.config.discord.serverInvite})!`,
             },
             {
               name: "🐞┆Found a bug?",
@@ -423,7 +412,7 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
     Name: command,
   });
   if (cmd) {
-    return message.channel.send({ content: cmdx.Responce });
+    return message.channel.send({ content: cmd.Responce });
   }
 
   const cmdx = await CommandsSchema.findOne({
@@ -444,7 +433,7 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
       return message.author.send({ content: cmdx.Responce }).catch((e) => {
         client.errNormal(
           {
-            error: "I can't DM you, maybe you have DM turned off!",
+            error: "I can't DM you, maybe you have DMs turned off!",
           },
           message.channel
         );
@@ -452,5 +441,3 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
     }
   }
 };
-
-
