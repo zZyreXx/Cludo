@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+
 const Functions = require("../../database/models/functions");
 const afk = require("../../database/models/afk");
 const chatBotSchema = require("../../database/models/chatbot-channel");
@@ -11,6 +12,7 @@ const levelLogs = require("../../database/models/levelChannels");
 const Commands = require("../../database/models/customCommand");
 const CommandsSchema = require("../../database/models/customCommandAdvanced");
 const fetch = require("node-fetch");
+
 /**
  * 
  * @param {Discord.Client} client 
@@ -22,7 +24,9 @@ module.exports = async (client, message) => {
     id: client.webhooks.dmLogs.id,
     token: client.webhooks.dmLogs.token,
   });
+
   if (message.author.bot) return;
+
   if (message.channel.type === Discord.ChannelType.DM) {
     let embedLogs = new Discord.EmbedBuilder()
       .setTitle(`💬・New DM message!`)
@@ -33,6 +37,7 @@ module.exports = async (client, message) => {
       )
       .setColor(client.config.colors.normal)
       .setTimestamp();
+
     if (message.attachments.size > 0)
       embedLogs.addFields(
         { name: `📃┆Attachments`, value: `${message.attachments.first()?.url}`, inline: false },
@@ -42,6 +47,7 @@ module.exports = async (client, message) => {
       embeds: [embedLogs],
     });
   }
+
   // Levels
   Functions.findOne({ Guild: message.guild.id }, async (err, data) => {
     if (data) {
@@ -52,90 +58,20 @@ module.exports = async (client, message) => {
           message.guild.id,
           randomXP
         );
+
         if (hasLeveledUp) {
           const user = await client.fetchLevels(
             message.author.id,
             message.guild.id
           );
+
           const levelData = await levelLogs.findOne({
             Guild: message.guild.id,
           });
           const messageData = await messageSchema.findOne({
             Guild: message.guild.id,
           });
-          if (messageData) {
-            var levelMessage = messageData.Message;
-            levelMessage = levelMessage.replace(
-              `{user:username}`,
-              message.author.username
-            );
-            levelMessage = levelMessage.replace(
-              `{user:discriminator}`,
-const Discord = require("discord.js");
-const Functions = require("../../database/models/functions");
-const afk = require("../../database/models/afk");
-const chatBotSchema = require("../../database/models/chatbot-channel");
-const messagesSchema = require("../../database/models/messages");
-const messageSchema = require("../../database/models/levelMessages");
-const messageRewards = require("../../database/models/messageRewards");
-const Schema = require("../../database/models/stickymessages");
-const levelRewards = require("../../database/models/levelRewards");
-const levelLogs = require("../../database/models/levelChannels");
-const Commands = require("../../database/models/customCommand");
-const CommandsSchema = require("../../database/models/customCommandAdvanced");
-const fetch = require("node-fetch");
-/**
- * 
- * @param {Discord.Client} client 
- * @param {Discord.Message} message 
- * @returns 
- */
-module.exports = async (client, message) => {
-  const dmlog = new Discord.WebhookClient({
-    id: client.webhooks.dmLogs.id,
-    token: client.webhooks.dmLogs.token,
-  });
-  if (message.author.bot) return;
-  if (message.channel.type === Discord.ChannelType.DM) {
-    let embedLogs = new Discord.EmbedBuilder()
-      .setTitle(`💬・New DM message!`)
-      .setDescription(`Bot has received a new DM message!`)
-      .addFields(
-        { name: "👤┆Send By", value: `${message.author} (${message.author.tag})`, inline: true },
-        { name: `💬┆Message`, value: `${message.content || "None"}`, inline: true },
-      )
-      .setColor(client.config.colors.normal)
-      .setTimestamp();
-    if (message.attachments.size > 0)
-      embedLogs.addFields(
-        { name: `📃┆Attachments`, value: `${message.attachments.first()?.url}`, inline: false },
-      )
-    return dmlog.send({
-      username: "Bot DM",
-      embeds: [embedLogs],
-    });
-  }
-  // Levels
-  Functions.findOne({ Guild: message.guild.id }, async (err, data) => {
-    if (data) {
-      if (data.Levels == true) {
-        const randomXP = Math.floor(Math.random() * 9) + 1;
-        const hasLeveledUp = await client.addXP(
-          message.author.id,
-          message.guild.id,
-          randomXP
-        );
-        if (hasLeveledUp) {
-          const user = await client.fetchLevels(
-            message.author.id,
-            message.guild.id
-          );
-          const levelData = await levelLogs.findOne({
-            Guild: message.guild.id,
-          });
-          const messageData = await messageSchema.findOne({
-            Guild: message.guild.id,
-          });
+
           if (messageData) {
             var levelMessage = messageData.Message;
             levelMessage = levelMessage.replace(
@@ -154,8 +90,10 @@ module.exports = async (client, message) => {
               `{user:mention}`,
               message.author
             );
+
             levelMessage = levelMessage.replace(`{user:level}`, user.level);
             levelMessage = levelMessage.replace(`{user:xp}`, user.xp);
+
             try {
               if (levelData) {
                 await client.channels.cache
@@ -188,6 +126,7 @@ module.exports = async (client, message) => {
               });
             }
           }
+
           levelRewards.findOne(
             { Guild: message.guild.id, Level: user.level },
             async (err, data) => {
@@ -203,6 +142,7 @@ module.exports = async (client, message) => {
       }
     }
   });
+
   // Message tracker system
   messagesSchema.findOne(
     { Guild: message.guild.id, User: message.author.id },
@@ -210,6 +150,7 @@ module.exports = async (client, message) => {
       if (data) {
         data.Messages += 1;
         data.save();
+
         messageRewards.findOne(
           { Guild: message.guild.id, Messages: data.Messages },
           async (err, data) => {
@@ -231,6 +172,7 @@ module.exports = async (client, message) => {
       }
     }
   );
+
   // AFK system
   afk.findOne(
     { Guild: message.guild.id, User: message.author.id },
@@ -240,6 +182,7 @@ module.exports = async (client, message) => {
           Guild: message.guild.id,
           User: message.author.id,
         });
+
         client
           .simpleEmbed(
             {
@@ -252,6 +195,7 @@ module.exports = async (client, message) => {
               m.delete();
             }, 5000);
           });
+
         if (message.member.displayName.startsWith(`[AFK] `)) {
           let name = message.member.displayName.replace(`[AFK] `, ``);
           message.member.setNickname(name).catch((e) => { });
@@ -259,6 +203,7 @@ module.exports = async (client, message) => {
       }
     }
   );
+
   message.mentions.users.forEach(async (u) => {
     if (
       !message.content.includes("@here") &&
@@ -361,28 +306,14 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
     }
   }
 });
-
+  
   // Sticky messages
   try {
     Schema.findOne(
-
-    
-        
-          
-    
-
-        
-        Expand All
-    
-    @@ -318,7 +309,7 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
-  
       { Guild: message.guild.id, Channel: message.channel.id },
       async (err, data) => {
         if (!data) return;
-        const lastStickyMessage = await message.channel.messages
-      { Guild: message.guild.id, Channel: message.channel.id },
-      async (err, data) => {
-        if (!data) return;
+
         const lastStickyMessage = await message.channel.messages
           .fetch(data.LastMessage)
           .catch(() => { });
@@ -391,22 +322,9 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
 
         const newMessage = await client.simpleEmbed(
           { desc: `${data.Content}` },
-
-    
-        
-          
-    
-
-        
-        Expand All
-    
-    @@ -329,10 +320,12 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
-  
           message.channel
         );
-        data.LastMessage = newMessage.id;
-          message.channel
-        );
+
         data.LastMessage = newMessage.id;
         data.save();
       }
@@ -418,35 +336,18 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
   if (!guildSettings) {
     new Functions({
       Guild: message.guild.id,
-
-    
-        
-          
-    
-
-        
-        Expand All
-    
-    @@ -351,11 +344,7 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
-  
       Prefix: client.config.discord.prefix,
     }).save();
+
     guildSettings = await Functions.findOne({ Guild: message.guild.id });
   }
+
   if (!guildSettings || !guildSettings.Prefix) {
     Functions.findOne({ Guild: message.guild.id }, async (err, data) => {
       data.Prefix = client.config.discord.prefix;
       data.save();
     });
-      Prefix: client.config.discord.prefix,
-    }).save();
-    guildSettings = await Functions.findOne({ Guild: message.guild.id });
-  }
-  if (!guildSettings || !guildSettings.Prefix) {
-    Functions.findOne({ Guild: message.guild.id }, async (err, data) => {
-      data.Prefix = client.config.discord.prefix;
-      data.save();
-    });
+
     guildSettings = await Functions.findOne({ Guild: message.guild.id });
   }
 
@@ -458,29 +359,15 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
 
   const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const prefixRegex = new RegExp(
-
-    
-          
-            
-    
-
-          
-          Expand Down
-          
-            
-    
-
-          
-          Expand Up
-    
-    @@ -390,21 +379,21 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
-  
     `^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`
   );
+
   if (!prefixRegex.test(message.content.toLowerCase())) return;
   const [, matchedPrefix] = message.content.toLowerCase().match(prefixRegex);
+
   const args = message.content.slice(matchedPrefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
+
   if (
     message.mentions.users.first() &&
     message.mentions.users.first().id == client.user.id &&
@@ -493,34 +380,13 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
           client.config.discord.botInvite
         )
         .setStyle(Discord.ButtonStyle.Link),
+
       new Discord.ButtonBuilder()
         .setLabel("Support server")
         .setURL(client.config.discord.serverInvite)
         .setStyle(Discord.ButtonStyle.Link)
     );
-    `^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`
-  );
-  if (!prefixRegex.test(message.content.toLowerCase())) return;
-  const [, matchedPrefix] = message.content.toLowerCase().match(prefixRegex);
-  const args = message.content.slice(matchedPrefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-  if (
-    message.mentions.users.first() &&
-    message.mentions.users.first().id == client.user.id &&
-    command.length === 0
-  ) {
-    let row = new Discord.ActionRowBuilder().addComponents(
-      new Discord.ButtonBuilder()
-        .setLabel("Invite")
-        .setURL(
-          client.config.discord.botInvite
-        )
-        .setStyle(Discord.ButtonStyle.Link),
-      new Discord.ButtonBuilder()
-        .setLabel("Support server")
-        .setURL(client.config.discord.serverInvite)
-        .setStyle(Discord.ButtonStyle.Link)
-    );
+
     client
       .embed(
         {
@@ -542,17 +408,6 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
             },
             {
               name: "🐞┆Found a bug?",
-
-    
-        
-          
-    
-
-        
-        Expand All
-    
-    @@ -423,7 +412,7 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
-  
               value: `Report all bugs via: \`/report bug\`!`,
             },
           ],
@@ -562,17 +417,7 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
       )
       .catch(() => { });
   }
-  const cmd = await Commands.findOne({
-    Guild: message.guild.id,
-              value: `Report all bugs via: \`/report bug\`!`,
-            },
-          ],
-          components: [row],
-        },
-        message.channel
-      )
-      .catch(() => { });
-  }
+
   const cmd = await Commands.findOne({
     Guild: message.guild.id,
     Name: command,
@@ -582,31 +427,6 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
   }
 
   const cmdx = await CommandsSchema.findOne({
-
-    
-        
-          
-    
-
-        
-        Expand All
-    
-    @@ -444,13 +433,11 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
-  
-    Guild: message.guild.id,
-    Name: command,
-  });
-  if (cmdx) {
-    if (cmdx.Action == "Normal") {
-      return message.channel.send({ content: cmdx.Responce });
-    } else if (cmdx.Action == "Embed") {
-      return client.simpleEmbed(
-        {
-          desc: `${cmdx.Responce}`,
-        },
-        message.channel
-      );
-    } else if (cmdx.Action == "DM") {
     Guild: message.guild.id,
     Name: command,
   });
@@ -632,3 +452,4 @@ chatBotSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
     }
   }
 };
+
