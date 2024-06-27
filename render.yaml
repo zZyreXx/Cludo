@@ -1,0 +1,24 @@
+# Exported from Render on 2024-06-27T15:48:43Z
+services:
+- type: web
+  name: CludoBot
+  runtime: node
+  repo: https://github.com/zZyreXx/Cludo
+  plan: free
+  envVars:
+  - key: WEBHOOK_TOKEN
+    sync: false
+  - key: WEBHOOK_ID
+    sync: false
+  - key: MONGO_TOKEN
+    sync: false
+  - key: GIPHY_TOKEN
+    sync: false
+  - key: DISCORD_TOKEN
+    sync: false
+  - key: DISCORD_ID
+    sync: false
+  region: ohio
+  buildCommand: npm install
+  startCommand: node ./src/index.js
+version: "1"
