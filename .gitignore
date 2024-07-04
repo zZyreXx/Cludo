@@ -1,4 +1,4 @@
-# Logs xx
+# Logs
 logs
 *.log
 npm-debug.log*
@@ -84,7 +84,7 @@ dist
 
 # Gatsby files
 .cache/
-# Comment in the public line in if your project uses Gatsby and *not* Next.js
+# Comment in the public line if your project uses Gatsby and *not* Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
 
@@ -103,6 +103,8 @@ dist
 # TernJS port file
 .tern-port
 
+# Configuration files
 src/config/*
 
+# Lock file
 package-lock.json
