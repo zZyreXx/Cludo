@@ -8,10 +8,13 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --production
 
 # Copy the rest of the application code to the working directory
 COPY . .
+
+# Expose the port your application runs on (e.g., 3000 for typical Node.js apps)
+EXPOSE 3000
 
 # Specify the command to run the application
 CMD ["npm", "start"]
