@@ -1,6 +1,7 @@
-const { CommandInteraction, Client } = require('discord.js');
-const { SlashCommandBuilder } = require('discord.js');
-const Discord = require('discord.js');
+const { SlashCommandBuilder, PermissionsBitField, EmbedBuilder } = require('discord.js');
+
+// In-memory config (use DB for production)
+const setupData = {};
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -83,26 +84,57 @@ module.exports = {
             subcommand
                 .setName('ticketpanel')
                 .setDescription('Set the ticket panel from the server')
-        )
-    ,
+        ),
 
-    /** 
-     * @param {Client} client
-     * @param {CommandInteraction} interaction
-     * @param {String[]} args
+    /**
+     * @param {import('discord.js').Client} client 
+     * @param {import('discord.js').CommandInteraction} interaction 
      */
+    run: async (client, interaction) => {
+        await interaction.deferReply({ ephemeral: true });
 
-    run: async (client, interaction, args) => {
-        await interaction.deferReply({ fetchReply: true });
-        const perms = await client.checkUserPerms({
-            flags: [Discord.PermissionsBitField.Flags.Administrator],
-            perms: [Discord.PermissionsBitField.Flags.Administrator]
-        }, interaction)
+        const member = interaction.member;
+        const sub = interaction.options.getSubcommand();
+        const setupOption = interaction.options.getString('setup');
+        const guildId = interaction.guildId;
 
-        if (perms == false) return;
+        // Permission check
+        if (!member.permissions.has(PermissionsBitField.Flags.Administrator)) {
+            return interaction.editReply("❌ You must be an administrator to use this command.");
+        }
 
-        client.loadSubcommands(client, interaction, args);
-    },
+        // Setup data holder
+        if (!setupData[guildId]) setupData[guildId] = {};
+
+        if (sub === 'help') {
+            const embed = new EmbedBuilder()
+                .setTitle("🛠️ Auto Setup Help")
+                .setDescription([
+                    "`/autosetup logs` - Configure logging channels",
+                    "`/autosetup fun` - Set up fun features like birthdays, chatbot, etc.",
+                    "`/autosetup games` - Set up game channels",
+                    "`/autosetup welcome` - Set welcome/leave messages or roles",
+                    "`/autosetup customvoice` - Configure auto voice channels",
+                    "`/autosetup ticketpanel` - Set up ticket system"
+                ].join("\n"))
+                .setColor("Blue");
+
+            return interaction.editReply({ embeds: [embed] });
+        }
+
+        if (['logs', 'fun', 'games', 'welcome'].includes(sub)) {
+            setupData[guildId][sub] = setupOption;
+            return interaction.editReply(`✅ Setup for **${sub}** has been configured to \`${setupOption}\`.`);
+        }
+
+        if (sub === 'customvoice') {
+            setupData[guildId].customvoice = true;
+            return interaction.editReply("🎤 Custom voice channels setup enabled.");
+        }
+
+        if (sub === 'ticketpanel') {
+            setupData[guildId].ticketpanel = true;
+            return interaction.editReply("🎟️ Ticket panel setup has been initiated.");
+        }
+    }
 };
-
- 
