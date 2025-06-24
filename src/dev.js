@@ -1,65 +1,63 @@
-/*
-* This file adds a developer badge to a user 
-* Only use this if you want to add a badge to a user
-* If someone tells you to use this to add their id, they are lying 
-* 
-* @string member - The member you want to add the badge to
-*/
+/**
+ * This file adds a developer badge to a user
+ * Use only if you want to manually flag a user as a developer
+ */
+
 const chalk = require('chalk');
-if (!process.argv[2]) {
-    console.log(chalk.red(`[ERROR]`), chalk.white(`>>`), chalk.red(`Developer Badge`), chalk.white(`>>`), chalk.red(`Please provide a member id!`))
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+// Exit if no member ID is provided
+const memberId = process.argv[2];
+if (!memberId) {
+    console.log(chalk.red(`[ERROR]`), chalk.white(`>>`), chalk.red(`Developer Badge`), chalk.white(`>>`), chalk.red(`Please provide a member ID!`));
     process.exit(1);
 }
-require('dotenv').config('./.env');
-// Require database
-const mongoose = require('mongoose');
-// Require the model
+
+// Database Model
 const model = require('./database/models/badge.js');
-// Connect to the database
+
+// Mongo Connection
 mongoose.set('strictQuery', false);
-// Await the connection
 mongoose.connect(process.env.MONGO_TOKEN, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
-    console.log(chalk.green(`[SUCCESS]`), chalk.white(`>>`), chalk.green(`Developer Badge`), chalk.white(`>>`), chalk.green(`Connected to the database!`))
+    console.log(chalk.green(`[SUCCESS]`), chalk.white(`>>`), chalk.green(`Developer Badge`), chalk.white(`>>`), chalk.green(`Connected to the database!`));
+    updateBadge();
 }).catch((err) => {
-    console.log(chalk.red(`[ERROR]`), chalk.white(`>>`), chalk.red(`Developer Badge`), chalk.white(`>>`), chalk.red(`Failed to connect to the database!`))
-    console.log(err)
+    console.log(chalk.red(`[ERROR]`), chalk.white(`>>`), chalk.red(`Developer Badge`), chalk.white(`>>`), chalk.red(`Failed to connect to the database!`));
+    console.error(err);
     process.exit(1);
 });
-// Find the user
-model.findOne({
-    User: process.argv[2]
-}, async (err, data) => {
-    if (err) console.log(err);
-    if (!data) {
-        // Create a new document
-        const newData = new model({
-            User: process.argv[2],
-            FLAGS: [
-                "DEVELOPER"
-            ]
-        });
-        try {
+
+// Main logic to add/update the badge
+async function updateBadge() {
+    try {
+        const data = await model.findOne({ User: memberId });
+
+        if (!data) {
+            // Create a new document
+            const newData = new model({
+                User: memberId,
+                FLAGS: ["DEVELOPER"]
+            });
             await newData.save();
-        } catch (err) {
-            console.log(err)
+            console.log(chalk.white(`>>`), chalk.green(`Developer Badge has been added to the user!`));
+        } else {
+            // Prevent duplicate flag
+            if (!data.FLAGS.includes("DEVELOPER")) {
+                data.FLAGS.push("DEVELOPER");
+                await data.save();
+                console.log(chalk.white(`>>`), chalk.green(`Developer Badge has been added to the user!`));
+            } else {
+                console.log(chalk.white(`>>`), chalk.yellow(`User already has the Developer badge.`));
+            }
         }
-        console.log((chalk.white(`>>`)), chalk.red(`Developer Badge`), chalk.green(`has been added to the user!`))
+    } catch (err) {
+        console.error(chalk.red(`[ERROR]`), chalk.white(`>>`), err);
+    } finally {
         mongoose.connection.close();
         process.exit(0);
     }
-    if (data) {
-        // Update the document
-        data.FLAGS.push("DEVELOPER");
-        try {
-            await data.save();
-        } catch (err) {
-            console.log(err)
-        }
-        console.log((chalk.white(`>>`)), chalk.red(`Developer Badge`), chalk.green(`has been added to the user!`))
-        mongoose.connection.close();
-        process.exit(0);
-    }
-});
+}
