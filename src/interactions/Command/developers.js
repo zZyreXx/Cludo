@@ -1,7 +1,5 @@
-const { CommandInteraction, Client } = require('discord.js');
-const { SlashCommandBuilder } = require('discord.js');
+const { CommandInteraction, Client, SlashCommandBuilder } = require('discord.js');
 const Discord = require('discord.js');
-
 const model = require('../../database/models/badge');
 
 module.exports = {
@@ -17,22 +15,46 @@ module.exports = {
             subcommand
                 .setName('eval')
                 .setDescription('Get the result of a piece of code')
-                .addStringOption(option => option.setName('code').setDescription('Your code').setRequired(true))
+                .addStringOption(option =>
+                    option.setName('code')
+                        .setDescription('Your code')
+                        .setRequired(true)
+                )
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('badge')
                 .setDescription('Manage the bot badges')
-                .addBooleanOption(option => option.setName('new').setDescription('Select a boolean').setRequired(true))
-                .addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(true))
-                .addStringOption(option => option.setName('badge').setDescription('Choose your badge').setRequired(true))
+                .addBooleanOption(option =>
+                    option.setName('new')
+                        .setDescription('Add or remove badge')
+                        .setRequired(true)
+                )
+                .addUserOption(option =>
+                    option.setName('user')
+                        .setDescription('Select a user')
+                        .setRequired(true)
+                )
+                .addStringOption(option =>
+                    option.setName('badge')
+                        .setDescription('Choose a badge type')
+                        .setRequired(true)
+                )
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('ban')
                 .setDescription('Manage the bot bans')
-                .addBooleanOption(option => option.setName('new').setDescription('Select a boolean').setRequired(true))
-                .addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(true))
+                .addBooleanOption(option =>
+                    option.setName('new')
+                        .setDescription('Ban or unban')
+                        .setRequired(true)
+                )
+                .addUserOption(option =>
+                    option.setName('user')
+                        .setDescription('Select a user')
+                        .setRequired(true)
+                )
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -40,15 +62,23 @@ module.exports = {
                 .setDescription('Manage the bot credits')
                 .addStringOption(option =>
                     option.setName('type')
-                        .setDescription('The type of credits')
+                        .setDescription('Add or remove credits')
                         .setRequired(true)
                         .addChoices(
                             { name: 'Add', value: 'add' },
                             { name: 'Remove', value: 'remove' }
                         )
                 )
-                .addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(true))
-                .addNumberOption(option => option.setName('amount').setDescription('Amount of credits').setRequired(true))
+                .addUserOption(option =>
+                    option.setName('user')
+                        .setDescription('Select a user')
+                        .setRequired(true)
+                )
+                .addNumberOption(option =>
+                    option.setName('amount')
+                        .setDescription('Amount of credits')
+                        .setRequired(true)
+                )
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -56,7 +86,7 @@ module.exports = {
                 .setDescription('Post preset messages')
                 .addStringOption(option =>
                     option.setName('message')
-                        .setDescription('Select a message')
+                        .setDescription('Choose a message to post')
                         .setRequired(true)
                         .addChoices(
                             { name: 'Information', value: 'information' },
@@ -73,28 +103,32 @@ module.exports = {
             subcommand
                 .setName('servers')
                 .setDescription('See all servers from this shard')
-        )
-    ,
+        ),
 
-    /** 
+    /**
      * @param {Client} client
      * @param {CommandInteraction} interaction
      * @param {String[]} args
      */
-
     run: async (client, interaction, args) => {
-        model.findOne({ User: interaction.user.id }, async (err, data) => {
-            if (data && data.FLAGS.includes("DEVELOPER")) {
+        try {
+            const data = await model.findOne({ User: interaction.user.id });
+
+            if (data?.FLAGS?.includes("DEVELOPER")) {
                 await interaction.deferReply({ fetchReply: true });
                 client.loadSubcommands(client, interaction, args);
             } else {
                 return client.errNormal({
                     error: 'Only Bot developers are allowed to do this',
                     type: 'ephemeral'
-                }, interaction)
+                }, interaction);
             }
-        })
+        } catch (err) {
+            console.error("Developer check failed:", err);
+            return client.errNormal({
+                error: 'An error occurred while checking developer permissions.',
+                type: 'ephemeral'
+            }, interaction);
+        }
     },
 };
-
- 
