@@ -1,5 +1,14 @@
-const Discord = require('discord.js');
+const { 
+    Client, 
+    GatewayIntentBits, 
+    Partials, 
+    WebhookClient, 
+    EmbedBuilder, 
+    Collection, 
+    codeBlock 
+} = require('discord.js');
 const fs = require('fs');
+require('dotenv').config();
 
 const { Manager } = require("erela.js");
 const Spotify = require("erela.js-spotify");
@@ -7,121 +16,90 @@ const Facebook = require("erela.js-facebook");
 const Deezer = require("erela.js-deezer");
 const AppleMusic = require("erela.js-apple");
 
-// Discord client
-const client = new Discord.Client({
-    allowedMentions: {
-        parse: [
-            'users',
-            'roles'
-        ],
-        repliedUser: true
-    },
-    autoReconnect: true,
-    disabledEvents: [
-        "TYPING_START"
-    ],
+// === CLIENT SETUP ===
+const client = new Client({
+    allowedMentions: { parse: ['users', 'roles'], repliedUser: true },
     partials: [
-        Discord.Partials.Channel,
-        Discord.Partials.GuildMember,
-        Discord.Partials.Message,
-        Discord.Partials.Reaction,
-        Discord.Partials.User,
-        Discord.Partials.GuildScheduledEvent
+        Partials.Channel,
+        Partials.GuildMember,
+        Partials.Message,
+        Partials.Reaction,
+        Partials.User,
+        Partials.GuildScheduledEvent
     ],
     intents: [
-        Discord.GatewayIntentBits.Guilds,
-        Discord.GatewayIntentBits.GuildMembers,
-        Discord.GatewayIntentBits.GuildBans,
-        Discord.GatewayIntentBits.GuildEmojisAndStickers,
-        Discord.GatewayIntentBits.GuildIntegrations,
-        Discord.GatewayIntentBits.GuildWebhooks,
-        Discord.GatewayIntentBits.GuildInvites,
-        Discord.GatewayIntentBits.GuildVoiceStates,
-        Discord.GatewayIntentBits.GuildMessages,
-        Discord.GatewayIntentBits.GuildMessageReactions,
-        Discord.GatewayIntentBits.GuildMessageTyping,
-        Discord.GatewayIntentBits.DirectMessages,
-        Discord.GatewayIntentBits.DirectMessageReactions,
-        Discord.GatewayIntentBits.DirectMessageTyping,
-        Discord.GatewayIntentBits.GuildScheduledEvents,
-        Discord.GatewayIntentBits.MessageContent
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildBans,
+        GatewayIntentBits.GuildEmojisAndStickers,
+        GatewayIntentBits.GuildIntegrations,
+        GatewayIntentBits.GuildWebhooks,
+        GatewayIntentBits.GuildInvites,
+        GatewayIntentBits.GuildVoiceStates,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.GuildMessageReactions,
+        GatewayIntentBits.DirectMessages,
+        GatewayIntentBits.DirectMessageReactions,
+        GatewayIntentBits.GuildScheduledEvents,
+        GatewayIntentBits.MessageContent
     ],
     restTimeOffset: 0
 });
 
-
+// === LAVALINK SETUP ===
 const clientID = process.env.SPOTIFY_CLIENT_ID;
 const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
-if (clientID && clientSecret) {
-    // Lavalink client
-    client.player = new Manager({
-        plugins: [
-            new AppleMusic(),
-            new Deezer(),
-            new Facebook(),
-            new Spotify({
-                clientID,
-                clientSecret,
-            })
-        ],
-        nodes: [
-            {
-                host: process.env.LAVALINK_HOST || "lavalink.api.timelessnesses.me",
-                port: parseInt(process.env.LAVALINK_PORT) ||  80,
-                password: process.env.LAVALINK_PASSWORD || "youshallnotpass",
-                secure: Boolean(process.env.LAVALINK_SECURE) || false
-            },
-            {
-                host: "209.145.62.164",
-                port: 50117,
-                password: "redant"
-            },
-        ],
-        send(id, payload) {
-            const guild = client.guilds.cache.get(id);
-            if (guild) guild.shard.send(payload);
+
+client.player = new Manager({
+    plugins: [
+        new AppleMusic(),
+        new Deezer(),
+        new Facebook(),
+        ...(clientID && clientSecret ? [new Spotify({ clientID, clientSecret })] : [])
+    ],
+    nodes: clientID && clientSecret ? [
+        {
+            host: process.env.LAVALINK_HOST || "lavalink.api.timelessnesses.me",
+            port: parseInt(process.env.LAVALINK_PORT) || 80,
+            password: process.env.LAVALINK_PASSWORD || "youshallnotpass",
+            secure: process.env.LAVALINK_SECURE === "true"
         },
-    })
-
-} else {
-    // Lavalink client
-    client.player = new Manager({
-        plugins: [
-            new AppleMusic(),
-            new Deezer(),
-            new Facebook(),
-        ],
-        nodes: [
-            {
-                host: process.env.LAVALINK_HOST || "lava-v3.ajieblogs.eu.org",
-                port: parseInt(process.env.LAVALINK_PORT) || 443,
-                password: process.env.LAVALINK_PASSWORD || "https://dsc.gg/ajidevserver",
-                secure: Boolean(process.env.LAVALINK_SECURE) || true
-            },
-        ],
-        send(id, payload) {
-            const guild = client.guilds.cache.get(id);
-            if (guild) guild.shard.send(payload);
+        {
+            host: "209.145.62.164",
+            port: 50117,
+            password: "redant"
         }
-    })
-}
-const events = fs.readdirSync(`./src/events/music`).filter(files => files.endsWith('.js'));
+    ] : [
+        {
+            host: process.env.LAVALINK_HOST || "lava-v3.ajieblogs.eu.org",
+            port: parseInt(process.env.LAVALINK_PORT) || 443,
+            password: process.env.LAVALINK_PASSWORD || "https://dsc.gg/ajidevserver",
+            secure: true
+        }
+    ],
+    send(id, payload) {
+        const guild = client.guilds.cache.get(id);
+        if (guild) guild.shard.send(payload);
+    }
+});
 
+// === MUSIC EVENTS ===
+const events = fs.readdirSync(`./src/events/music`).filter(f => f.endsWith('.js'));
 for (const file of events) {
     const event = require(`./events/music/${file}`);
     client.player.on(file.split(".")[0], event.bind(null, client)).setMaxListeners(0);
-};
+}
 
-// Connect to database
+// === DATABASE ===
 require("./database/connect")();
 
-// Client settings
+// === CLIENT CONFIGURATION ===
 client.config = require('./config/bot');
 client.changelogs = require('./config/changelogs');
 client.emotes = require("./config/emojis.json");
 client.webhooks = require("./config/webhooks.json");
+
 const webHooksArray = ['startLogs', 'shardLogs', 'errorLogs', 'dmLogs', 'voiceLogs', 'serverLogs', 'serverLogs2', 'commandLogs', 'consoleLogs', 'warnLogs', 'voiceErrorLogs', 'creditLogs', 'evalLogs', 'interactionLogs'];
-// Check if .env webhook_id and webhook_token are set
 if (process.env.WEBHOOK_ID && process.env.WEBHOOK_TOKEN) {
     for (const webhookName of webHooksArray) {
         client.webhooks[webhookName].id = process.env.WEBHOOK_ID;
@@ -129,98 +107,63 @@ if (process.env.WEBHOOK_ID && process.env.WEBHOOK_TOKEN) {
     }
 }
 
-client.commands = new Discord.Collection();
+// === MISC DATA STRUCTURES ===
+client.commands = new Collection();
 client.playerManager = new Map();
 client.triviaManager = new Map();
 client.queue = new Map();
 
-// Webhooks
-const consoleLogs = new Discord.WebhookClient({
+// === WEBHOOK LOGGERS ===
+const consoleLogs = WebhookClient.from({
     id: client.webhooks.consoleLogs.id,
     token: client.webhooks.consoleLogs.token,
 });
 
-const warnLogs = new Discord.WebhookClient({
+const warnLogs = WebhookClient.from({
     id: client.webhooks.warnLogs.id,
     token: client.webhooks.warnLogs.token,
 });
 
-// Load handlers
+// === LOAD HANDLERS ===
 fs.readdirSync('./src/handlers').forEach((dir) => {
     fs.readdirSync(`./src/handlers/${dir}`).forEach((handler) => {
         require(`./handlers/${dir}/${handler}`)(client);
     });
 });
 
+// === LOGIN ===
 client.login(process.env.DISCORD_TOKEN);
 
+// === ERROR HANDLING ===
 process.on('unhandledRejection', error => {
     console.error('Unhandled promise rejection:', error);
-    if (error) if (error.length > 950) error = error.slice(0, 950) + '... view console for details';
-    if (error.stack) if (error.stack.length > 950) error.stack = error.stack.slice(0, 950) + '... view console for details';
-    if(!error.stack) return
-    const embed = new Discord.EmbedBuilder()
+    const embed = new EmbedBuilder()
         .setTitle(`🚨・Unhandled promise rejection`)
         .addFields([
-            {
-                name: "Error",
-                value: error ? Discord.codeBlock(error) : "No error",
-            },
-            {
-                name: "Stack error",
-                value: error.stack ? Discord.codeBlock(error.stack) : "No stack error",
-            }
+            { name: "Error", value: codeBlock(error?.message || "No message") },
+            { name: "Stack", value: codeBlock(error?.stack || "No stack trace") }
         ])
-        .setColor(client.config.colors.normal)
-    consoleLogs.send({
-        username: 'Cludo Logs',
-        embeds: [embed],
-    }).catch(() => {
-        console.log('Error sending unhandledRejection to webhook')
-        console.log(error)
-    })
+        .setColor(client.config.colors.normal);
+    consoleLogs.send({ username: 'Cludo Logs', embeds: [embed] }).catch(console.error);
 });
 
 process.on('warning', warn => {
     console.warn("Warning:", warn);
-    const embed = new Discord.EmbedBuilder()
-        .setTitle(`🚨・New warning found`)
-        .addFields([
-            {
-                name: `Warn`,
-                value: `\`\`\`${warn}\`\`\``,
-            },
-        ])
-        .setColor(client.config.colors.normal)
-    warnLogs.send({
-        username: 'Cludo Logs',
-        embeds: [embed],
-    }).catch(() => {
-        console.log('Error sending warning to webhook')
-        console.log(warn)
-    })
+    const embed = new EmbedBuilder()
+        .setTitle(`🚨・New warning`)
+        .addFields([{ name: "Warn", value: codeBlock(String(warn)) }])
+        .setColor(client.config.colors.normal);
+    warnLogs.send({ username: 'Cludo Logs', embeds: [embed] }).catch(console.error);
 });
 
-client.on(Discord.ShardEvents.Error, error => {
-    console.log(error)
-    if (error) if (error.length > 950) error = error.slice(0, 950) + '... view console for details';
-    if (error.stack) if (error.stack.length > 950) error.stack = error.stack.slice(0, 950) + '... view console for details';
-    if (!error.stack) return
-    const embed = new Discord.EmbedBuilder()
-        .setTitle(`🚨・A websocket connection encountered an error`)
+client.on('shardError', error => {
+    console.error("Shard error:", error);
+    const embed = new EmbedBuilder()
+        .setTitle(`🚨・A websocket connection error occurred`)
         .addFields([
-            {
-                name: `Error`,
-                value: `\`\`\`${error}\`\`\``,
-            },
-            {
-                name: `Stack error`,
-                value: `\`\`\`${error.stack}\`\`\``,
-            }
+            { name: "Error", value: codeBlock(error?.message || "No message") },
+            { name: "Stack", value: codeBlock(error?.stack || "No stack trace") }
         ])
-        .setColor(client.config.colors.normal)
-    consoleLogs.send({
-        username: 'Cludo Logs',
-        embeds: [embed],
-    });
+        .setColor(client.config.colors.normal);
+    consoleLogs.send({ username: 'Cludo Logs', embeds: [embed] }).catch(console.error);
 });
