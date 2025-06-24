@@ -1,14 +1,12 @@
-const { CommandInteraction, Client } = require('discord.js');
 const { SlashCommandBuilder } = require('discord.js');
-const Discord = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('activities')
-        .setDescription('Start a activity')
+        .setDescription('Start a voice channel activity')
         .addStringOption(option =>
             option.setName('activity')
-                .setDescription('The activity that you want')
+                .setDescription('The activity that you want to start')
                 .setRequired(true)
                 .addChoices(
                     { name: 'Betrayal.io', value: 'betrayal' },
@@ -24,65 +22,64 @@ module.exports = {
                     { name: 'Word Snacks', value: 'wordsnacks' },
                     { name: 'Watch Together', value: 'watchtogether' }
                 )
-        )
-    ,
+        ),
 
-    /** 
-     * @param {Client} client
-     * @param {CommandInteraction} interaction
-     * @param {String[]} args
+    /**
+     * @param {import('discord.js').Client} client
+     * @param {import('discord.js').CommandInteraction} interaction
      */
-
-    run: async (client, interaction, args) => {
+    run: async (client, interaction) => {
         await interaction.deferReply({ fetchReply: true });
+
         const activity = interaction.options.getString('activity');
-
         const channel = interaction.member.voice.channel;
-        if (!channel) return client.errNormal({ 
-            error: `You're not in a voice channel!`, 
-            type: 'editreply' 
-        }, interaction);
 
-        if (activity == "betrayal") {
-            client.generateActivity("773336526917861400", "Betrayal.io", channel, interaction)
+        if (!channel) {
+            return client.errNormal({
+                error: `You're not in a voice channel!`,
+                type: 'editreply'
+            }, interaction);
         }
-        else if (activity == "checkers") {
-            client.generateActivity("832013003968348200", "Checkers in the Park", channel, interaction)
+
+        const activityMap = {
+            betrayal:      { id: '773336526917861400', name: 'Betrayal.io' },
+            checkers:      { id: '832013003968348200', name: 'Checkers in the Park' },
+            chess:         { id: '832012586023256104', name: 'Chess in the Park' },
+            doodlecrew:    { id: '878067389634314250', name: 'Doodle Crew' },
+            fishington:    { id: '814288819477020702', name: 'Fishington.io' },
+            letterleague:  { id: '879863686565621790', name: 'Letter League' },
+            ocho:          { id: '832025144389533716', name: 'Ocho' },
+            poker:         { id: '755827207812677713', name: 'Poker Night' },
+            sketchheads:   { id: '902271654783242291', name: 'Sketch Heads' },
+            spellcast:     { id: '852509694341283871', name: 'Spell Cast' },
+            wordsnacks:    { id: '879863976006127627', name: 'Word Snacks' },
+            watchtogether: { id: '880218394199220334', name: 'Watch Together' }
+        };
+
+        const selected = activityMap[activity];
+
+        if (!selected) {
+            return interaction.editReply({
+                content: "❌ Unknown activity selected.",
+                ephemeral: true
+            });
         }
-        else if (activity == "chess") {
-            client.generateActivity("832012586023256104", "Chess in the Park", channel, interaction)
-        }
-        else if (activity == "doodlecrew") {
-            client.generateActivity("878067389634314250", "Doodle Crew", channel, interaction)
-        }
-        else if (activity == "fishington") {
-            client.generateActivity("814288819477020702", "Fishington.io", channel, interaction)
-        }
-        else if (activity == "lettertile") {
-            client.generateActivity("879863686565621790", "Letter Tile", channel, interaction)
-        }
-        else if (activity == "poker") {
-            client.generateActivity("755827207812677713", "Poker Night", channel, interaction)
-        }
-        else if (activity == "spellcast") {
-            client.generateActivity("852509694341283871", "Spell Cast", channel, interaction)
-        }
-        else if (activity == "wordsnacks") {
-            client.generateActivity("879863976006127627", "Word Snacks", channel, interaction)
-        }
-        else if (activity == "watchtogether") {
-            client.generateActivity("880218394199220334", "Watch Together", channel, interaction)
-        }
-        else if (activity == "ocho") {
-            client.generateActivity("832025144389533716", "Ocho", channel, interaction)
-        }
-        else if (activity == "sketchheads") {
-            client.generateActivity("902271654783242291", "Sketch Heads", channel, interaction)
-        }
-        else if (activity == "letterleague") {
-            client.generateActivity("879863686565621790", "Letter League", channel, interaction)
+
+        try {
+            if (typeof client.generateActivity === 'function') {
+                await client.generateActivity(selected.id, selected.name, channel, interaction);
+            } else {
+                await interaction.editReply({
+                    content: "❌ Activity system is not set up correctly (generateActivity missing).",
+                    ephemeral: true
+                });
+            }
+        } catch (err) {
+            console.error("Activity Error:", err);
+            await interaction.editReply({
+                content: "❌ Failed to start the activity.",
+                ephemeral: true
+            });
         }
     },
 };
-
- 
